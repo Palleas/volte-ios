@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
+		7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */; };
+		7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */; };
+		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
+		7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */; };
+		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
+		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7ADFD5C91DAD22130070C5BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7ADFD5B91DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7ADFD5BE1DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ADFD5C61DAD22130070C5BE /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
+		7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volte-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7ADFD5AE1DAD1E7E0070C5BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7ADFD5A81DAD1E7E0070C5BE = {
+			isa = PBXGroup;
+			children = (
+				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
+				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
+				7ADFD5B21DAD1E7E0070C5BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7ADFD5B21DAD1E7E0070C5BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ADFD5B11DAD1E7E0070C5BE /* Volte.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ADFD5B31DAD1E7E0070C5BE /* Volte */ = {
+			isa = PBXGroup;
+			children = (
+				7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */,
+				7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */,
+				7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */,
+				7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */,
+				7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */,
+				7ADFD5C01DAD1E7E0070C5BE /* Info.plist */,
+				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
+			);
+			path = Volte;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7ADFD5B01DAD1E7E0070C5BE /* Volte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ADFD5C31DAD1E7E0070C5BE /* Build configuration list for PBXNativeTarget "Volte" */;
+			buildPhases = (
+				7ADFD5AD1DAD1E7E0070C5BE /* Sources */,
+				7ADFD5AE1DAD1E7E0070C5BE /* Frameworks */,
+				7ADFD5AF1DAD1E7E0070C5BE /* Resources */,
+				7ADFD5C91DAD22130070C5BE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Volte;
+			productName = Volte;
+			productReference = 7ADFD5B11DAD1E7E0070C5BE /* Volte.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7ADFD5A91DAD1E7E0070C5BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Perfectly-Cooked";
+				TargetAttributes = {
+					7ADFD5B01DAD1E7E0070C5BE = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MR4EU5S834;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7ADFD5AC1DAD1E7E0070C5BE /* Build configuration list for PBXProject "Volte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7ADFD5A81DAD1E7E0070C5BE;
+			productRefGroup = 7ADFD5B21DAD1E7E0070C5BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7ADFD5B01DAD1E7E0070C5BE /* Volte */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7ADFD5AF1DAD1E7E0070C5BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */,
+				7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */,
+				7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7ADFD5AD1DAD1E7E0070C5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */,
+				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ADFD5B91DAD1E7E0070C5BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ADFD5BE1DAD1E7E0070C5BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7ADFD5C11DAD1E7E0070C5BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7ADFD5C21DAD1E7E0070C5BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7ADFD5C41DAD1E7E0070C5BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Volte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Volte";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Volte/Volte-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7ADFD5C51DAD1E7E0070C5BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Volte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Volte";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Volte/Volte-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7ADFD5AC1DAD1E7E0070C5BE /* Build configuration list for PBXProject "Volte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ADFD5C11DAD1E7E0070C5BE /* Debug */,
+				7ADFD5C21DAD1E7E0070C5BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ADFD5C31DAD1E7E0070C5BE /* Build configuration list for PBXNativeTarget "Volte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ADFD5C41DAD1E7E0070C5BE /* Debug */,
+				7ADFD5C51DAD1E7E0070C5BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7ADFD5A91DAD1E7E0070C5BE /* Project object */;
+}
