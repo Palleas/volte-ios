@@ -19,6 +19,7 @@
 		7AB44C0D1DAD7A7D0082AE6B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44C0F1DAE70E20082AE6B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; };
 		7AB44C101DAE70E20082AE6B /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */; };
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
 		7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */; };
 		7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		7AB44C041DAD7A7C0082AE6B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineMessageCell.swift; sourceTree = "<group>"; };
 		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
 				7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */,
 				7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */,
+				7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */,
 				7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */,
 				7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,

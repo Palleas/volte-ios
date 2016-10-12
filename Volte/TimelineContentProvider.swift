@@ -16,6 +16,7 @@ struct Account {
 
 struct Item {
     let content: String
+    let author: String
     let email: String
 }
 
@@ -80,6 +81,7 @@ class TimelineContentProvider {
 
                     sink.send(value: Item(
                         content: payload["text"].string ?? "No content for \(uid)",
+                        author: payload["author"]["name"].stringValue,
                         email: payload["author"]["email"].stringValue
                     ))
                     sink.sendCompleted()

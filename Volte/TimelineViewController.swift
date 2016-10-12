@@ -17,7 +17,14 @@ class TimelineViewController: UIViewController {
     fileprivate let provider = TimelineContentProvider()
     fileprivate var messages = [Item]()
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(TimelineMessageCell.self, forCellReuseIdentifier: "TimelineItemCell")
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 140
+            tableView.contentInset = .zero
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,9 +57,9 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDataSourcePr
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath)
-        cell.imageView?.image = nil
-        cell.textLabel?.text = messages[indexPath.row].content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath) as! TimelineMessageCell
+        cell.contentLabel.text = messages[indexPath.row].content
+        cell.authorLabel.text = messages[indexPath.row].author
 
         let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
         let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())")!
@@ -64,7 +71,7 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDataSourcePr
             }
 
             DispatchQueue.main.async {
-                cell.imageView?.image = UIImage(data: data)
+                cell.avatarView.image = UIImage(data: data)
             }
         }.resume()
 
