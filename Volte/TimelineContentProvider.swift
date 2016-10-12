@@ -9,10 +9,6 @@
 import Foundation
 import ReactiveSwift
 import SwiftyJSON
-struct Account {
-    let username: String
-    let password: String
-}
 
 struct Item {
     let content: String
@@ -28,17 +24,13 @@ enum TimelineError: Error {
 class TimelineContentProvider {
     private let session = MCOIMAPSession()
 
-    init() {
+    init(account: Account) {
         session.hostname = "SSL0.OVH.NET"
         session.port = 993
         session.connectionType = .TLS
-    }
-
-    func authenticate(with account: Account) -> TimelineContentProvider {
         session.username = account.username
         session.password = account.password
 
-        return self
     }
 
     func fetchShallowMessages() -> SignalProducer<MCOIMAPMessage, TimelineError> {
