@@ -47,8 +47,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="NGR-v0-bc9" secondAttribute="trailing" constant="20" id="0xw-Uz-itF"/>
                 <constraint firstItem="NGR-v0-bc9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="691-xy-qVK"/>
-                <constraint firstItem="NGR-v0-bc9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TPJ-TG-juf"/>
+                <constraint firstItem="NGR-v0-bc9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="WDw-ZD-Voz"/>
             </constraints>
             <connections>
                 <outlet property="loginButton" destination="egd-lh-pnd" id="M5n-DA-GOM"/>
