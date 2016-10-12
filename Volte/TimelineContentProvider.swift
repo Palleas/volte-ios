@@ -16,6 +16,7 @@ struct Account {
 
 struct Item {
     let content: String
+    let email: String
 }
 
 enum TimelineError: Error {
@@ -77,7 +78,10 @@ class TimelineContentProvider {
 
                     let payload = JSON(data: voltePart.data)
 
-                    sink.send(value: Item(content: payload["text"].string ?? "No content for \(uid)"))
+                    sink.send(value: Item(
+                        content: payload["text"].string ?? "No content for \(uid)",
+                        email: payload["author"]["email"].stringValue
+                    ))
                     sink.sendCompleted()
                 } else {
                     sink.send(error: .internalError)

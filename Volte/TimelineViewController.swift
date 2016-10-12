@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ReactiveSwift
+import CryptoSwift
 
 class TimelineViewController: UIViewController {
 
@@ -40,22 +41,6 @@ class TimelineViewController: UIViewController {
                     print("Error = \(error)")
                 }
             }
-
-
-
-//        session.hostname = "SSL0.OVH.NET"
-//        session.port = 993
-//        session.username = account.username
-//        session.password = account.password
-//        session.connectionType = .TLS
-//
-//        let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
-//        let operation = session.fetchMessagesOperation(withFolder: "INBOX", requestKind: .headers, uids: uids)
-//        operation?.start({ [weak self] (error, messages, vanishedMessages) in
-//            guard let messages = messages else { return }
-//            self?.messages = messages as! [MCOIMAPMessage]
-//            self?.tableView.reloadData()
-//        })
     }
 }
 
@@ -66,8 +51,23 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDataSourcePr
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath)
+        cell.imageView?.image = nil
         cell.textLabel?.text = messages[indexPath.row].content
-        
+
+        let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
+        let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())")!
+
+        URLSession.shared.dataTask(with: avatarURL) { data, _, _ in
+            guard let data = data else {
+                print("Unable to load avatar")
+                return
+            }
+
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: data)
+            }
+        }.resume()
+
         return cell
     }
 
