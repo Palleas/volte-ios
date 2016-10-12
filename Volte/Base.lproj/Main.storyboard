@@ -91,10 +91,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Timeline View Controller-->
+        <!--Timeline-->
         <scene sceneID="Lch-OC-LVN">
             <objects>
-                <viewController id="VuX-fr-Xo7" customClass="TimelineViewController" customModule="Volte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Timeline" id="VuX-fr-Xo7" customClass="TimelineViewController" customModule="Volte" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rQH-C5-mjJ"/>
                         <viewControllerLayoutGuide type="bottom" id="UGy-SX-rkO"/>
@@ -102,8 +102,46 @@
                     <view key="view" contentMode="scaleToFill" id="AEK-2u-A65">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-Qq-qgx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineItemCell" textLabel="ffW-Vv-4B2" style="IBUITableViewCellStyleDefault" id="rd9-UJ-8FG">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rd9-UJ-8FG" id="XF9-7H-X6J">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ffW-Vv-4B2">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VuX-fr-Xo7" id="5Cc-WT-42S"/>
+                                    <outlet property="delegate" destination="VuX-fr-Xo7" id="FV8-d3-1aA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UGy-SX-rkO" firstAttribute="top" secondItem="qg3-Qq-qgx" secondAttribute="bottom" id="Pn5-6X-kAs"/>
+                            <constraint firstItem="qg3-Qq-qgx" firstAttribute="top" secondItem="rQH-C5-mjJ" secondAttribute="bottom" id="dXd-bn-N7a"/>
+                            <constraint firstItem="qg3-Qq-qgx" firstAttribute="leading" secondItem="AEK-2u-A65" secondAttribute="leading" id="pNv-ez-2eP"/>
+                            <constraint firstAttribute="trailing" secondItem="qg3-Qq-qgx" secondAttribute="trailing" id="r4t-sK-C0w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="qg3-Qq-qgx" id="Jx8-3t-U7G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xs3-a6-39e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

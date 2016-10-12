@@ -1,3 +1,5 @@
 github "MailCore/mailcore2" "master"
 github "ReactiveCocoa/ReactiveCocoa" "master"
 github "SwiftyJSON/SwiftyJSON"
+github "krzyzanowskim/CryptoSwift"
+

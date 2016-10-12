@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
+		7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */; };
+		7AB44C061DAD7A7D0082AE6B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; };
+		7AB44C071DAD7A7D0082AE6B /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AB44C081DAD7A7D0082AE6B /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; };
+		7AB44C091DAD7A7D0082AE6B /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AB44C0A1DAD7A7D0082AE6B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; };
+		7AB44C0B1DAD7A7D0082AE6B /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AB44C0C1DAD7A7D0082AE6B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; };
+		7AB44C0D1DAD7A7D0082AE6B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
 		7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */; };
 		7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */; };
@@ -25,6 +34,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */,
+				7AB44C071DAD7A7D0082AE6B /* ReactiveCocoa.framework in Embed Frameworks */,
+				7AB44C091DAD7A7D0082AE6B /* ReactiveSwift.framework in Embed Frameworks */,
+				7AB44C0B1DAD7A7D0082AE6B /* Result.framework in Embed Frameworks */,
+				7AB44C0D1DAD7A7D0082AE6B /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,6 +46,11 @@
 
 /* Begin PBXFileReference section */
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
+		7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		7AB44C041DAD7A7C0082AE6B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +68,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */,
+				7AB44C061DAD7A7D0082AE6B /* ReactiveCocoa.framework in Frameworks */,
+				7AB44C081DAD7A7D0082AE6B /* ReactiveSwift.framework in Frameworks */,
+				7AB44C0A1DAD7A7D0082AE6B /* Result.framework in Frameworks */,
+				7AB44C0C1DAD7A7D0082AE6B /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +81,10 @@
 		7ADFD5A81DAD1E7E0070C5BE = {
 			isa = PBXGroup;
 			children = (
+				7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */,
+				7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */,
+				7AB44C041DAD7A7C0082AE6B /* Result.framework */,
+				7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */,
 				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
 				7ADFD5B21DAD1E7E0070C5BE /* Products */,
@@ -84,6 +110,7 @@
 				7ADFD5C01DAD1E7E0070C5BE /* Info.plist */,
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
 				7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */,
+				7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -164,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */,
+				7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,
 			);

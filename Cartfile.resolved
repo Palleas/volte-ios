@@ -1,3 +1,4 @@
+github "krzyzanowskim/CryptoSwift" "0.6.0"
 github "antitypical/Result" "3.0.0"
 github "SwiftyJSON/SwiftyJSON" "v3.1.1"
 github "MailCore/mailcore2" "f9471a7cace7ef0ddae8790021933b1c6cd963d8"
