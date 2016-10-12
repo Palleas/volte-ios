@@ -71,10 +71,11 @@ class TimelineContentProvider {
                 if let _ = error {
                     sink.send(error: .internalError)
                 } else if let messageContent = messageContent {
-                    let parser = MCOMessageParser(data: messageContent)
-                    print("content = \(parser?.mainPart())")
+                    let parser = MCOMessageParser(data: messageContent)!
+                    let parts = (parser.mainPart() as! MCOMultipart).parts as! [MCOAttachment]
+                    let voltePart = parts.filter { $0.mimeType == "application/ld+json" }.first!
 
-                    let payload = JSON(data: messageContent)
+                    let payload = JSON(data: voltePart.data)
 
                     sink.send(value: Item(content: payload["text"].string ?? "No content for \(uid)"))
                     sink.sendCompleted()
