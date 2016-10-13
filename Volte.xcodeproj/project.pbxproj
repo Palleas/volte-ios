@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A16609F1DAED6FF00AEBC50 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A16609E1DAED6FF00AEBC50 /* LoginViewController.xib */; };
 		7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */; };
-		7A1660A51DAF125800AEBC50 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* SendMessageViewController.swift */; };
+		7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */; };
 		7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */; };
 		7A1660A91DAFF29100AEBC50 /* testers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A1660A81DAFF29100AEBC50 /* testers.json */; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
@@ -57,7 +57,7 @@
 /* Begin PBXFileReference section */
 		7A16609E1DAED6FF00AEBC50 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
-		7A1660A41DAF125800AEBC50 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		7A1660A81DAFF29100AEBC50 /* testers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testers.json; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */,
 				7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */,
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
-				7A1660A41DAF125800AEBC50 /* SendMessageViewController.swift */,
+				7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */,
 				7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */,
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
 			);
@@ -241,7 +241,7 @@
 				7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,
-				7A1660A51DAF125800AEBC50 /* SendMessageViewController.swift in Sources */,
+				7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */,
 				7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */,
 				7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */,
 			);

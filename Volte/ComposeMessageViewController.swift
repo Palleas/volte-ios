@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReactiveSwift
 
 class ComposeMessageView: UIView {
 
@@ -57,9 +58,15 @@ class ComposeMessageViewController: UIViewController {
     func didTapSend() {
         let content = (view as! ComposeMessageView).contentField.text ?? "No content"
 
-        composer.sendMessage(with: content).startWithResult { result in
-            print("Error = \(result.error)")
-            print("Value = \(result.value)")
-        }
+        composer
+            .sendMessage(with: content)
+            .observe(on: UIScheduler())
+            .startWithResult { [weak self] result in
+                print("Error = \(result.error)")
+                print("Value = \(result.value)")
+                if let _ = result.value {
+                    self?.navigationController?.popViewController(animated: true) // boo.
+                }
+            }
     }
 }
