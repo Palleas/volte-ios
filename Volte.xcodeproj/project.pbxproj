@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A16609F1DAED6FF00AEBC50 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A16609E1DAED6FF00AEBC50 /* LoginViewController.xib */; };
+		7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
 		7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */; };
 		7AB44C061DAD7A7D0082AE6B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; };
@@ -20,9 +22,10 @@
 		7AB44C0F1DAE70E20082AE6B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; };
 		7AB44C101DAE70E20082AE6B /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */; };
+		7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */; };
+		7ABDDD061DAED0ED000D0D79 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD051DAED0ED000D0D79 /* AccountController.swift */; };
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
-		7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */; };
-		7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */; };
+		7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */; };
 		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
 		7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */; };
 		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
@@ -49,6 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A16609E1DAED6FF00AEBC50 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
 		7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -57,10 +62,11 @@
 		7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineMessageCell.swift; sourceTree = "<group>"; };
+		7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		7ABDDD051DAED0ED000D0D79 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7ADFD5B91DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ADFD5BE1DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +91,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A1660A01DAEDA6100AEBC50 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */,
+				7A16609E1DAED6FF00AEBC50 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		7A1660A11DAEDA7200AEBC50 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */,
+				7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */,
+				7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
 		7ADFD5A81DAD1E7E0070C5BE = {
 			isa = PBXGroup;
 			children = (
@@ -110,16 +135,16 @@
 		7ADFD5B31DAD1E7E0070C5BE /* Volte */ = {
 			isa = PBXGroup;
 			children = (
+				7A1660A01DAEDA6100AEBC50 /* Login */,
+				7A1660A11DAEDA7200AEBC50 /* Timeline */,
+				7ABDDD051DAED0ED000D0D79 /* AccountController.swift */,
 				7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */,
-				7ADFD5B61DAD1E7E0070C5BE /* ViewController.swift */,
-				7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */,
 				7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */,
-				7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */,
 				7ADFD5C01DAD1E7E0070C5BE /* Info.plist */,
-				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
-				7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */,
+				7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */,
+				7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */,
 				7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */,
-				7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */,
+				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -188,7 +213,7 @@
 			files = (
 				7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */,
 				7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */,
-				7ADFD5BA1DAD1E7E0070C5BE /* Main.storyboard in Resources */,
+				7A16609F1DAED6FF00AEBC50 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,25 +224,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ABDDD061DAED0ED000D0D79 /* AccountController.swift in Sources */,
 				7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */,
-				7ADFD5B71DAD1E7E0070C5BE /* ViewController.swift in Sources */,
+				7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */,
+				7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */,
 				7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,
+				7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7ADFD5B81DAD1E7E0070C5BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7ADFD5B91DAD1E7E0070C5BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

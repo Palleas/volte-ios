@@ -11,78 +11,48 @@ import UIKit
 import ReactiveSwift
 import CryptoSwift
 
+protocol TimelineViewModelType {
+    var messages: MutableProperty<[Item]> { get }
+}
+
+class TimelineViewModel {
+    var messages = MutableProperty<[Item]>([])
+}
+
 class TimelineViewController: UIViewController {
+    fileprivate let provider: TimelineContentProvider
 
-    var account: Account?
-    fileprivate let provider = TimelineContentProvider()
-    fileprivate var messages = [Item]()
+    private let viewModel = TimelineViewModel()
 
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.register(TimelineMessageCell.self, forCellReuseIdentifier: "TimelineItemCell")
-            tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.estimatedRowHeight = 140
-            tableView.contentInset = .zero
-        }
+    init(provider: TimelineContentProvider) {
+        self.provider = provider
+
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        view = TimelineView(viewModel: viewModel)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        guard let account = account else {
-            print("No account configured :(")
-            return
-        }
-
         provider
-            .authenticate(with: account)
             .fetchItems()
             .collect()
             .observe(on: UIScheduler())
             .startWithResult { [weak self] (result) in
                 if let messages = result.value {
-                    self?.messages = messages
-                    self?.tableView.reloadData()
+                    // TODO use RAC binding but I don't remember how it works
+                    self?.viewModel.messages.value = messages
                 } else if let error = result.error {
                     // TODO: Present error
                     print("Error = \(error)")
                 }
             }
     }
-}
-
-extension TimelineViewController: UITableViewDataSource, UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath) as! TimelineMessageCell
-        cell.contentLabel.text = messages[indexPath.row].content
-        cell.authorLabel.text = messages[indexPath.row].author
-
-        let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
-        let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())")!
-
-        URLSession.shared.dataTask(with: avatarURL) { data, _, _ in
-            guard let data = data else {
-                print("Unable to load avatar")
-                return
-            }
-
-            DispatchQueue.main.async {
-                cell.avatarView.image = UIImage(data: data)
-            }
-        }.resume()
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//        session.fetchMessageByUIDOperation(withFolder: "INBOX", uid: messages)
-    }
-}
-
-extension TimelineViewController: UITableViewDelegate {
-
 }
