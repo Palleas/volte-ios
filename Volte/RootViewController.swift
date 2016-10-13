@@ -15,12 +15,9 @@ class RootView: UIView {
     var containedView: UIView?
 
     func transition(to view: UIView) {
-        containedView?.removeFromSuperview()
-
         view.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(view)
-        self.containedView = view
 
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: topAnchor),
@@ -28,7 +25,16 @@ class RootView: UIView {
             view.rightAnchor.constraint(equalTo: rightAnchor),
             view.heightAnchor.constraint(equalTo: heightAnchor)
         ])
-        
+
+        guard let containedView = containedView else {
+            self.containedView = view
+            return
+        }
+
+        UIView.transition(from: containedView, to: view, duration: 0.5, options: .transitionCrossDissolve) { _ in
+            self.containedView = view
+
+        }
     }
 }
 
