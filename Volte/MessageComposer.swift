@@ -8,11 +8,9 @@
 
 import Foundation
 import ReactiveSwift
+import Result
 
 class MessageComposer {
-    // TODO
-    private static let recipients = ["romain.pouclet@gmail.com", /*"marc@weistroff.net",*/ "socialnetwork@mopro.io"]
-
     enum ComposingError: Error {
         case internalError(Error)
     }
@@ -34,12 +32,18 @@ class MessageComposer {
         session.username = account.username;
         session.password = account.password;
     }
-
     func sendMessage(with content: String) -> SignalProducer<String, ComposingError> {
+        return fetchBetaTesters()
+            .promoteErrors(ComposingError.self)
+            .flatMap(.latest, transform: { (senders) -> SignalProducer<String, ComposingError> in
+                return self.sendMessage(with: content, to: senders)
+            })
+    }
+    func sendMessage(with content: String, to recipients: [MCOAddress]) -> SignalProducer<String, ComposingError> {
         return SignalProducer { sink, disposable in
             let builder = MCOMessageBuilder()
             builder.header.from = MCOAddress(mailbox: self.account.username)
-            builder.header.to = MessageComposer.recipients.map { MCOAddress(mailbox: $0) }
+            builder.header.to = recipients
             builder.header.subject = "Coucou"
 
             builder.textBody = content
@@ -73,6 +77,17 @@ class MessageComposer {
             disposable.add {
                 operation?.cancel()
             }
+        }
+    }
+
+    func fetchBetaTesters() -> SignalProducer<[MCOAddress], NoError> {
+        return SignalProducer { sink, _ in
+            let testersURL = Bundle.main.url(forResource: "testers", withExtension: "json")!
+            let content = try! Data(contentsOf: testersURL)
+            let testers = try! JSONSerialization.jsonObject(with: content, options: .allowFragments) as! [String]
+            print("Testers = \(testers)")
+            sink.send(value: testers.map { MCOAddress(mailbox: $0)})
+            sink.sendCompleted()
         }
     }
 }

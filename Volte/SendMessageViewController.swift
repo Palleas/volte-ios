@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SendMessageView: UIView {
+class ComposeMessageView: UIView {
 
     let contentField = UITextView()
 
@@ -31,7 +31,7 @@ class SendMessageView: UIView {
     }
 }
 
-class SendMessageViewController: UIViewController {
+class ComposeMessageViewController: UIViewController {
 
     private let composer: MessageComposer
     
@@ -49,13 +49,14 @@ class SendMessageViewController: UIViewController {
     }
 
     override func loadView() {
-        let sendMessageView = SendMessageView()
+        let composeMessageView = ComposeMessageView()
 
-        self.view = sendMessageView
+        self.view = composeMessageView
     }
 
     func didTapSend() {
-        let content = (view as! SendMessageView).contentField.text ?? "No content"
+        let content = (view as! ComposeMessageView).contentField.text ?? "No content"
+
         composer.sendMessage(with: content).startWithResult { result in
             print("Error = \(result.error)")
             print("Value = \(result.value)")

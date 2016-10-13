@@ -43,6 +43,7 @@ class TimelineMessageCell: UITableViewCell {
         contentView.addSubview(contentLabel)
         contentView.addSubview(avatarView)
 
+
         NSLayoutConstraint.activate([
             avatarView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             avatarView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
@@ -56,7 +57,9 @@ class TimelineMessageCell: UITableViewCell {
             contentLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 5),
             contentLabel.leftAnchor.constraint(equalTo: authorLabel.leftAnchor),
             contentLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+
+            contentView.heightAnchor.constraint(greaterThanOrEqualTo: avatarView.heightAnchor, multiplier: 1, constant: 20)
         ])
     }
     
