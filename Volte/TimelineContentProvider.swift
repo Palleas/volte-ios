@@ -23,7 +23,7 @@ enum TimelineError: Error {
 
 class TimelineContentProvider {
     private let session = MCOIMAPSession()
-
+    
     init(account: Account) {
         session.hostname = "SSL0.OVH.NET"
         session.port = 993

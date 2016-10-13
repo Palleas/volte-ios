@@ -23,9 +23,11 @@ class TimelineViewController: UIViewController {
     fileprivate let provider: TimelineContentProvider
 
     private let viewModel = TimelineViewModel()
+    private let account: Account
 
-    init(provider: TimelineContentProvider) {
+    init(provider: TimelineContentProvider, account: Account) {
         self.provider = provider
+        self.account = account
 
         super.init(nibName: nil, bundle: nil)
 
@@ -72,7 +74,8 @@ extension TimelineViewController: TimelineViewDelegate {
     }
 
     func didTapCompose() {
-        let viewController = SendMessageViewController()
+        let composer = MessageComposer(account: account)
+        let viewController = SendMessageViewController(composer: composer)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

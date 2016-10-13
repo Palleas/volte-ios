@@ -11,25 +11,18 @@ import UIKit
 
 class SendMessageView: UIView {
 
-    private let contentField = UITextView()
-    private let charCountView = UIView()
+    let contentField = UITextView()
 
     init() {
         super.init(frame: .zero)
         contentField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentField)
 
-        charCountView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(charCountView)
-
         NSLayoutConstraint.activate([
             contentField.topAnchor.constraint(equalTo: topAnchor),
             contentField.leftAnchor.constraint(equalTo: leftAnchor),
             contentField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            contentField.rightAnchor.constraint(equalTo: rightAnchor),
-
-            charCountView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            charCountView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20)
+            contentField.rightAnchor.constraint(equalTo: rightAnchor)
         ])
     }
     
@@ -40,7 +33,11 @@ class SendMessageView: UIView {
 
 class SendMessageViewController: UIViewController {
 
-    init() {
+    private let composer: MessageComposer
+    
+    init(composer: MessageComposer) {
+        self.composer = composer
+        
         super.init(nibName: nil, bundle: nil)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
@@ -58,6 +55,10 @@ class SendMessageViewController: UIViewController {
     }
 
     func didTapSend() {
-        
+        let content = (view as! SendMessageView).contentField.text ?? "No content"
+        composer.sendMessage(with: content).startWithResult { result in
+            print("Error = \(result.error)")
+            print("Value = \(result.value)")
+        }
     }
 }
