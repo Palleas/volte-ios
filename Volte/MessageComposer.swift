@@ -11,10 +11,10 @@ import ReactiveSwift
 
 class MessageComposer {
     // TODO
-    private static let recipients = ["romain.pouclet@gmail.com", "marc@weistroff.net"]
+    private static let recipients = ["romain.pouclet@gmail.com", /*"marc@weistroff.net",*/ "socialnetwork@mopro.io"]
 
     enum ComposingError: Error {
-        case internalError
+        case internalError(Error)
     }
 
     private let session: MCOSMTPSession = {
@@ -43,16 +43,28 @@ class MessageComposer {
             builder.header.subject = "Coucou"
 
             builder.textBody = content
-//            let payload = ["something": "something-else"]
-//            let attachment = MCOAttachment(rfc822Message: try! JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted))!
-//            attachment.mimeType = "application/ld+json"
-//            builder.addAttachment(attachment)
+            let payload: [String: Any] = [
+                "@context": "http://schema.org",
+                "@type": "SocialMediaPosting",
+                "@id": UUID().uuidString,
+                "datePublished": "\(Date())",
+                "author": [
+                    "@type": "Person",
+                    "name": "John Potatoe",
+                    "email": self.account.username
+                ],
+                "text": content
+            ]
+
+            let attachment = MCOAttachment(rfc822Message: try! JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted))!
+            attachment.mimeType = "application/ld+json"
+            builder.addAttachment(attachment)
 
             let operation = self.session.sendOperation(with: builder.data())
             operation?.start { (error) in
                 print("Send error = \(error)")
                 if let error = error {
-                    sink.send(error: .internalError)
+                    sink.send(error: .internalError(error))
                 } else {
                     sink.send(value: "Yay")
                     sink.sendCompleted()
