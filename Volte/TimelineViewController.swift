@@ -35,12 +35,19 @@ class TimelineViewController: UIViewController {
     }
 
     override func loadView() {
-        view = TimelineView(viewModel: viewModel)
+        let timelineView = TimelineView(viewModel: viewModel)
+        timelineView.delegate = self
+
+        self.view = timelineView
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        fetchMessages()
+    }
+
+    func fetchMessages() {
         provider
             .fetchItems()
             .collect()
@@ -53,6 +60,12 @@ class TimelineViewController: UIViewController {
                     // TODO: Present error
                     print("Error = \(error)")
                 }
-            }
+        }
+    }
+}
+
+extension TimelineViewController: TimelineViewDelegate {
+    func didPullToRefresh() {
+        fetchMessages()
     }
 }

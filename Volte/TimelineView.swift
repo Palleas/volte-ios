@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol TimelineViewDelegate: class {
+    func didPullToRefresh()
+}
+
 class TimelineView: UIView {
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -20,13 +24,19 @@ class TimelineView: UIView {
         return tableView
     }()
 
+    private let refreshControl = UIRefreshControl()
+
     fileprivate let viewModel: TimelineViewModel
+
+    weak var delegate: TimelineViewDelegate?
 
     init(viewModel: TimelineViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
 
         tableView.dataSource = self
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
         addSubview(tableView)
 
@@ -37,15 +47,18 @@ class TimelineView: UIView {
             tableView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
 
-
-
         viewModel.messages.producer.startWithValues { [weak self] _ in
+            self?.refreshControl.endRefreshing()
             self?.tableView.reloadData()
         }
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func handleRefresh() {
+        delegate?.didPullToRefresh()
     }
 }
 
