@@ -19,6 +19,7 @@ protocol AccountControllerType {
     var account: MutableProperty<Account?> { get }
 
     func authenticate(with username: String, password: String)
+    func logout()
 }
 
 class AccountController: AccountControllerType {
@@ -41,6 +42,13 @@ class AccountController: AccountControllerType {
 
         keychain.setString(username, key: AccountController.usernameKey)
         keychain.setString(password, key: AccountController.passwordKey)
+    }
+
+    func logout() {
+        account.value = nil
+
+        keychain.setString(nil, key: AccountController.usernameKey)
+        keychain.setString(nil, key: AccountController.passwordKey)
     }
 
 }

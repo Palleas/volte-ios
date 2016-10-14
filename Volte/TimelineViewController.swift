@@ -23,15 +23,18 @@ class TimelineViewController: UIViewController {
     fileprivate let provider: TimelineContentProvider
 
     private let viewModel = TimelineViewModel()
+    private let accountController: AccountControllerType
     fileprivate let account: Account
 
-    init(provider: TimelineContentProvider, account: Account) {
+    init(provider: TimelineContentProvider, accountController: AccountControllerType, account: Account) {
         self.provider = provider
+        self.accountController = accountController
         self.account = account
 
         super.init(nibName: nil, bundle: nil)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapCompose))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapMenu))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -66,16 +69,25 @@ class TimelineViewController: UIViewController {
                 }
         }
     }
-}
-
-extension TimelineViewController: TimelineViewDelegate {
-    func didPullToRefresh() {
-        fetchMessages()
-    }
 
     func didTapCompose() {
         let composer = MessageComposer(account: account)
         let viewController = ComposeMessageViewController(composer: composer)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func didTapMenu() {
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        sheet.addAction(UIAlertAction(title: "Logout", style: .destructive) { [weak self] _ in
+            self?.accountController.logout()
+        })
+        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(sheet, animated: true, completion: nil)
+    }
+}
+
+extension TimelineViewController: TimelineViewDelegate {
+    func didPullToRefresh() {
+        fetchMessages()
     }
 }
