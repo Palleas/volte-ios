@@ -23,7 +23,7 @@ enum TimelineError: Error {
 
 class TimelineContentProvider {
     private let session = MCOIMAPSession()
-
+    
     init(account: Account) {
         session.hostname = "SSL0.OVH.NET"
         session.port = 993
@@ -66,7 +66,10 @@ class TimelineContentProvider {
                     sink.send(error: .internalError)
                 } else if let messageContent = messageContent {
                     let parser = MCOMessageParser(data: messageContent)!
-                    let parts = (parser.mainPart() as! MCOMultipart).parts as! [MCOAttachment]
+                    guard let parts = (parser.mainPart() as? MCOMultipart)?.parts as? [MCOAttachment] else {
+                        sink.send(error: .decodingError(uid))
+                        return
+                    }
                     let voltePart = parts.filter { $0.mimeType == "application/ld+json" }.first!
 
                     let payload = JSON(data: voltePart.data)
@@ -94,7 +97,9 @@ class TimelineContentProvider {
 
         return fetchShallowMessages()
             .flatMap(.concat, transform: { (message) -> SignalProducer<Item, TimelineError> in
-                return self.fetchMessage(with: message.uid)
+                return self
+                    .fetchMessage(with: message.uid)
+                    .flatMapError { _ in SignalProducer.empty }
             })
     }
 }

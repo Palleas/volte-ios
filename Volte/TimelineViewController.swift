@@ -23,11 +23,15 @@ class TimelineViewController: UIViewController {
     fileprivate let provider: TimelineContentProvider
 
     private let viewModel = TimelineViewModel()
+    fileprivate let account: Account
 
-    init(provider: TimelineContentProvider) {
+    init(provider: TimelineContentProvider, account: Account) {
         self.provider = provider
+        self.account = account
 
         super.init(nibName: nil, bundle: nil)
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapCompose))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,5 +71,11 @@ class TimelineViewController: UIViewController {
 extension TimelineViewController: TimelineViewDelegate {
     func didPullToRefresh() {
         fetchMessages()
+    }
+
+    func didTapCompose() {
+        let composer = MessageComposer(account: account)
+        let viewController = ComposeMessageViewController(composer: composer)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
