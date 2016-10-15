@@ -1,4 +1,5 @@
 github "krzyzanowskim/CryptoSwift" "0.6.1"
+github "rdignard08/RGLockbox" "76b0affda4dc981e0457f84d0d9c6134c9d7b401"
 github "antitypical/Result" "3.0.0"
 github "SwiftyJSON/SwiftyJSON" "v3.1.1"
 github "MailCore/mailcore2" "efce413258a838818a39a12f0f86d563c8488468"
