@@ -42,7 +42,7 @@ class TimelineContentProvider {
             operation?.start { (error, messages, vanishedMessages) in
                 if let _ = error {
                     sink.send(error: .internalError)
-                } else if let messages = messages as? [MCOIMAPMessage] {
+                } else if let messages = messages {
                     messages.forEach { sink.send(value: $0) }
                     sink.sendCompleted()
                 } else {

@@ -33,6 +33,8 @@
 		7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */; };
 		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
 		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */; };
+		7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,12 +74,15 @@
 		7ABDDD051DAED0ED000D0D79 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ADFD5BE1DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ADFD5C61DAD22130070C5BE /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
 		7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volte-Bridging-Header.h"; sourceTree = "<group>"; };
+		7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
+		7AFECF041DB28CBA001A0E6B /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,16 @@
 			name = Timeline;
 			sourceTree = "<group>";
 		};
+		7A1660AA1DB05A4300AEBC50 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */,
+				7AFECF041DB28CBA001A0E6B /* OnePasswordExtension.h */,
+				7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
 		7ADFD5A81DAD1E7E0070C5BE = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,7 @@
 		7ADFD5B31DAD1E7E0070C5BE /* Volte */ = {
 			isa = PBXGroup;
 			children = (
+				7A1660AA1DB05A4300AEBC50 /* Externals */,
 				7A1660A01DAEDA6100AEBC50 /* Login */,
 				7A1660A11DAEDA7200AEBC50 /* Timeline */,
 				7ABDDD051DAED0ED000D0D79 /* AccountController.swift */,
@@ -220,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */,
 				7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */,
 				7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */,
 				7A1660A91DAFF29100AEBC50 /* testers.json in Resources */,
@@ -240,6 +257,7 @@
 				7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */,
 				7AB44C011DAD78CC0082AE6B /* TimelineContentProvider.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
+				7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */,
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,
 				7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */,
 				7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */,

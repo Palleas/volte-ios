@@ -1,6 +1,6 @@
-github "krzyzanowskim/CryptoSwift" "0.6.0"
+github "krzyzanowskim/CryptoSwift" "0.6.1"
 github "antitypical/Result" "3.0.0"
 github "SwiftyJSON/SwiftyJSON" "v3.1.1"
-github "MailCore/mailcore2" "f9471a7cace7ef0ddae8790021933b1c6cd963d8"
+github "MailCore/mailcore2" "efce413258a838818a39a12f0f86d563c8488468"
 github "ReactiveCocoa/ReactiveSwift" "1.0.0-alpha.2"
 github "ReactiveCocoa/ReactiveCocoa" "4296d939cb5e991871b985e4bd85910d58feadce"
