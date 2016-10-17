@@ -1,4 +1,4 @@
-# volte-ios
+# Volte (iOS)
 
 A prototype iOS app for Volte.
 
