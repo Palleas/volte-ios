@@ -21,4 +21,4 @@ Right know the recipients of the messages you post are stored in the [Volte/test
 
 ## License 
 
-Volte iOS is distributed under the GPL v3 license, see [LICENSE](LICENSE) file.
+Volte iOS is distributed under the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html), see [LICENSE](LICENSE) file.
