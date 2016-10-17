@@ -2,6 +2,8 @@
 
 A prototype iOS app for Volte.
 
+![Volte logo](volte-logo.png)
+
 ## How to get started
 
 1. Make sure you have [Carthage](https://github.com/Carthage/Carthage/) installed and Xcode 8.
