@@ -13,3 +13,6 @@ A prototype iOS app for Volte.
 Right know the recipients of the messages you post are stored in the [Volte/testers.json](Volte/testers.json) file.
 
 ## Credits 
+
+* [Romain Pouclet](https://romain-pouclet.com) 
+* [Marc Weistroff](http://www.delatech.net/en/)
