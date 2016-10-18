@@ -8,6 +8,16 @@
 
 import UIKit
 
+func parse(keyboardNotification notification: Notification) -> (CGFloat, TimeInterval, UIViewAnimationOptions)? {
+    guard let info = notification.userInfo else { return nil }
+    guard let height = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else { return nil }
+    guard let duration = info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return nil }
+    guard let curveRaw = info[UIKeyboardAnimationCurveUserInfoKey] as? Int else { return nil }
+    let curve = UIViewAnimationOptions(rawValue: UInt(curveRaw) << 16)
+
+    return (height, duration, curve)
+}
+
 // TODO use RAC Action
 protocol LoginViewDelegate: class {
     func didAuthenticate(with username: String?, password: String?)
@@ -26,7 +36,8 @@ class LoginView: UIView {
         return button
     }()
 
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
@@ -59,6 +70,18 @@ class LoginView: UIView {
     }
 }
 
+extension LoginView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameField {
+            passwordField.becomeFirstResponder()
+        } else {
+            delegate?.didAuthenticate(with: usernameField.text, password: passwordField.text)
+        }
+
+        return true
+    }
+}
+
 class LoginViewController: UIViewController {
     fileprivate let accountController: AccountControllerType
 
@@ -78,6 +101,44 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         loginView.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear(note:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(note:)), name: .UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(note:)), name: .UIKeyboardWillHide, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+
+        super.viewWillDisappear(animated)
+    }
+
+    func keyboardWillAppear(note: Notification) {
+        guard let (height, duration, animation) = parse(keyboardNotification: note) else { return }
+
+        UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
+            self.loginView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
+        }, completion: nil)
+    }
+
+    func keyboardWillChangeFrame(note: Notification) {
+        guard let (height, duration, animation) = parse(keyboardNotification: note) else { return }
+
+        UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
+            self.loginView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
+        }, completion: nil)
+    }
+
+    func keyboardWillHide(note: Notification) {
+        guard let (_, duration, animation) = parse(keyboardNotification: note) else { return }
+
+        UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
+            self.loginView.scrollView.contentInset = UIEdgeInsets.zero
+        }, completion: nil)
     }
 }
 
@@ -112,4 +173,3 @@ extension LoginViewController: LoginViewDelegate {
         }
     }
 }
-
