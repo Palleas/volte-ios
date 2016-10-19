@@ -12,8 +12,7 @@
 		7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */; };
 		7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */; };
 		7A1660A91DAFF29100AEBC50 /* testers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A1660A81DAFF29100AEBC50 /* testers.json */; };
-		7A1660AE1DB05A4E00AEBC50 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1660AB1DB05A4E00AEBC50 /* 1Password.xcassets */; };
-		7A1660AF1DB05A4E00AEBC50 /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660AD1DB05A4E00AEBC50 /* OnePasswordExtension.m */; };
+		7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A754C111DB7D19100376570 /* LoadingViewController.swift */; };
 		7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
 		7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
@@ -67,9 +66,7 @@
 		7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		7A1660A81DAFF29100AEBC50 /* testers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testers.json; sourceTree = "<group>"; };
-		7A1660AB1DB05A4E00AEBC50 /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = 1Password.xcassets; path = "../../../Downloads/onepassword-app-extension-master/1Password.xcassets"; sourceTree = "<group>"; };
-		7A1660AC1DB05A4E00AEBC50 /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnePasswordExtension.h; path = "../../../Downloads/onepassword-app-extension-master/OnePasswordExtension.h"; sourceTree = "<group>"; };
-		7A1660AD1DB05A4E00AEBC50 /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OnePasswordExtension.m; path = "../../../Downloads/onepassword-app-extension-master/OnePasswordExtension.m"; sourceTree = "<group>"; };
+		7A754C111DB7D19100376570 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
@@ -181,6 +178,7 @@
 				7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */,
 				7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */,
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
+				7A754C111DB7D19100376570 /* LoadingViewController.swift */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -273,6 +271,7 @@
 				7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */,
 				7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */,
 				7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */,
+				7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

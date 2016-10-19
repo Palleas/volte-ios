@@ -55,11 +55,15 @@ class TimelineViewController: UIViewController {
     }
 
     func fetchMessages() {
+        present(LoadingViewController(), animated: true, completion: nil)
+
         provider
             .fetchItems()
             .collect()
             .observe(on: UIScheduler())
             .startWithResult { [weak self] (result) in
+                self?.dismiss(animated: true, completion: nil)
+                
                 if let messages = result.value {
                     // TODO use RAC binding but I don't remember how it works
                     self?.viewModel.messages.value = messages
