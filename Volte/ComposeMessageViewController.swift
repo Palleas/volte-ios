@@ -56,6 +56,7 @@ class ComposeMessageViewController: UIViewController {
     }
 
     func didTapSend() {
+        present(LoadingViewController(), animated: true, completion: nil)
         let content = (view as! ComposeMessageView).contentField.text ?? "No content"
 
         composer
@@ -64,8 +65,10 @@ class ComposeMessageViewController: UIViewController {
             .startWithResult { [weak self] result in
                 print("Error = \(result.error)")
                 print("Value = \(result.value)")
-                if let _ = result.value {
-                    self?.navigationController?.popViewController(animated: true) // boo.
+                self?.dismiss(animated: true) {
+                    if let _ = result.value {
+                        _ = self?.navigationController?.popViewController(animated: true) // boo.
+                    }
                 }
             }
     }
