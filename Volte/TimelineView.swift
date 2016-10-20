@@ -82,6 +82,8 @@ class TimelineView: UIView {
     }
 
     func handleRefresh() {
+        refreshControl.endRefreshing()
+
         delegate?.didPullToRefresh()
     }
 }

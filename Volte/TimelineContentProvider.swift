@@ -11,6 +11,7 @@ import ReactiveSwift
 import SwiftyJSON
 
 struct Item {
+    let uid: UInt32
     let content: String
     let email: String
 }
@@ -50,14 +51,12 @@ class TimelineContentProvider {
             }
 
             disposable.add {
-                print("Cancelling operation")
                 operation?.cancel()
             }
         }
     }
 
     func fetchMessage(with uid: UInt32) -> SignalProducer<Item, TimelineError> {
-        print("Fetching message with uid \(uid)")
         return SignalProducer { sink, disposable in
             let operation = self.session.fetchMessageByUIDOperation(withFolder: "INBOX", uid: uid)
             operation?.start({ (error, messageContent) in
@@ -74,6 +73,7 @@ class TimelineContentProvider {
                     let payload = JSON(data: voltePart.data)
 
                     sink.send(value: Item(
+                        uid: uid,
                         content: payload["text"].string ?? "No content for \(uid)",
                         email: parser.header.from.mailbox ?? ""
                     ))
@@ -91,8 +91,6 @@ class TimelineContentProvider {
     }
 
     func fetchItems() -> SignalProducer<Item, TimelineError> {
-        print("Fetching messages")
-
         return fetchShallowMessages()
             .flatMap(.concat, transform: { (message) -> SignalProducer<Item, TimelineError> in
                 return self
