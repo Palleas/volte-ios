@@ -243,6 +243,7 @@
 				7ADFD5AE1DAD1E7E0070C5BE /* Frameworks */,
 				7ADFD5AF1DAD1E7E0070C5BE /* Resources */,
 				7ADFD5C91DAD22130070C5BE /* Embed Frameworks */,
+				7A7DE3BF1DB9075D00D71FD8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -303,6 +304,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A7DE3BF1DB9075D00D71FD8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MailCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RGLockboxIOS.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7ADFD5AD1DAD1E7E0070C5BE /* Sources */ = {
