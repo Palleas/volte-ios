@@ -18,6 +18,7 @@
 		7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */; };
 		7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B61DB8420200D71FD8 /* Localizations.swift */; };
 		7A7DE3B91DB8476F00D71FD8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3BB1DB8476F00D71FD8 /* LoginViewController.xib */; };
+		7A7DE3C11DB9105E00D71FD8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */; };
 		7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
 		7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
@@ -86,6 +87,7 @@
 		7A7DE3B81DB8462C00D71FD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A7DE3BA1DB8476F00D71FD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoginViewController.xib; sourceTree = "<group>"; };
 		7A7DE3BC1DB8477200D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
 				7A754C111DB7D19100376570 /* LoadingViewController.swift */,
 				7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */,
+				7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -243,7 +246,6 @@
 				7ADFD5AE1DAD1E7E0070C5BE /* Frameworks */,
 				7ADFD5AF1DAD1E7E0070C5BE /* Resources */,
 				7ADFD5C91DAD22130070C5BE /* Embed Frameworks */,
-				7A7DE3BF1DB9075D00D71FD8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7DE3C11DB9105E00D71FD8 /* Launch Screen.storyboard in Resources */,
 				7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */,
 				7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */,
 				7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */,
@@ -304,29 +307,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7A7DE3BF1DB9075D00D71FD8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/MailCore.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RGLockboxIOS.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7ADFD5AD1DAD1E7E0070C5BE /* Sources */ = {
@@ -487,6 +467,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Volte/Volte-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -508,6 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Volte/Volte-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
