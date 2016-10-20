@@ -15,6 +15,8 @@ struct L10n {
     struct Compose {
       /// What are you up to?
       static let WhatAreYouUpTo = L10n.tr("timeline.compose.what_are_you_up_to")
+      /// Compose
+      static let Title = L10n.tr("timeline.compose.title")
     }
   }
 }

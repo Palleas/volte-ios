@@ -71,7 +71,8 @@ class ComposeMessageViewController: UIViewController {
 
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
-        title = "Compose"
+
+        title = L10n.Timeline.Compose.Title
     }
     
     required init?(coder aDecoder: NSCoder) {
