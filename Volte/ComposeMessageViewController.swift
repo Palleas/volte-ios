@@ -92,14 +92,20 @@ class ComposeMessageViewController: UIViewController {
         composer
             .sendMessage(with: content)
             .observe(on: UIScheduler())
-            .startWithResult { [weak self] result in
-                print("Error = \(result.error)")
-                print("Value = \(result.value)")
+            .on(completed: { [weak self] in
                 self?.dismiss(animated: true) {
-                    if let _ = result.value {
-                        _ = self?.navigationController?.popViewController(animated: true) // boo.
-                    }
+                    _ = self?.navigationController?.popViewController(animated: true) // boo.
                 }
-            }
+            })
+            .startWithFailed({ [weak self] error in
+                let alert = UIAlertController(title: L10n.Compose.Error.Title, message: L10n.Compose.Error.Message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { [weak self] _ in
+                    self?.dismiss(animated: true, completion: nil)
+                })
+
+                self?.dismiss(animated: true) {
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            })
     }
 }

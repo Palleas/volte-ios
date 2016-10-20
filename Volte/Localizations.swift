@@ -15,6 +15,16 @@ struct L10n {
     static let Dismiss = L10n.tr("alert.dismiss")
   }
 
+  struct Compose {
+
+    struct Error {
+      /// Unable to post message
+      static let Title = L10n.tr("compose.error.title")
+      /// We were ynable to post your message, please try again later.
+      static let Message = L10n.tr("compose.error.message")
+    }
+  }
+
   struct Login {
 
     struct Failure {

@@ -11,3 +11,6 @@
 "login.failure.title" = "Invalid Credentials";
 "login.failure.message" = "Please make sure your credentials are correct and try again";
 "alert.dismiss" = "Dismiss";
+"compose.error.title" = "Unable to post message";
+"compose.error.message" = "We were ynable to post your message, please try again later.";
+
