@@ -18,7 +18,17 @@ struct Item {
 
 enum TimelineError: Error {
     case internalError
+    case authenticationError
     case decodingError(UInt32)
+}
+
+func ==(lhs: TimelineError, rhs: TimelineError) -> Bool {
+    switch (lhs, rhs) {
+    case (.internalError, .internalError): return true
+    case (.authenticationError, .authenticationError): return true
+    case (.decodingError(let message1), .decodingError(let message2)) where message1 == message2: return true
+    default: return true
+    }
 }
 
 class TimelineContentProvider {
@@ -40,7 +50,9 @@ class TimelineContentProvider {
             let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
             let operation = self.session.fetchMessagesOperation(withFolder: "INBOX", requestKind: .structure, uids: uids)
             operation?.start { (error, messages, vanishedMessages) in
-                if let _ = error {
+                if let error = error as? NSError, error.code == MCOErrorCode.authentication.rawValue {
+                    sink.send(error: .authenticationError)
+                } else if let _ = error {
                     sink.send(error: .internalError)
                 } else if let messages = messages {
                     messages.forEach { sink.send(value: $0) }
