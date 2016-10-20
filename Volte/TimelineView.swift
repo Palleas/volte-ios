@@ -72,7 +72,7 @@ extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath) as! TimelineMessageCell
         cell.contentLabel.text = messages[indexPath.row].content
-        cell.authorLabel.text = messages[indexPath.row].author
+        cell.authorLabel.text = messages[indexPath.row].email
 
         let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
         let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())")!

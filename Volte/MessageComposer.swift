@@ -52,11 +52,6 @@ class MessageComposer {
                 "@type": "SocialMediaPosting",
                 "@id": UUID().uuidString,
                 "datePublished": "\(Date())",
-                "author": [
-                    "@type": "Person",
-                    "name": "John Potatoe",
-                    "email": self.account.username
-                ],
                 "text": content
             ]
 
