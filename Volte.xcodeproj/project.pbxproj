@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FCE200D6931F0ADBA51CAC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5928BB7B739DB6804DA652D3 /* CoreText.framework */; };
+		19776F0B187CC6DBB0D23204 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */; };
+		5E76BA40086843107AB34376 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */; };
 		7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */; };
 		7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */; };
 		7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */; };
@@ -32,6 +35,7 @@
 		7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */; };
 		7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */; };
 		7ABDDD061DAED0ED000D0D79 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD051DAED0ED000D0D79 /* AccountController.swift */; };
+		7ADAC3505C800341EF4A34FC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C8D051CCF7528339401977 /* CoreVideo.framework */; };
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
 		7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */; };
 		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
@@ -39,6 +43,11 @@
 		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */; };
 		7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */; };
+		B45FE76137DA7D98DA407945 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9D51215CAF110225FDBED0 /* QuartzCore.framework */; };
+		BCE642410C839D1CEF2F1AA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */; };
+		C6175B922EB7411D41DE531F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */; };
+		CFF0AFC6186EEC857A94A419 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */; };
+		FE40AD08426EDD8A3D4B0CD4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A97DD264B994C0F167607E /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +71,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		37A97DD264B994C0F167607E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		53C8D051CCF7528339401977 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5928BB7B739DB6804DA652D3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
@@ -93,6 +107,10 @@
 		7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		7AFECF041DB28CBA001A0E6B /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
 		7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
+		7F9D51215CAF110225FDBED0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +125,37 @@
 				7AB44C0F1DAE70E20082AE6B /* CryptoSwift.framework in Frameworks */,
 				7AB44C0A1DAD7A7D0082AE6B /* Result.framework in Frameworks */,
 				7AB44C0C1DAD7A7D0082AE6B /* SwiftyJSON.framework in Frameworks */,
+				5E76BA40086843107AB34376 /* BuddyBuildSDK.framework in Frameworks */,
+				C6175B922EB7411D41DE531F /* AssetsLibrary.framework in Frameworks */,
+				00FCE200D6931F0ADBA51CAC /* CoreText.framework in Frameworks */,
+				FE40AD08426EDD8A3D4B0CD4 /* CoreTelephony.framework in Frameworks */,
+				CFF0AFC6186EEC857A94A419 /* SystemConfiguration.framework in Frameworks */,
+				B45FE76137DA7D98DA407945 /* QuartzCore.framework in Frameworks */,
+				BCE642410C839D1CEF2F1AA7 /* AVFoundation.framework in Frameworks */,
+				19776F0B187CC6DBB0D23204 /* CoreMedia.framework in Frameworks */,
+				7ADAC3505C800341EF4A34FC /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013592D6AE24FC1E47464288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */,
+				9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */,
+				5928BB7B739DB6804DA652D3 /* CoreText.framework */,
+				37A97DD264B994C0F167607E /* CoreTelephony.framework */,
+				28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */,
+				7F9D51215CAF110225FDBED0 /* QuartzCore.framework */,
+				5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */,
+				8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */,
+				53C8D051CCF7528339401977 /* CoreVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A1660A01DAEDA6100AEBC50 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +197,7 @@
 				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
 				7ADFD5B21DAD1E7E0070C5BE /* Products */,
+				013592D6AE24FC1E47464288 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,6 +453,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Volte/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -430,6 +475,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Volte/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
