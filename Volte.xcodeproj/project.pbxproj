@@ -13,6 +13,8 @@
 		7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */; };
 		7A1660A91DAFF29100AEBC50 /* testers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A1660A81DAFF29100AEBC50 /* testers.json */; };
 		7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A754C111DB7D19100376570 /* LoadingViewController.swift */; };
+		7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */; };
+		7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B61DB8420200D71FD8 /* Localizations.swift */; };
 		7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
 		7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
@@ -33,7 +35,6 @@
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
 		7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */; };
 		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
-		7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */; };
 		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
 		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */; };
@@ -67,6 +68,9 @@
 		7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		7A1660A81DAFF29100AEBC50 /* testers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testers.json; sourceTree = "<group>"; };
 		7A754C111DB7D19100376570 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		7A7DE3B51DB8407C00D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A7DE3B61DB8420200D71FD8 /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
+		7A7DE3B81DB8462C00D71FD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
@@ -82,7 +86,6 @@
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7ADFD5BE1DAD1E7E0070C5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ADFD5C61DAD22130070C5BE /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
 		7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volte-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		7ADFD5B31DAD1E7E0070C5BE /* Volte */ = {
 			isa = PBXGroup;
 			children = (
+				7A7DE3B61DB8420200D71FD8 /* Localizations.swift */,
 				7A1660AA1DB05A4300AEBC50 /* Externals */,
 				7A1660A01DAEDA6100AEBC50 /* Login */,
 				7A1660A11DAEDA7200AEBC50 /* Timeline */,
@@ -171,7 +175,6 @@
 				7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */,
 				7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */,
 				7ADFD5C01DAD1E7E0070C5BE /* Info.plist */,
-				7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */,
 				7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */,
 				7AB44C001DAD78CC0082AE6B /* TimelineContentProvider.swift */,
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
@@ -179,6 +182,7 @@
 				7A1660A61DAF16BE00AEBC50 /* MessageComposer.swift */,
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
 				7A754C111DB7D19100376570 /* LoadingViewController.swift */,
+				7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -228,7 +232,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				fr,
 			);
 			mainGroup = 7ADFD5A81DAD1E7E0070C5BE;
 			productRefGroup = 7ADFD5B21DAD1E7E0070C5BE /* Products */;
@@ -246,8 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */,
-				7ADFD5BF1DAD1E7E0070C5BE /* LaunchScreen.storyboard in Resources */,
 				7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */,
+				7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */,
 				7A1660A91DAFF29100AEBC50 /* testers.json in Resources */,
 				7A16609F1DAED6FF00AEBC50 /* LoginViewController.xib in Resources */,
 			);
@@ -270,6 +274,7 @@
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,
 				7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */,
 				7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */,
+				7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */,
 				7A1660A71DAF16BE00AEBC50 /* MessageComposer.swift in Sources */,
 				7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */,
 			);
@@ -278,12 +283,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7ADFD5BD1DAD1E7E0070C5BE /* LaunchScreen.storyboard */ = {
+		7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7ADFD5BE1DAD1E7E0070C5BE /* Base */,
+				7A7DE3B51DB8407C00D71FD8 /* fr */,
+				7A7DE3B81DB8462C00D71FD8 /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -343,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

@@ -12,23 +12,51 @@ import ReactiveSwift
 
 class ComposeMessageView: UIView {
 
-    let contentField = UITextView()
+    let contentField: UITextView = {
+        let field = UITextView()
+        field.font = .systemFont(ofSize: 18)
+        field.translatesAutoresizingMaskIntoConstraints = false
 
+        return field
+    }()
+
+    let placeholder: UILabel = {
+        let placeholder = UILabel()
+        placeholder.text = L10n.Timeline.Compose.WhatAreYouUpTo
+        placeholder.textColor = .lightGray
+        placeholder.font = .systemFont(ofSize: 18)
+        placeholder.translatesAutoresizingMaskIntoConstraints = false
+        placeholder.isUserInteractionEnabled = false
+
+        return placeholder
+    }()
     init() {
         super.init(frame: .zero)
-        contentField.translatesAutoresizingMaskIntoConstraints = false
+        contentField.delegate = self
         addSubview(contentField)
+        addSubview(placeholder)
 
         NSLayoutConstraint.activate([
             contentField.topAnchor.constraint(equalTo: topAnchor),
             contentField.leftAnchor.constraint(equalTo: leftAnchor),
             contentField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            contentField.rightAnchor.constraint(equalTo: rightAnchor)
+            contentField.rightAnchor.constraint(equalTo: rightAnchor),
+
+            placeholder.topAnchor.constraint(equalTo: topAnchor, constant: 71), // SORRY 🙈
+            placeholder.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
         ])
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ComposeMessageView: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.1) {
+            self.placeholder.alpha = textView.text.isEmpty ? 1 : 0
+        }
     }
 }
 
@@ -41,6 +69,7 @@ class ComposeMessageViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
 
+        navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
         title = "Compose"
     }
