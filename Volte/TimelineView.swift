@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReactiveSwift
 import UIKit
 
 protocol TimelineViewDelegate: class {
@@ -24,6 +25,16 @@ class TimelineView: UIView {
         return tableView
     }()
 
+    private let emptyMessage: UILabel = {
+        let message = UILabel()
+        message.text = L10n.Timeline.Empty
+        message.textColor = .black
+        message.alpha = 0
+        message.translatesAutoresizingMaskIntoConstraints = false
+
+        return message
+    }()
+
     private let refreshControl = UIRefreshControl()
 
     fileprivate let viewModel: TimelineViewModel
@@ -34,22 +45,35 @@ class TimelineView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
 
+        backgroundColor = .white
+
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
         addSubview(tableView)
+        addSubview(emptyMessage)
 
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.leftAnchor.constraint(equalTo: leftAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableView.rightAnchor.constraint(equalTo: rightAnchor)
+            tableView.rightAnchor.constraint(equalTo: rightAnchor),
+
+            emptyMessage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyMessage.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
 
-        viewModel.messages.producer.startWithValues { [weak self] _ in
+        let messagesCount = viewModel.messages.producer.map({ $0.count })
+        messagesCount.observe(on: UIScheduler()).startWithValues { [weak self] count in
             self?.refreshControl.endRefreshing()
             self?.tableView.reloadData()
+
+            UIView.animate(withDuration: 0.3) {
+                let isEmpty = count == 0
+                self?.tableView.alpha = isEmpty ? 0 : 1
+                self?.emptyMessage.alpha = isEmpty ? 1 : 0
+            }
         }
     }
 

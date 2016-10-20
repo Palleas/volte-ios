@@ -11,6 +11,8 @@ import Foundation
 struct L10n {
 
   struct Timeline {
+    /// Your timeline is empty. ☹️
+    static let Empty = L10n.tr("timeline.empty")
 
     struct Compose {
       /// What are you up to?
