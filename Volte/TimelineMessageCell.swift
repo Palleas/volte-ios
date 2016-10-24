@@ -11,10 +11,9 @@ import UIKit
 
 class TimelineMessageCell: UITableViewCell {
 
-    let authorLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 13)
 
         return label
     }()
@@ -23,7 +22,7 @@ class TimelineMessageCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = .systemFont(ofSize: 12)
+        label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -32,6 +31,8 @@ class TimelineMessageCell: UITableViewCell {
     let avatarView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
 
         return imageView
     }()
@@ -39,10 +40,11 @@ class TimelineMessageCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        contentView.addSubview(authorLabel)
+        contentView.addSubview(titleLabel)
         contentView.addSubview(contentLabel)
         contentView.addSubview(avatarView)
 
+        separatorInset = .zero
 
         NSLayoutConstraint.activate([
             avatarView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -50,16 +52,15 @@ class TimelineMessageCell: UITableViewCell {
             avatarView.widthAnchor.constraint(equalToConstant: 40),
             avatarView.heightAnchor.constraint(equalToConstant: 40),
 
-            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            authorLabel.leftAnchor.constraint(equalTo: avatarView.rightAnchor, constant: 10),
-            authorLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,  constant: -10),
+            titleLabel.topAnchor.constraint(equalTo: avatarView.topAnchor, constant: -5), // There is Probably something better to do with baseline
+            titleLabel.leftAnchor.constraint(equalTo: avatarView.rightAnchor, constant: 10),
+            titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,  constant: -10),
 
-            contentLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 5),
-            contentLabel.leftAnchor.constraint(equalTo: authorLabel.leftAnchor),
+            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            contentLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             contentLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
             contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-
-            contentView.heightAnchor.constraint(greaterThanOrEqualTo: avatarView.heightAnchor, multiplier: 1, constant: 20)
+            contentLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 18)
         ])
     }
     

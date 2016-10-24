@@ -14,6 +14,7 @@ struct Item {
     let uid: UInt32
     let content: String
     let email: String
+    let date: Date
 }
 
 enum TimelineError: Error {
@@ -87,7 +88,8 @@ class TimelineContentProvider {
                     sink.send(value: Item(
                         uid: uid,
                         content: payload["text"].string ?? "No content for \(uid)",
-                        email: parser.header.from.mailbox ?? ""
+                        email: parser.header.from.mailbox ?? "",
+                        date: parser.header.date
                     ))
                     sink.sendCompleted()
                 } else {

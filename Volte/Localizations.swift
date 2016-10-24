@@ -45,6 +45,21 @@ struct L10n {
       /// Compose
       static let Title = L10n.tr("timeline.compose.title")
     }
+
+    struct Date {
+      /// %d seconds ago
+      static func SecondsAgo(p0: Int) -> String {
+        return L10n.tr("timeline.date.seconds_ago", p0)
+      }
+      /// %d minutes ago
+      static func MinutesAgo(p0: Int) -> String {
+        return L10n.tr("timeline.date.minutes_ago", p0)
+      }
+      /// %d hours ago
+      static func HoursAgo(p0: Int) -> String {
+        return L10n.tr("timeline.date.hours_ago", p0)
+      }
+    }
   }
 }
 

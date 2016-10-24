@@ -32,7 +32,12 @@ class TimelineViewController: UIViewController {
         self.account = account
 
         super.init(nibName: nil, bundle: nil)
-
+        navigationItem.titleView = {
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "volte-logo-2"))
+            imageView.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 44))
+            imageView.contentMode = .scaleAspectFit
+            return imageView
+        }()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapCompose))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapMenu))
     }
