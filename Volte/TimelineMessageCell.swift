@@ -53,14 +53,15 @@ class TimelineMessageCell: UITableViewCell {
             avatarView.widthAnchor.constraint(equalToConstant: 40),
             avatarView.heightAnchor.constraint(equalToConstant: 40),
 
-            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            authorLabel.topAnchor.constraint(equalTo: avatarView.topAnchor, constant: -5), // There is Probably something better to do with baseline
             authorLabel.leftAnchor.constraint(equalTo: avatarView.rightAnchor, constant: 10),
             authorLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,  constant: -10),
 
             contentLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 5),
             contentLabel.leftAnchor.constraint(equalTo: authorLabel.leftAnchor),
             contentLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            contentLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 18)
         ])
     }
     
