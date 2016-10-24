@@ -32,6 +32,8 @@ class TimelineMessageCell: UITableViewCell {
     let avatarView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
 
         return imageView
     }()
