@@ -45,6 +45,7 @@ class TimelineMessageCell: UITableViewCell {
         contentView.addSubview(contentLabel)
         contentView.addSubview(avatarView)
 
+        separatorInset = .zero
 
         NSLayoutConstraint.activate([
             avatarView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
