@@ -12,6 +12,7 @@ import UIKit
 
 protocol TimelineViewDelegate: class {
     func didPullToRefresh()
+    func didTap(url: URL)
 }
 
 class TimelineView: UIView {
@@ -135,6 +136,7 @@ extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath) as! TimelineMessageCell
         cell.contentLabel.text = messages[indexPath.row].content
+        cell.delegate = self
 
         cell.titleLabel.attributedText = attributedString(forAuthor: messages[indexPath.row].email, date: messages[indexPath.row].date)
 
@@ -160,6 +162,8 @@ extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching 
     }
 }
 
-extension TimelineView: UITableViewDelegate {
-    
+extension TimelineView: TimelineMessageCellDelegate {
+    func didTap(url: URL) {
+        delegate?.didTap(url: url)
+    }
 }

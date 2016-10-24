@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
+protocol TimelineMessageCellDelegate: class {
+    func didTap(url: URL)
+}
+
 class TimelineMessageCell: UITableViewCell {
+    weak var delegate: TimelineMessageCellDelegate?
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -18,12 +23,16 @@ class TimelineMessageCell: UITableViewCell {
         return label
     }()
 
-    let contentLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
+    let contentLabel: UITextView = {
+        let label = UITextView()
+        label.textContainerInset = .zero
         label.font = .systemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isScrollEnabled = false
+        label.dataDetectorTypes = [.link]
+        label.isEditable = false
+        label.isUserInteractionEnabled = true
+        label.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.blue]
 
         return label
     }()
@@ -41,6 +50,7 @@ class TimelineMessageCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(titleLabel)
+        contentLabel.delegate = self
         contentView.addSubview(contentLabel)
         contentView.addSubview(avatarView)
 
@@ -66,5 +76,14 @@ class TimelineMessageCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension TimelineMessageCell: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+
+        delegate?.didTap(url: URL)
+
+        return false
     }
 }
