@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import CryptoSwift
+import SafariServices
 
 protocol TimelineViewModelType {
     var messages: MutableProperty<[Item]> { get }
@@ -55,6 +56,11 @@ class TimelineViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // 🙈
+        if let presented = presentedViewController, presented is SFSafariViewController {
+            return
+        }
 
         fetchMessages()
     }
@@ -108,5 +114,10 @@ class TimelineViewController: UIViewController {
 extension TimelineViewController: TimelineViewDelegate {
     func didPullToRefresh() {
         fetchMessages()
+    }
+
+    func didTap(url: URL) {
+        let browser = SFSafariViewController(url: url)
+        present(browser, animated: true, completion: nil)
     }
 }
