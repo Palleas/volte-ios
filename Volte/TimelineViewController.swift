@@ -57,6 +57,8 @@ class TimelineViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-3, for: .default)
+
         // 🙈
         if let presented = presentedViewController, presented is SFSafariViewController {
             return
