@@ -33,6 +33,8 @@ class TimelineMessageCell: UITableViewCell {
         label.isEditable = false
         label.isUserInteractionEnabled = true
         label.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.blue]
+        label.contentInset = UIEdgeInsets(top: -4, left: -4, bottom: 0, right: 0)
+        label.textAlignment = .left
 
         return label
     }()
