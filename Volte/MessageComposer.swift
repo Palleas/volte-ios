@@ -17,9 +17,9 @@ class MessageComposer {
 
     private let session: MCOSMTPSession = {
         let session = MCOSMTPSession()
-        session.hostname = "SSL0.OVH.NET"
-        session.port = 465;
-        session.connectionType = .TLS
+        session.hostname = "voltenetwork.xyz"
+        session.port = 587
+        session.connectionType = .startTLS
 
         return session
     }()

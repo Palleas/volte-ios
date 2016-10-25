@@ -36,7 +36,7 @@ class TimelineContentProvider {
     private let session = MCOIMAPSession()
     
     init(account: Account) {
-        session.hostname = "SSL0.OVH.NET"
+        session.hostname = "voltenetwork.xyz"
         session.port = 993
         session.connectionType = .TLS
         session.username = account.username
