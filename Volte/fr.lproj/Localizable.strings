@@ -7,3 +7,13 @@
 */
 "timeline.compose.what_are_you_up_to" = "Quoi de neuf ?";
 "timeline.compose.title" = "Nouveau message";
+"timeline.empty" = "Votre timeline est vide. ☹️";
+"timeline.date.seconds_ago" = "Il y a %d secondes";
+"timeline.date.minutes_ago" = "Il y a %d minutes";
+"timeline.date.hours_ago" = "Il y a %d heures";
+
+"login.failure.title" = "Accès invalides";
+"login.failure.message" = "Vérifiez que vos accès sont corrects et essayez à nouveau.";
+"alert.dismiss" = "Fermer";
+"compose.error.title" = "Impossible de poster le message";
+"compose.error.message" = "Une erreur est survenue lors de l'envoi du message, veuillez réessayer plus tard.";
