@@ -2,6 +2,17 @@
 //  MessageComposer.swift
 //  Volte
 //
+//  Created by Romain Pouclet on 2016-10-25.
+//  Copyright © 2016 Perfectly-Cooked. All rights reserved.
+//
+
+import Foundation
+import MailCore
+
+//
+//  MessageComposer.swift
+//  Volte
+//
 //  Created by Romain Pouclet on 2016-10-12.
 //  Copyright © 2016 Perfectly-Cooked. All rights reserved.
 //
@@ -10,8 +21,8 @@ import Foundation
 import ReactiveSwift
 import Result
 
-class MessageComposer {
-    enum ComposingError: Error {
+public class MessageComposer {
+    public enum ComposingError: Error {
         case internalError(Error)
     }
 
@@ -26,20 +37,22 @@ class MessageComposer {
 
     private let account: Account
 
-    init(account: Account) {
+    public init(account: Account) {
         self.account = account
 
         session.username = account.username;
         session.password = account.password;
     }
-    func sendMessage(with content: String) -> SignalProducer<String, ComposingError> {
+
+    public func sendMessage(with content: String) -> SignalProducer<String, ComposingError> {
         return fetchBetaTesters()
             .promoteErrors(ComposingError.self)
             .flatMap(.latest, transform: { (senders) -> SignalProducer<String, ComposingError> in
                 return self.sendMessage(with: content, to: senders)
             })
     }
-    func sendMessage(with content: String, to recipients: [MCOAddress]) -> SignalProducer<String, ComposingError> {
+
+    public func sendMessage(with content: String, to recipients: [MCOAddress]) -> SignalProducer<String, ComposingError> {
         return SignalProducer { sink, disposable in
             let builder = MCOMessageBuilder()
             builder.header.from = MCOAddress(mailbox: self.account.username)
@@ -75,9 +88,11 @@ class MessageComposer {
         }
     }
 
-    func fetchBetaTesters() -> SignalProducer<[MCOAddress], NoError> {
+    public func fetchBetaTesters() -> SignalProducer<[MCOAddress], NoError> {
         return SignalProducer { sink, _ in
-            let testersURL = Bundle.main.url(forResource: "testers", withExtension: "json")!
+
+            let bundle = Bundle(for: type(of: self))
+            let testersURL = bundle.url(forResource: "testers", withExtension: "json")!
             let content = try! Data(contentsOf: testersURL)
             let testers = try! JSONSerialization.jsonObject(with: content, options: .allowFragments) as! [String]
             print("Testers = \(testers)")
