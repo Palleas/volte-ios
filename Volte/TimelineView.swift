@@ -75,8 +75,12 @@ class TimelineView: UIView {
 
         let messagesCount = viewModel.messages.producer.map({ $0.count })
         messagesCount.observe(on: UIScheduler()).startWithValues { [weak self] count in
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({ 
+                self?.tableView.reloadData()
+            })
             self?.refreshControl.endRefreshing()
-            self?.tableView.reloadData()
+            CATransaction.commit()
 
             UIView.animate(withDuration: 0.3) {
                 let isEmpty = count == 0
@@ -91,9 +95,7 @@ class TimelineView: UIView {
     }
 
     func handleRefresh() {
-        refreshControl.endRefreshing()
-
-        delegate?.didPullToRefresh()
+        self.delegate?.didPullToRefresh()
     }
 
 

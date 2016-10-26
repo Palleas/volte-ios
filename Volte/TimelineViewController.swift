@@ -40,7 +40,7 @@ class TimelineViewController: UIViewController {
             return imageView
         }()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapCompose))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "settings"), style: .plain, target: self, action: #selector(didTapMenu))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +56,8 @@ class TimelineViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-3, for: .default)
 
         // 🙈
         if let presented = presentedViewController, presented is SFSafariViewController {
