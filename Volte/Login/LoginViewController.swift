@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VolteCore
 
 func parse(keyboardNotification notification: Notification) -> (CGFloat, TimeInterval, UIViewAnimationOptions)? {
     guard let info = notification.userInfo else { return nil }

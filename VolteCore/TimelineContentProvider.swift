@@ -9,21 +9,22 @@
 import Foundation
 import ReactiveSwift
 import SwiftyJSON
+import MailCore
 
-struct Item {
-    let uid: UInt32
-    let content: String
-    let email: String
-    let date: Date
+public struct Item {
+    public let uid: UInt32
+    public let content: String
+    public let email: String
+    public let date: Date
 }
 
-enum TimelineError: Error {
+public enum TimelineError: Error {
     case internalError
     case authenticationError
     case decodingError(UInt32)
 }
 
-func ==(lhs: TimelineError, rhs: TimelineError) -> Bool {
+public func ==(lhs: TimelineError, rhs: TimelineError) -> Bool {
     switch (lhs, rhs) {
     case (.internalError, .internalError): return true
     case (.authenticationError, .authenticationError): return true
@@ -32,10 +33,10 @@ func ==(lhs: TimelineError, rhs: TimelineError) -> Bool {
     }
 }
 
-class TimelineContentProvider {
+public class TimelineContentProvider {
     private let session = MCOIMAPSession()
     
-    init(account: Account) {
+    public init(account: Account) {
         session.hostname = "voltenetwork.xyz"
         session.port = 993
         session.connectionType = .TLS
@@ -44,7 +45,7 @@ class TimelineContentProvider {
 
     }
 
-    func fetchShallowMessages() -> SignalProducer<MCOIMAPMessage, TimelineError> {
+    public func fetchShallowMessages() -> SignalProducer<MCOIMAPMessage, TimelineError> {
         print("Fetching shallow messages")
 
         return SignalProducer { sink, disposable in
@@ -69,7 +70,7 @@ class TimelineContentProvider {
         }
     }
 
-    func fetchMessage(with uid: UInt32) -> SignalProducer<Item, TimelineError> {
+    public func fetchMessage(with uid: UInt32) -> SignalProducer<Item, TimelineError> {
         return SignalProducer { sink, disposable in
             let operation = self.session.fetchMessageByUIDOperation(withFolder: "INBOX", uid: uid)
             operation?.start({ (error, messageContent) in
@@ -104,7 +105,7 @@ class TimelineContentProvider {
 
     }
 
-    func fetchItems() -> SignalProducer<Item, TimelineError> {
+    public func fetchItems() -> SignalProducer<Item, TimelineError> {
         return fetchShallowMessages()
             .flatMap(.concat, transform: { (message) -> SignalProducer<Item, TimelineError> in
                 return self

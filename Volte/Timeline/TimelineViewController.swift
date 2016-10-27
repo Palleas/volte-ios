@@ -11,6 +11,7 @@ import UIKit
 import ReactiveSwift
 import CryptoSwift
 import SafariServices
+import VolteCore
 
 protocol TimelineViewModelType {
     var messages: MutableProperty<[Item]> { get }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import ReactiveSwift
-
+import VolteCore
 
 class RootView: UIView {
     var containedView: UIView?

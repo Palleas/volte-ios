@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ReactiveSwift
+import VolteCore
 
 class ComposeMessageView: UIView {
 
