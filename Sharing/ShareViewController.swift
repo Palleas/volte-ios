@@ -61,14 +61,23 @@ class ShareViewController: SLComposeServiceViewController {
             .observe(on: UIScheduler())
             .startWithResult { [weak self] result in
                 if let error = result.error, error == .notAuthenticated {
-                    print("Not authenticated \(error)")
+                    let alert = UIAlertController(title: L10n.Sharing.Error.Title, message: L10n.Sharing.Error.NotAuthenticated, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { _ in
+                        self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+                    })
+                    self?.present(alert, animated: true, completion: nil)
                 } else if let error = result.error {
-                    print("Other error: \(error)")
+                    let alert = UIAlertController(title: L10n.Sharing.Error.Title, message: L10n.Sharing.Error.Composing, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { _ in
+                        self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+                    })
+                    self?.present(alert, animated: true, completion: nil)
+
                 } else {
-                    print("Success!")
+                    self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+
                 }
 
-                self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
             }
     }
 

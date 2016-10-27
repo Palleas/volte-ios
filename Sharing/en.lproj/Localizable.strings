@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Volte
+
+  Created by Romain Pouclet on 2016-10-26.
+  Copyright © 2016 Perfectly-Cooked. All rights reserved.
+*/
+"sharing.error.title" = "An error occured";
+"sharing.error.not_authenticated" = "You are not authenticated in Volte app.";
+"sharing.error.composing" = "An error occured while trying to send the message.";
+"alert.dismiss" = "Dismiss";

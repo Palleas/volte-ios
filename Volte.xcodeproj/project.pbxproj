@@ -64,6 +64,8 @@
 		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
 		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
 		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AE2D8981DC18E8B009BA8BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */; };
+		7AE2D89D1DC18FC1009BA8BA /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */; };
 		7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */; };
 		7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */; };
 		B45FE76137DA7D98DA407945 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9D51215CAF110225FDBED0 /* QuartzCore.framework */; };
@@ -174,6 +176,9 @@
 		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ADFD5C61DAD22130070C5BE /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
 		7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volte-Bridging-Header.h"; sourceTree = "<group>"; };
+		7AE2D8991DC18E8B009BA8BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AE2D89B1DC18F3A009BA8BA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
 		7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		7AFECF041DB28CBA001A0E6B /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
 		7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
@@ -310,10 +315,12 @@
 		7AD9ECD81DC172CB001FAAF7 /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
+				7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */,
 				7AD9ECE51DC1737E001FAAF7 /* Sharing.entitlements */,
 				7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */,
 				7AD9ECDB1DC172CB001FAAF7 /* MainInterface.storyboard */,
 				7AD9ECDE1DC172CB001FAAF7 /* Info.plist */,
+				7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */,
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -506,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD9ECDD1DC172CB001FAAF7 /* MainInterface.storyboard in Resources */,
+				7AE2D8981DC18E8B009BA8BA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE2D89D1DC18FC1009BA8BA /* Localizations.swift in Sources */,
 				7AD9ECDA1DC172CB001FAAF7 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +638,15 @@
 				7AD9ECDC1DC172CB001FAAF7 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE2D8991DC18E8B009BA8BA /* en */,
+				7AE2D89B1DC18F3A009BA8BA /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -894,6 +912,7 @@
 				7AD9ECE41DC172CB001FAAF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ADFD5AC1DAD1E7E0070C5BE /* Build configuration list for PBXProject "Volte" */ = {
 			isa = XCConfigurationList;
