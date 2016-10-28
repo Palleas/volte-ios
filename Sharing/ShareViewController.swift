@@ -27,7 +27,7 @@ class ShareViewController: SLComposeServiceViewController {
 
     override func didSelectPost() {
         accountController.account.producer
-            .promoteErrors(SharingError)
+            .promoteErrors(SharingError.self)
             .attemptMap { (account) -> Result<MessageComposer, ShareViewController.SharingError> in
                 if let account = account {
                     return Result(value: MessageComposer(account: account))
@@ -36,27 +36,17 @@ class ShareViewController: SLComposeServiceViewController {
                 return Result(error: .notAuthenticated)
             }
             .flatMap(.latest, transform: { (composer) -> SignalProducer<String, ShareViewController.SharingError> in
-                if let item = self.extensionContext?.inputItems.first as? NSExtensionItem,
-                    let attachment = item.attachments?.first as? NSItemProvider,
-                    attachment.hasItemConformingToTypeIdentifier("public.url") {
-
-                    return SignalProducer<String, ShareViewController.SharingError> { sink, _ in
-                        attachment.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, error) in
-                            if let url = (url as? URL)?.absoluteString {
-                                sink.send(value: "\(self.contentText ?? "")\n\(url)")
-                                sink.sendCompleted()
-                            }
-
-                            sink.send(error: .invalidURL)
-                        })
+                return self.extractMessage().map { url in
+                    var content = self.contentText ?? ""
+                    if let url = url {
+                        content += "\n\(url)"
                     }
-                    .flatMap(.latest, transform: { (content) -> SignalProducer<String, ShareViewController.SharingError> in
-                        return composer.sendMessage(with: content)
-                            .flatMapError { _ in return SignalProducer(error: SharingError.composingError) }
-                    })
+                    return content
                 }
-
-                return SignalProducer(error: .invalidURL)
+                .promoteErrors(ShareViewController.SharingError.self)
+                .flatMap(.latest) { content -> SignalProducer<String, ShareViewController.SharingError> in
+                    return composer.sendMessage(with: content).flatMapError { _ in return SignalProducer(error: SharingError.composingError) }
+                }
             })
             .observe(on: UIScheduler())
             .startWithResult { [weak self] result in
@@ -66,7 +56,7 @@ class ShareViewController: SLComposeServiceViewController {
                         self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
                     })
                     self?.present(alert, animated: true, completion: nil)
-                } else if let error = result.error {
+                } else if let _ = result.error {
                     let alert = UIAlertController(title: L10n.Sharing.Error.Title, message: L10n.Sharing.Error.Composing, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { _ in
                         self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
@@ -75,14 +65,42 @@ class ShareViewController: SLComposeServiceViewController {
 
                 } else {
                     self?.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
-
                 }
-
             }
     }
 
     override func configurationItems() -> [Any]! {
         return []
+    }
+
+    func extractMessage() -> SignalProducer<String?, NoError> {
+        guard let indexItems = extensionContext?.inputItems as? [NSExtensionItem] else { return SignalProducer.empty }
+
+        return SignalProducer { sink, _ in
+            let attachments = indexItems
+                .map { $0.attachments as! [NSItemProvider] }
+                .flatMap { $0 }
+                .filter { $0.hasItemConformingToTypeIdentifier("public.url") }
+
+            guard let attachment = attachments.first else {
+                sink.send(value: nil)
+                sink.sendCompleted()
+                return
+            }
+
+            attachment.loadItem(forTypeIdentifier: "public.url", options: nil) { response, _ in
+                guard let url = (response as? URL)?.absoluteString else {
+                    sink.send(value: nil)
+                    sink.sendCompleted()
+
+                    return
+                }
+
+                sink.send(value: url)
+                sink.sendCompleted()
+            }
+        }
+
     }
 
 }
