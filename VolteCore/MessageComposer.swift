@@ -34,15 +34,15 @@ public class MessageComposer {
         session.password = account.password;
     }
 
-    public func sendMessage(with content: String) -> SignalProducer<String, ComposingError> {
+    public func sendMessage(with content: String, attachments: [Data]? = nil) -> SignalProducer<String, ComposingError> {
         return fetchBetaTesters()
             .promoteErrors(ComposingError.self)
             .flatMap(.latest, transform: { (senders) -> SignalProducer<String, ComposingError> in
-                return self.sendMessage(with: content, to: senders)
+                return self.sendMessage(with: content, to: senders, attachments: attachments)
             })
     }
 
-    public func sendMessage(with content: String, to recipients: [MCOAddress]) -> SignalProducer<String, ComposingError> {
+    public func sendMessage(with content: String, to recipients: [MCOAddress], attachments: [Data]?) -> SignalProducer<String, ComposingError> {
         return SignalProducer { sink, disposable in
             let builder = MCOMessageBuilder()
             builder.header.from = MCOAddress(mailbox: self.account.username)
@@ -61,6 +61,15 @@ public class MessageComposer {
             let attachment = MCOAttachment(rfc822Message: try! JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted))!
             attachment.mimeType = "application/ld+json"
             builder.addAttachment(attachment)
+
+            if let attachments = attachments {
+                attachments.enumerated().map { index, data -> MCOAttachment in
+                    let attachment = MCOAttachment(data: data, filename: "attachment-\(index).jpg")!
+                    attachment.mimeType = "image/jpg"
+                    return attachment
+                }
+                .forEach(builder.addAttachment)
+            }
 
             let operation = self.session.sendOperation(with: builder.data())
             operation?.start { (error) in

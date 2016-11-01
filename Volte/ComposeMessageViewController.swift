@@ -11,6 +11,11 @@ import UIKit
 import ReactiveSwift
 import VolteCore
 
+
+protocol ComposeMessageViewDelegate: class {
+    func didTapCamera()
+}
+
 class ComposeMessageView: UIView {
 
     let contentField: UITextView = {
@@ -31,6 +36,11 @@ class ComposeMessageView: UIView {
 
         return placeholder
     }()
+
+    private let toolbar = UIToolbar()
+
+    weak var delegate: ComposeMessageViewDelegate?
+
     init() {
         super.init(frame: .zero)
         contentField.delegate = self
@@ -46,10 +56,24 @@ class ComposeMessageView: UIView {
             placeholder.topAnchor.constraint(equalTo: topAnchor, constant: 71), // SORRY 🙈
             placeholder.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
         ])
+
+        toolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(didTapCamera))
+        ]
+        contentField.inputAccessoryView = toolbar
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc private func didTapCamera() {
+        delegate?.didTapCamera()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        toolbar.frame = CGRect(origin: .zero, size: CGSize(width: frame.width, height: 44))
     }
 }
 
@@ -64,6 +88,7 @@ extension ComposeMessageView: UITextViewDelegate {
 class ComposeMessageViewController: UIViewController {
 
     private let composer: MessageComposer
+    fileprivate var attachments = MutableProperty<[Data]>([Data]())
     
     init(composer: MessageComposer) {
         self.composer = composer
@@ -74,6 +99,10 @@ class ComposeMessageViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
 
         title = L10n.Timeline.Compose.Title
+
+        attachments.producer.startWithValues { data in
+            print("Data => \(data)")
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,7 +111,7 @@ class ComposeMessageViewController: UIViewController {
 
     override func loadView() {
         let composeMessageView = ComposeMessageView()
-
+        composeMessageView.delegate = self
         self.view = composeMessageView
     }
 
@@ -91,7 +120,7 @@ class ComposeMessageViewController: UIViewController {
         let content = (view as! ComposeMessageView).contentField.text ?? "No content"
 
         composer
-            .sendMessage(with: content)
+            .sendMessage(with: content, attachments: attachments.value)
             .observe(on: UIScheduler())
             .on(completed: { [weak self] in
                 self?.dismiss(animated: true) {
@@ -108,5 +137,32 @@ class ComposeMessageViewController: UIViewController {
                     self?.present(alert, animated: true, completion: nil)
                 }
             })
+    }
+}
+
+extension ComposeMessageViewController: ComposeMessageViewDelegate {
+    func didTapCamera() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+}
+
+extension ComposeMessageViewController: UINavigationControllerDelegate {}
+
+extension ComposeMessageViewController: UIImagePickerControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("User did cancel")
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+
+        self.attachments.value.append(UIImageJPEGRepresentation(image, 75)!)
+        dismiss(animated: true, completion: nil)
     }
 }
