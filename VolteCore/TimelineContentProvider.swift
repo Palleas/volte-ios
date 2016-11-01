@@ -16,6 +16,7 @@ public struct Item {
     public let content: String
     public let email: String
     public let date: Date
+    public let attachments: [Data]
 }
 
 public enum TimelineError: Error {
@@ -86,11 +87,16 @@ public class TimelineContentProvider {
 
                     let payload = JSON(data: voltePart.data)
 
+                    let attachments = parts
+                        .filter { $0.mimeType == "image/jpg" }
+                        .flatMap { $0.data }
+
                     sink.send(value: Item(
                         uid: uid,
                         content: payload["text"].string ?? "No content for \(uid)",
                         email: parser.header.from.mailbox ?? "",
-                        date: parser.header.date
+                        date: parser.header.date,
+                        attachments: attachments
                     ))
                     sink.sendCompleted()
                 } else {

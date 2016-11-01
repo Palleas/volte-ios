@@ -8,12 +8,21 @@
 
 import Foundation
 import UIKit
+import VolteCore
 
 protocol TimelineMessageCellDelegate: class {
     func didTap(url: URL)
 }
 
 class TimelineMessageCell: UITableViewCell {
+    fileprivate let formater: DateFormatter = {
+        let formater = DateFormatter()
+        formater.dateStyle = .short
+        formater.timeStyle = .none
+
+        return formater
+    }()
+
     weak var delegate: TimelineMessageCellDelegate?
 
     let titleLabel: UILabel = {
@@ -48,6 +57,17 @@ class TimelineMessageCell: UITableViewCell {
         return imageView
     }()
 
+    let preview: UIImageView = {
+        let preview = UIImageView()
+        preview.translatesAutoresizingMaskIntoConstraints = false
+        preview.contentMode = .scaleAspectFit
+        
+        return preview
+    }()
+
+    private var noAttachmentsConstraints: [NSLayoutConstraint] = []
+    private var attachmentsConstraints: [NSLayoutConstraint] = []
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -71,13 +91,73 @@ class TimelineMessageCell: UITableViewCell {
             contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             contentLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
             contentLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             contentLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 18)
         ])
+
+        noAttachmentsConstraints = [
+            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        ]
+
+        attachmentsConstraints = [
+            preview.topAnchor.constraint(equalTo: contentLabel.bottomAnchor, constant: 10),
+            preview.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            preview.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
+            preview.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            preview.heightAnchor.constraint(equalToConstant: 300)
+        ]
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(item: Item) {
+        if item.attachments.isEmpty {
+            preview.removeFromSuperview()
+            NSLayoutConstraint.activate(noAttachmentsConstraints)
+            NSLayoutConstraint.deactivate(attachmentsConstraints)
+        } else {
+            contentView.addSubview(preview)
+            NSLayoutConstraint.activate(attachmentsConstraints)
+            NSLayoutConstraint.deactivate(noAttachmentsConstraints)
+
+            if let attachment = item.attachments.first {
+                preview.image = UIImage(data: attachment)
+            }
+        }
+
+        contentLabel.text = item.content
+        titleLabel.attributedText = attributedString(forAuthor: item.email, date: item.date)
+
+        setNeedsUpdateConstraints()
+    }
+
+    fileprivate func format(date: Date) -> String {
+        let interval = Int(Date().timeIntervalSince(date))
+
+        if interval < 60 {
+            return L10n.Timeline.Date.SecondsAgo(p0: interval)
+        } else if interval < 3600 {
+            return L10n.Timeline.Date.MinutesAgo(p0: Int(interval / 60))
+        } else if interval < 86400 {
+            return L10n.Timeline.Date.HoursAgo(p0: Int(interval / 3600))
+        }
+
+        return formater.string(from: date)
+    }
+
+    func attributedString(forAuthor author: String, date: Date) -> NSAttributedString {
+        let string = NSMutableAttributedString(string: author, attributes: [
+            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16),
+            NSForegroundColorAttributeName: UIColor.black
+            ])
+
+        string.append(NSMutableAttributedString(string: " " + format(date: date), attributes: [
+            NSFontAttributeName: UIFont.systemFont(ofSize: 13),
+            NSForegroundColorAttributeName: UIColor.lightGray
+            ]))
+
+        return string
     }
 }
 

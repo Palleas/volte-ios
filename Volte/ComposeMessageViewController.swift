@@ -143,6 +143,9 @@ class ComposeMessageViewController: UIViewController {
 extension ComposeMessageViewController: ComposeMessageViewDelegate {
     func didTapCamera() {
         let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
@@ -157,12 +160,18 @@ extension ComposeMessageViewController: UIImagePickerControllerDelegate {
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
             dismiss(animated: true, completion: nil)
             return
         }
 
-        self.attachments.value.append(UIImageJPEGRepresentation(image, 75)!)
+        let size = CGSize(width: 612, height: 612)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 612, height: 612), true, 0)
+        image.draw(in: CGRect(origin: .zero, size: size))
+        let resized = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        self.attachments.value.append(UIImageJPEGRepresentation(resized, 75)!)
         dismiss(animated: true, completion: nil)
     }
 }
