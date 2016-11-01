@@ -2,17 +2,6 @@
 //  MessageComposer.swift
 //  Volte
 //
-//  Created by Romain Pouclet on 2016-10-25.
-//  Copyright © 2016 Perfectly-Cooked. All rights reserved.
-//
-
-import Foundation
-import MailCore
-
-//
-//  MessageComposer.swift
-//  Volte
-//
 //  Created by Romain Pouclet on 2016-10-12.
 //  Copyright © 2016 Perfectly-Cooked. All rights reserved.
 //
@@ -20,6 +9,7 @@ import MailCore
 import Foundation
 import ReactiveSwift
 import Result
+import MailCore
 
 public class MessageComposer {
     public enum ComposingError: Error {

@@ -1,5 +1,5 @@
-github "MailCore/mailcore2" "master"
+github "MailCore/mailcore2" "efce413258a838818a39a12f0f86d563c8488468"
 github "ReactiveCocoa/ReactiveCocoa" "master"
 github "SwiftyJSON/SwiftyJSON"
-github "krzyzanowskim/CryptoSwift"
+github "krzyzanowskim/CryptoSwift" "0.6.4"
 github "rdignard08/RGLockbox" "swift-3"
