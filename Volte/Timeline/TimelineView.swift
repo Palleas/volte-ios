@@ -16,21 +16,14 @@ protocol TimelineViewDelegate: class {
 }
 
 class TimelineView: UIView {
-    fileprivate let formater: DateFormatter = {
-        let formater = DateFormatter()
-        formater.dateStyle = .short
-        formater.timeStyle = .none
-
-        return formater
-    }()
-
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(TimelineMessageCell.self, forCellReuseIdentifier: "TimelineItemCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableViewAutomaticDimension
-
+        tableView.allowsSelection = false
+        
         return tableView
     }()
 
@@ -97,35 +90,6 @@ class TimelineView: UIView {
     func handleRefresh() {
         self.delegate?.didPullToRefresh()
     }
-
-
-    fileprivate func format(date: Date) -> String {
-        let interval = Int(Date().timeIntervalSince(date))
-
-        if interval < 60 {
-            return L10n.Timeline.Date.SecondsAgo(p0: interval)
-        } else if interval < 3600 {
-            return L10n.Timeline.Date.MinutesAgo(p0: Int(interval / 60))
-        } else if interval < 86400 {
-            return L10n.Timeline.Date.HoursAgo(p0: Int(interval / 3600))
-        }
-        
-        return formater.string(from: date)
-    }
-
-    func attributedString(forAuthor author: String, date: Date) -> NSAttributedString {
-        let string = NSMutableAttributedString(string: author, attributes: [
-            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16),
-            NSForegroundColorAttributeName: UIColor.black
-        ])
-
-        string.append(NSMutableAttributedString(string: " " + format(date: date), attributes: [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 13),
-            NSForegroundColorAttributeName: UIColor.lightGray
-        ]))
-
-        return string
-    }
 }
 
 extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching {
@@ -137,10 +101,9 @@ extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching 
         let messages = viewModel.messages.value
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineItemCell", for: indexPath) as! TimelineMessageCell
-        cell.contentLabel.text = messages[indexPath.row].content
         cell.delegate = self
 
-        cell.titleLabel.attributedText = attributedString(forAuthor: messages[indexPath.row].email, date: messages[indexPath.row].date)
+        cell.configure(item: messages[indexPath.row])
 
         let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
         let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())?d=identicon")!
