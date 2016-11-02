@@ -14,7 +14,9 @@ extension NSManagedObjectContext: ReactiveExtensionsProvider {}
 
 enum CoreDataError: Error {
     case saving(Error)
+    case fetching(Error)
 }
+
 extension Reactive where Base: NSManagedObjectContext {
     func save() -> SignalProducer<(), CoreDataError> {
         return SignalProducer { [base = self.base] sink, disposable in
@@ -26,4 +28,17 @@ extension Reactive where Base: NSManagedObjectContext {
             }
         }
     }
+
+    func fetch<T : NSFetchRequestResult>(_ request: NSFetchRequest<T>) -> SignalProducer<[T], CoreDataError>  {
+        return SignalProducer { [base = self.base] sink, disposable in
+            do {
+                let result = try base.fetch(request)
+                sink.send(value: result)
+                sink.sendCompleted()
+            } catch let error {
+                sink.send(error: .fetching(error))
+            }
+        }
+    }
+
 }

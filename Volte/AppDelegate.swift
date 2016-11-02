@@ -9,6 +9,7 @@
 import UIKit
 import VolteCore
 import CoreData
+import ReactiveSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,10 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
 
-        storageController.load().startWithCompleted {
-            print("Storage initialized!")
-        }
-        
+        storageController.load().startWithCompleted {}
+
+        accountController.account.producer
+            .skipNil()
+            .flatMap(.latest) { (account) -> SignalProducer<[Message], TimelineError> in
+                print("We have an account, let's download messages")
+                return TimelineDownloader(account: account, storageController: self.storageController).fetchItems()
+            }
+            .startWithResult { result in
+                print("Result.value = \(result.value)")
+                print("Result.error = \(result.error)")
+            }
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = RootViewController(accountController: accountController, storageController: storageController)

@@ -55,7 +55,7 @@ class RootViewController: UIViewController {
 
         self.accountController.account.producer.startWithValues { account in
             if let account = account {
-                let provider = TimelineContentProvider(account: account, storageController: storageController)
+                let provider = TimelineContentProvider(storageController: storageController)
                 let timelineViewController = TimelineViewController(provider: provider, accountController: self.accountController, account: account)
                 self.transition(to: UINavigationController(rootViewController: timelineViewController))
             } else {

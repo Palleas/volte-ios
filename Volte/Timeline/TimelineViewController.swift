@@ -72,10 +72,7 @@ class TimelineViewController: UIViewController {
         present(LoadingViewController(), animated: true, completion: nil)
 
         provider
-            .fetchItems()
-            .map { $0.sorted(by: { (item1, item2) -> Bool in
-                return item1.uid > item2.uid
-            })}
+            .fetchMessages()
             .observe(on: UIScheduler())
             .startWithResult { [weak self] (result) in
                 self?.dismiss(animated: true, completion: nil)
@@ -83,14 +80,6 @@ class TimelineViewController: UIViewController {
                 if let messages = result.value {
                     // TODO use RAC binding but I don't remember how it works
                     self?.viewModel.messages.value = messages
-                } else if let error = result.error, error == .authenticationError {
-                    let alert = UIAlertController(title: L10n.Login.Failure.Title, message: L10n.Login.Failure.Message, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { _ in
-                        self?.accountController.logout()
-
-                        self?.dismiss(animated: true, completion: nil)
-                    })
-                    self?.present(alert, animated: true, completion: nil)
                 } else if let error = result.error {
                     print("Error = \(error)")
                 }
