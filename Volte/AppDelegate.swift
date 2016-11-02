@@ -8,6 +8,7 @@
 
 import UIKit
 import VolteCore
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
 
         return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        try! self.storageController.container.viewContext.save()
     }
 
 }

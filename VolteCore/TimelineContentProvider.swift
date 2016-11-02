@@ -11,6 +11,7 @@ import ReactiveSwift
 import SwiftyJSON
 import Result
 import MailCore
+import CoreData
 
 public struct Item {
     public let uid: UInt32
@@ -137,6 +138,14 @@ public class TimelineContentProvider {
                     message.postedAt = item.date as NSDate?
                     message.uid = Int32(item.uid)
 
+                    let attachments:[Attachment] = item.attachments.map {
+                        let attachment = Attachment(entity: Attachment.entity(), insertInto: context)
+                        attachment.data = $0 as NSData?
+
+                        return attachment
+                    }
+                    message.attachments = NSSet(array: attachments)
+
                     sink.send(value: message)
                     sink.sendCompleted()
                     print("Imported message \(item.uid)")
@@ -148,7 +157,10 @@ public class TimelineContentProvider {
                 return SignalProducer { sink, _ in
                     do {
                         try context.save()
-                        sink.send(value: messages)
+
+                        let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
+                        request.sortDescriptors = [NSSortDescriptor(key: "postedAt", ascending: true)]
+                        sink.send(value: try! self.storageController.container.viewContext.fetch(request))
                         sink.sendCompleted()
                     } catch {
                         sink.send(error: TimelineError.internalError)

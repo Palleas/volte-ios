@@ -16,7 +16,7 @@ public class StorageController {
         case initializationError
     }
 
-    let container: NSPersistentContainer
+    public let container: NSPersistentContainer
 
     public init() {
         let bundle = Bundle(for: type(of: self))
