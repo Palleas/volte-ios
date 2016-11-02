@@ -77,7 +77,7 @@ public class TimelineDownloader {
 
     public func fetchMessage(with uid: UInt32) -> SignalProducer<Item, TimelineError> {
         return SignalProducer { sink, disposable in
-            let operation = self.session.fetchMessageByUIDOperation(withFolder: "INBOX", uid: uid)
+            let operation = self.session.fetchMessageOperation(withFolder: "INBOX", uid: uid)
             operation?.start({ (error, messageContent) in
                 if let _ = error {
                     sink.send(error: .internalError)
