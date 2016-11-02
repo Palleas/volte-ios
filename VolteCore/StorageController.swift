@@ -9,13 +9,14 @@
 import Foundation
 import CoreData
 import ReactiveSwift
+import Result
 
 public class StorageController {
     public enum StorageError: Error {
         case initializationError
     }
 
-    private let container: NSPersistentContainer
+    let container: NSPersistentContainer
 
     public init() {
         let bundle = Bundle(for: type(of: self))
@@ -25,7 +26,7 @@ public class StorageController {
 
     public func load() -> SignalProducer<(), StorageError> {
         return SignalProducer { sink, _ in
-            self.container.loadPersistentStores { (_, error) in
+            self.container.loadPersistentStores { (description, error) in
                 if let _ = error {
                     sink.send(error: .initializationError)
                 } else {
@@ -33,5 +34,42 @@ public class StorageController {
                 }
             }
         }
+    }
+
+    public func lastFetchedUID() -> SignalProducer<Int32, NoError> {
+        return SignalProducer { sink, _ in
+            let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
+            request.sortDescriptors = [NSSortDescriptor(key: "uid", ascending: false)]
+            request.fetchLimit = 1
+
+            let uid = try! self.container.viewContext.fetch(request).first?.uid ?? 1
+            print("UID = \(uid)")
+            
+            sink.send(value: uid)
+            sink.sendCompleted()
+        }
+    }
+
+}
+
+class StorageScheduler: SchedulerProtocol {
+    let context: NSManagedObjectContext
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
+
+    func schedule(_ action: @escaping () -> Void) -> Disposable? {
+        let disposable = SimpleDisposable()
+
+        context.perform { () -> Void in
+            guard !disposable.isDisposed else {
+                return
+            }
+
+            action()
+        }
+
+        return disposable
     }
 }

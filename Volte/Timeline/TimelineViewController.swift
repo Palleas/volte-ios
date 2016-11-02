@@ -18,7 +18,7 @@ protocol TimelineViewModelType {
 }
 
 class TimelineViewModel {
-    var messages = MutableProperty<[Item]>([])
+    var messages = MutableProperty<[Message]>([])
 }
 
 class TimelineViewController: UIViewController {
@@ -73,7 +73,6 @@ class TimelineViewController: UIViewController {
 
         provider
             .fetchItems()
-            .collect()
             .map { $0.sorted(by: { (item1, item2) -> Bool in
                 return item1.uid > item2.uid
             })}

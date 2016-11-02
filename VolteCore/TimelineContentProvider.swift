@@ -9,6 +9,7 @@
 import Foundation
 import ReactiveSwift
 import SwiftyJSON
+import Result
 import MailCore
 
 public struct Item {
@@ -36,21 +37,23 @@ public func ==(lhs: TimelineError, rhs: TimelineError) -> Bool {
 
 public class TimelineContentProvider {
     private let session = MCOIMAPSession()
-    
-    public init(account: Account) {
+    private let storageController: StorageController
+
+    public init(account: Account, storageController: StorageController) {
         session.hostname = "voltenetwork.xyz"
         session.port = 993
         session.connectionType = .TLS
         session.username = account.username
         session.password = account.password
 
+        self.storageController = storageController
     }
 
-    public func fetchShallowMessages() -> SignalProducer<MCOIMAPMessage, TimelineError> {
+    public func fetchShallowMessages(start: UInt64 = 1) -> SignalProducer<MCOIMAPMessage, TimelineError> {
         print("Fetching shallow messages")
 
         return SignalProducer { sink, disposable in
-            let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
+            let uids = MCOIndexSet(range: MCORangeMake(start, UINT64_MAX))
             let operation = self.session.fetchMessagesOperation(withFolder: "INBOX", requestKind: .structure, uids: uids)
             operation?.start { (error, messages, vanishedMessages) in
                 if let error = error as? NSError, error.code == MCOErrorCode.authentication.rawValue {
@@ -111,12 +114,46 @@ public class TimelineContentProvider {
 
     }
 
-    public func fetchItems() -> SignalProducer<Item, TimelineError> {
-        return fetchShallowMessages()
+    public func fetchItems() -> SignalProducer<[Message], TimelineError> {
+
+        let context = self.storageController.container.newBackgroundContext()
+
+        return self.storageController
+            .lastFetchedUID()
+            .promoteErrors(TimelineError.self)
+            .flatMap(.latest, transform: { (uid) -> SignalProducer<MCOIMAPMessage, TimelineError> in
+                return self.fetchShallowMessages(start: UInt64(uid + 1))
+            })
             .flatMap(.concat, transform: { (message) -> SignalProducer<Item, TimelineError> in
                 return self
                     .fetchMessage(with: message.uid)
                     .flatMapError { _ in SignalProducer.empty }
+            })
+            .flatMap(.concat, transform: { (item) -> SignalProducer<Message, TimelineError> in
+                let producer = SignalProducer<Message, TimelineError> { sink, _ in
+                    let message = Message(entity: Message.entity(), insertInto: context)
+                    message.author = item.email
+                    message.content = item.content
+                    message.postedAt = item.date as NSDate?
+                    message.uid = Int32(item.uid)
+
+                    sink.send(value: message)
+                    sink.sendCompleted()
+                    print("Imported message \(item.uid)")
+                }
+                return producer.start(on: StorageScheduler(context: context))
+            })
+            .collect()
+            .flatMap(.latest, transform: { (messages) -> SignalProducer<[Message], TimelineError> in
+                return SignalProducer { sink, _ in
+                    do {
+                        try context.save()
+                        sink.send(value: messages)
+                        sink.sendCompleted()
+                    } catch {
+                        sink.send(error: TimelineError.internalError)
+                    }
+                }
             })
     }
 }

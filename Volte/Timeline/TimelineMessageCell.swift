@@ -111,8 +111,8 @@ class TimelineMessageCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(item: Item) {
-        if item.attachments.isEmpty {
+    func configure(item: Message) {
+        if item.attachments?.count == 0 {
             preview.removeFromSuperview()
             NSLayoutConstraint.activate(noAttachmentsConstraints)
             NSLayoutConstraint.deactivate(attachmentsConstraints)
@@ -121,13 +121,13 @@ class TimelineMessageCell: UITableViewCell {
             NSLayoutConstraint.activate(attachmentsConstraints)
             NSLayoutConstraint.deactivate(noAttachmentsConstraints)
 
-            if let attachment = item.attachments.first {
-                preview.image = UIImage(data: attachment)
+            if let attachment = item.attachments?.first {
+//                preview.image = UIImage(data: attachment)
             }
         }
 
         contentLabel.text = item.content
-        titleLabel.attributedText = attributedString(forAuthor: item.email, date: item.date)
+        titleLabel.attributedText = attributedString(forAuthor: item.author!, date: item.postedAt as! Date)
 
         setNeedsUpdateConstraints()
     }

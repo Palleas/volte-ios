@@ -23,6 +23,10 @@
 		7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */; };
 		7A32BB341DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */; };
 		7A32BB361DC960D000F1F5A2 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB351DC960D000F1F5A2 /* StorageController.swift */; };
+		7A32BB431DC969AF00F1F5A2 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */; };
+		7A32BB441DC969AF00F1F5A2 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */; };
+		7A32BB451DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */; };
+		7A32BB461DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */; };
 		7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A754C111DB7D19100376570 /* LoadingViewController.swift */; };
 		7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */; };
 		7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B61DB8420200D71FD8 /* Localizations.swift */; };
@@ -155,6 +159,10 @@
 		7A1660A81DAFF29100AEBC50 /* testers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testers.json; sourceTree = "<group>"; };
 		7A32BB331DC95FCD00F1F5A2 /* VolteStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VolteStorage.xcdatamodel; sourceTree = "<group>"; };
 		7A32BB351DC960D000F1F5A2 /* StorageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataClass.swift"; path = "VolteCore/Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "VolteCore/Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attachment+CoreDataClass.swift"; path = "VolteCore/Attachment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attachment+CoreDataProperties.swift"; path = "VolteCore/Attachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A754C111DB7D19100376570 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7A7DE3B51DB8407C00D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A7DE3B61DB8420200D71FD8 /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
@@ -386,6 +394,10 @@
 		7ADFD5A81DAD1E7E0070C5BE = {
 			isa = PBXGroup;
 			children = (
+				7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */,
+				7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */,
+				7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */,
+				7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */,
 				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
 				7ABF0E831DC40AB60041CBB2 /* LinkedData */,
 				7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */,
@@ -695,7 +707,11 @@
 				7A32BB341DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld in Sources */,
 				7AACD2261DC0382900AC1249 /* MessageComposer.swift in Sources */,
 				7A1391401DC161C800B2DBD7 /* AccountController.swift in Sources */,
+				7A32BB431DC969AF00F1F5A2 /* Message+CoreDataClass.swift in Sources */,
+				7A32BB441DC969AF00F1F5A2 /* Message+CoreDataProperties.swift in Sources */,
 				7A1391411DC161E200B2DBD7 /* TimelineContentProvider.swift in Sources */,
+				7A32BB461DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift in Sources */,
+				7A32BB451DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift in Sources */,
 				7A32BB361DC960D000F1F5A2 /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

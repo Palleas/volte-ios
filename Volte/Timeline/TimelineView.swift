@@ -105,7 +105,7 @@ extension TimelineView: UITableViewDataSource, UITableViewDataSourcePrefetching 
 
         cell.configure(item: messages[indexPath.row])
 
-        let digest = messages[indexPath.row].email.data(using: String.Encoding.utf8)!
+        let digest = messages[indexPath.row].author!.data(using: String.Encoding.utf8)!
         let avatarURL = URL(string: "https://www.gravatar.com/avatar/\(digest.md5().toHexString())?d=identicon")!
 
         URLSession.shared.dataTask(with: avatarURL) { data, _, _ in
