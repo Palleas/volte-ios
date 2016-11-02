@@ -348,23 +348,55 @@
 			path = Externals;
 			sourceTree = "<group>";
 		};
-		7AACD21A1DC037A800AC1249 /* VolteCore */ = {
+		7A32BB4B1DCAA30A00F1F5A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */,
 				7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */,
 				7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */,
 				7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */,
 				7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7A32BB4C1DCAA31B00F1F5A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		7A32BB4D1DCAA32E00F1F5A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				7ABDDD051DAED0ED000D0D79 /* AccountController.swift */,
-				7AACD21C1DC037A800AC1249 /* Info.plist */,
 				7AACD2251DC0382900AC1249 /* MessageComposer.swift */,
+				7A32BB351DC960D000F1F5A2 /* StorageController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7A32BB4E1DCAA34A00F1F5A2 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
 				7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */,
+				7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		7AACD21A1DC037A800AC1249 /* VolteCore */ = {
+			isa = PBXGroup;
+			children = (
+				7A32BB4B1DCAA30A00F1F5A2 /* Models */,
+				7A32BB4D1DCAA32E00F1F5A2 /* Controllers */,
+				7AACD21C1DC037A800AC1249 /* Info.plist */,
+				7A32BB4E1DCAA34A00F1F5A2 /* Timeline */,
 				7AACD21B1DC037A800AC1249 /* VolteCore.h */,
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
-				7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */,
-				7A32BB351DC960D000F1F5A2 /* StorageController.swift */,
-				7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */,
-				7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */,
+				7A32BB4C1DCAA31B00F1F5A2 /* Extensions */,
 			);
 			path = VolteCore;
 			sourceTree = "<group>";
