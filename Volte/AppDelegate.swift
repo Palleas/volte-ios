@@ -13,11 +13,15 @@ import VolteCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let storageController = StorageController()
     private let accountController = AccountController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
+
+        storageController.load().startWithCompleted {
+            print("Storage initialized!")
+        }
         
 
         let window = UIWindow(frame: UIScreen.main.bounds)
