@@ -13,14 +13,6 @@ import Result
 import MailCore
 import CoreData
 
-public struct Item {
-    public let uid: UInt32
-    public let content: String
-    public let email: String
-    public let date: Date
-    public let attachments: [Data]
-}
-
 public enum TimelineError: Error {
     case internalError
     case authenticationError
@@ -75,48 +67,33 @@ public class TimelineDownloader {
         }
     }
 
-    public func fetchMessage(with uid: UInt32) -> SignalProducer<Item, TimelineError> {
-        return SignalProducer { sink, disposable in
-            let operation = self.session.fetchMessageOperation(withFolder: "INBOX", uid: uid)
-            operation?.start({ (error, messageContent) in
-                if let _ = error {
-                    sink.send(error: .internalError)
-                } else if let messageContent = messageContent {
-                    let parser = MCOMessageParser(data: messageContent)!
-                    guard let parts = (parser.mainPart() as? MCOMultipart)?.parts as? [MCOAttachment] else {
-                        sink.send(error: .decodingError(uid))
-                        return
-                    }
-                    let voltePart = parts.filter { $0.mimeType == "application/ld+json" }.first!
-
-                    let payload = JSON(data: voltePart.data)
-
-                    let attachments = parts
-                        .filter { $0.mimeType == "image/jpg" }
-                        .flatMap { $0.data }
-
-                    sink.send(value: Item(
-                        uid: uid,
-                        content: payload["text"].string ?? "No content for \(uid)",
-                        email: parser.header.from.mailbox ?? "",
-                        date: parser.header.date,
-                        attachments: attachments
-                    ))
-                    sink.sendCompleted()
-                } else {
-                    sink.send(error: .internalError)
-                }
-            })
-
-            disposable.add {
-                operation?.cancel()
+    public func fetchMessage(with uid: UInt32) -> SignalProducer<Message, TimelineError> {
+        print("Fetching message with id \(uid)")
+        let operation = self.session.fetchMessageOperation(withFolder: "INBOX", uid: uid)!
+        return operation.reactive.fetch()
+            .map {
+                let attachments = ($0.mainPart() as! MCOMultipart).parts as! [MCOAttachment]
+                return ($0.header.from.mailbox, $0.header.date, attachments)
             }
-        }
+            .flatMapError { _ in return SignalProducer<(String?, Date?, [MCOAttachment]), TimelineError>(error: .decodingError(uid)) }
+            .attemptMap({ (from, date, parts) -> Result<Message, TimelineError> in
+                guard let voltePart = parts.filter({ $0.mimeType == "application/ld+json" }).first else {
+                    return Result(error: TimelineError.decodingError(uid))
+                }
 
+                let payload = JSON(data: voltePart.data)
+                let message = Message(entity: Message.entity(), insertInto: nil)
+                message.author = from
+                message.content = payload["text"].string
+                message.postedAt = date as NSDate?
+                message.uid = Int32(uid)
+
+                return Result(value: message)
+            })
     }
 
     public func fetchItems() -> SignalProducer<[Message], TimelineError> {
-
+        print("Fetching all messages")
         let context = self.storageController.container.newBackgroundContext()
 
         return self.storageController
@@ -125,47 +102,19 @@ public class TimelineDownloader {
             .flatMap(.latest, transform: { (uid) -> SignalProducer<MCOIMAPMessage, TimelineError> in
                 return self.fetchShallowMessages(start: UInt64(uid + 1))
             })
-            .flatMap(.concat, transform: { (message) -> SignalProducer<Item, TimelineError> in
-                return self
-                    .fetchMessage(with: message.uid)
-                    .flatMapError { _ in SignalProducer.empty }
-            })
-            .flatMap(.concat, transform: { (item) -> SignalProducer<Message, TimelineError> in
-                let producer = SignalProducer<Message, TimelineError> { sink, _ in
-                    let message = Message(entity: Message.entity(), insertInto: context)
-                    message.author = item.email
-                    message.content = item.content
-                    message.postedAt = item.date as NSDate?
-                    message.uid = Int32(item.uid)
-
-                    let attachments:[Attachment] = item.attachments.map {
-                        let attachment = Attachment(entity: Attachment.entity(), insertInto: context)
-                        attachment.data = $0 as NSData?
-
-                        return attachment
-                    }
-                    message.attachments = NSSet(array: attachments)
-
-                    sink.send(value: message)
-                    sink.sendCompleted()
-                    print("Imported message \(item.uid)")
-                }
-                return producer.start(on: StorageScheduler(context: context))
+            .flatMap(.concat, transform: { (message) -> SignalProducer<Message, TimelineError> in
+                return self.fetchMessage(with: message.uid)
             })
             .collect()
-            .flatMap(.latest, transform: { (messages) -> SignalProducer<[Message], TimelineError> in
-                return SignalProducer { sink, _ in
-                    do {
-                        try context.save()
+            .flatMap(.latest, transform: { messages -> SignalProducer<[Message], TimelineError> in
+                messages.forEach(context.insert)
 
-                        let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
-                        request.sortDescriptors = [NSSortDescriptor(key: "postedAt", ascending: true)]
-                        sink.send(value: try! self.storageController.container.viewContext.fetch(request))
-                        sink.sendCompleted()
-                    } catch {
-                        sink.send(error: TimelineError.internalError)
-                    }
-                }
+                return context.reactive.save()
+                    .flatMapError { _ in SignalProducer<(),TimelineError>(error: .internalError) }
+                    .flatMap(.latest, transform: { (_) -> SignalProducer<[Message], TimelineError> in
+                        return SignalProducer<[Message], TimelineError>(value: messages)
+                    })
+
             })
     }
 }

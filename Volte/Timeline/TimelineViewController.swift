@@ -13,11 +13,7 @@ import CryptoSwift
 import SafariServices
 import VolteCore
 
-protocol TimelineViewModelType {
-    var messages: MutableProperty<[Item]> { get }
-}
-
-class TimelineViewModel {
+struct TimelineViewModel {
     var messages = MutableProperty<[Message]>([])
 }
 

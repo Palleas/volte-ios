@@ -12,7 +12,7 @@ import ReactiveSwift
 
 extension NSManagedObjectContext: ReactiveExtensionsProvider {}
 
-enum CoreDataError: Error {
+public enum CoreDataError: Error {
     case saving(Error)
     case fetching(Error)
 }
