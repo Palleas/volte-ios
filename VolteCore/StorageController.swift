@@ -27,6 +27,8 @@ public class StorageController {
 
     public let container: NSPersistentContainer
 
+    public let messages = MutableProperty<[Message]>([])
+
     public init() {
         let bundle = Bundle(for: type(of: self))
         let mom = NSManagedObjectModel.mergedModel(from: [bundle])!
@@ -57,6 +59,17 @@ public class StorageController {
             sink.send(value: uid)
             sink.sendCompleted()
         }
+    }
+
+    public func refresh() {
+        print("Refreshing container store...")
+        let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
+        request.sortDescriptors = [NSSortDescriptor(key: "postedAt", ascending: false)]
+
+        let producer = self.container.viewContext.reactive.fetch(request)
+            .flatMapError { _ in return SignalProducer<[Message], NoError>(values: []) }
+
+        messages <~ producer
     }
 
 }

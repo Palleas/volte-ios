@@ -56,30 +56,8 @@ class TimelineViewController: UIViewController {
 
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-3, for: .default)
 
-        // 🙈
-        if let presented = presentedViewController, presented is SFSafariViewController {
-            return
-        }
+        viewModel.messages <~ provider.messages
 
-        fetchMessages()
-    }
-
-    func fetchMessages() {
-        present(LoadingViewController(), animated: true, completion: nil)
-
-        provider
-            .fetchMessages()
-            .observe(on: UIScheduler())
-            .startWithResult { [weak self] (result) in
-                self?.dismiss(animated: true, completion: nil)
-                
-                if let messages = result.value {
-                    // TODO use RAC binding but I don't remember how it works
-                    self?.viewModel.messages.value = messages
-                } else if let error = result.error {
-                    print("Error = \(error)")
-                }
-        }
     }
 
     func didTapCompose() {
@@ -100,7 +78,7 @@ class TimelineViewController: UIViewController {
 
 extension TimelineViewController: TimelineViewDelegate {
     func didPullToRefresh() {
-        fetchMessages()
+
     }
 
     func didTap(url: URL) {

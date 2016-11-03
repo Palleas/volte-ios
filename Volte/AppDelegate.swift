@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .startWithResult { result in
                 print("Result.value = \(result.value)")
                 print("Result.error = \(result.error)")
+                self.storageController.refresh()
             }
 
         let window = UIWindow(frame: UIScreen.main.bounds)

@@ -15,16 +15,12 @@ public class TimelineContentProvider {
 
     private let storageController: StorageController
 
-    public init(storageController: StorageController) {
-        self.storageController = storageController
+    public var messages: SignalProducer<[Message], NoError> {
+        return storageController.messages.producer
     }
 
-    public func fetchMessages() -> SignalProducer<[Message], NoError> {
-        let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
-        request.sortDescriptors = [NSSortDescriptor(key: "postedAt", ascending: false)]
-
-        return self.storageController.container.viewContext.reactive.fetch(request)
-            .flatMapError { _ in return SignalProducer<[Message], NoError>(values: []) }
+    public init(storageController: StorageController) {
+        self.storageController = storageController
     }
 
 }
