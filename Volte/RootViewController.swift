@@ -41,6 +41,7 @@ class RootView: UIView {
 class RootViewController: UIViewController {
     private let accountController: AccountControllerType
     private let storageController: StorageController
+    private var downloadDisposable: Disposable?
 
     private var containedViewController: UIViewController?
     private var rootView: RootView {
@@ -72,6 +73,27 @@ class RootViewController: UIViewController {
         let rootView = RootView()
 
         self.view = rootView
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        downloadDisposable = accountController.account.producer
+            .skipNil()
+            .flatMap(.latest) { (account) -> SignalProducer<[Message], TimelineError> in
+                let downloader = TimelineDownloader(account: account, storageController: self.storageController)
+
+                downloader.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [], context: &self.context)
+
+                return downloader.fetchItems()
+            }
+            .startWithResult { result in
+                self.storageController.refresh()
+            }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        downloadDisposable?.dispose()
     }
 
     func transition(to viewController: UIViewController) {

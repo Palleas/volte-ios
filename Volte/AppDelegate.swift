@@ -23,18 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         storageController.load().startWithCompleted {}
 
-        accountController.account.producer
-            .skipNil()
-            .flatMap(.latest) { (account) -> SignalProducer<[Message], TimelineError> in
-                print("We have an account, let's download messages")
-                return TimelineDownloader(account: account, storageController: self.storageController).fetchItems()
-            }
-            .startWithResult { result in
-                print("Result.value = \(result.value)")
-                print("Result.error = \(result.error)")
-                self.storageController.refresh()
-            }
-
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = RootViewController(accountController: accountController, storageController: storageController)
         window.makeKeyAndVisible()
