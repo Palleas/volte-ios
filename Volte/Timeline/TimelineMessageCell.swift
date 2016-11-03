@@ -121,8 +121,8 @@ class TimelineMessageCell: UITableViewCell {
             NSLayoutConstraint.activate(attachmentsConstraints)
             NSLayoutConstraint.deactivate(noAttachmentsConstraints)
 
-            if let attachment = item.attachments?.anyObject() as? Data {
-                preview.image = UIImage(data: attachment)
+            if let attachment = item.attachments?.anyObject() as? Attachment, let data = attachment.data {
+                preview.image = UIImage(data: data as Data)
             }
         }
 

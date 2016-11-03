@@ -22,6 +22,7 @@ extension Reactive where Base: NSManagedObjectContext {
         return SignalProducer { [base = self.base] sink, disposable in
             do {
                 try base.save()
+                sink.send(value: ())
                 sink.sendCompleted()
             } catch let error {
                 sink.send(error: .saving(error))

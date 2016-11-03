@@ -81,12 +81,26 @@ public class TimelineDownloader {
                     return Result(error: TimelineError.decodingError(uid))
                 }
 
+                // Build the main message
                 let payload = JSON(data: voltePart.data)
                 let message = Message(entity: Message.entity(), insertInto: nil)
                 message.author = from
                 message.content = payload["text"].string
                 message.postedAt = date as NSDate?
                 message.uid = Int32(uid)
+                print("Creating message \(uid) - \(message.content)")
+
+                // Extract attachments
+                let attachments: [MCOAttachment] = parts.filter { $0.mimeType == "image/jpg" }
+
+                let savedAttachments = attachments.map { messageAttachment -> Attachment in
+                        let attachment = Attachment(entity: Attachment.entity(), insertInto: nil)
+                        attachment.data = messageAttachment.data as NSData?
+                        attachment.message = message
+                        return attachment
+                }
+                message.addToAttachments(NSSet(array: savedAttachments))
+                print("Message has \(message.attachments?.count) attachments")
 
                 return Result(value: message)
             })
@@ -107,11 +121,19 @@ public class TimelineDownloader {
             })
             .collect()
             .flatMap(.latest, transform: { messages -> SignalProducer<[Message], TimelineError> in
-                messages.forEach(context.insert)
+                print("Fetched \(messages.count) messages")
+                messages.forEach { message in
+                    context.insert(message)
+
+                    message.attachments?.forEach { attachment in
+                        context.insert(attachment as! NSManagedObject)
+                    }
+                }
 
                 return context.reactive.save()
                     .flatMapError { _ in SignalProducer<(),TimelineError>(error: .internalError) }
                     .flatMap(.latest, transform: { (_) -> SignalProducer<[Message], TimelineError> in
+                        print("Saved background context and returning \(messages.count) messages")
                         return SignalProducer<[Message], TimelineError>(value: messages)
                     })
 

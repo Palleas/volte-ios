@@ -11,6 +11,15 @@ import CoreData
 import ReactiveSwift
 import Result
 
+class VoltePersistentContainer: NSPersistentContainer {
+    override class func defaultDirectoryURL() -> URL {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        print("Path = \(path)")
+
+        return URL(fileURLWithPath: path)
+    }
+}
+
 public class StorageController {
     public enum StorageError: Error {
         case initializationError
@@ -21,7 +30,7 @@ public class StorageController {
     public init() {
         let bundle = Bundle(for: type(of: self))
         let mom = NSManagedObjectModel.mergedModel(from: [bundle])!
-        container = NSPersistentContainer(name: "Volte", managedObjectModel: mom)
+        container = VoltePersistentContainer(name: "Volte", managedObjectModel: mom)
     }
 
     public func load() -> SignalProducer<(), StorageError> {
