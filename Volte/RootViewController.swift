@@ -79,11 +79,7 @@ class RootViewController: UIViewController {
         downloadDisposable = accountController.account.producer
             .skipNil()
             .flatMap(.latest) { (account) -> SignalProducer<[Message], TimelineError> in
-                let downloader = TimelineDownloader(account: account, storageController: self.storageController)
-
-                downloader.progress.addObserver(self, forKeyPath: "fractionCompleted", options: [], context: &self.context)
-
-                return downloader.fetchItems()
+                return TimelineDownloader(account: account, storageController: self.storageController).fetchItems()
             }
             .startWithResult { result in
                 self.storageController.refresh()
