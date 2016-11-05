@@ -37,7 +37,16 @@ class ComposeMessageView: UIView {
         return placeholder
     }()
 
+    let previewView: UIImageView = {
+        let preview = UIImageView()
+        preview.translatesAutoresizingMaskIntoConstraints = false
+
+        return preview
+    }()
+
     private let toolbar = UIToolbar()
+
+    let preview = MutableProperty<UIImage?>(nil)
 
     weak var delegate: ComposeMessageViewDelegate?
 
@@ -46,6 +55,7 @@ class ComposeMessageView: UIView {
         contentField.delegate = self
         addSubview(contentField)
         addSubview(placeholder)
+        addSubview(previewView)
 
         NSLayoutConstraint.activate([
             contentField.topAnchor.constraint(equalTo: topAnchor),
@@ -55,7 +65,14 @@ class ComposeMessageView: UIView {
 
             placeholder.topAnchor.constraint(equalTo: topAnchor, constant: 71), // SORRY 🙈
             placeholder.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
+
+            previewView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            previewView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            previewView.widthAnchor.constraint(equalToConstant: 100),
+            previewView.heightAnchor.constraint(equalToConstant: 100)
         ])
+
+        preview.producer.startWithValues { self.previewView.image = $0 }
 
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(didTapCamera))
@@ -88,8 +105,11 @@ extension ComposeMessageView: UITextViewDelegate {
 class ComposeMessageViewController: UIViewController {
 
     private let composer: MessageComposer
-    fileprivate var attachments = MutableProperty<[Data]>([Data]())
-    
+    fileprivate var attachment = MutableProperty<Data?>(nil)
+    private var composeMessageView: ComposeMessageView {
+        return view as! ComposeMessageView
+    }
+
     init(composer: MessageComposer) {
         self.composer = composer
         
@@ -99,10 +119,6 @@ class ComposeMessageViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
 
         title = L10n.Timeline.Compose.Title
-
-        attachments.producer.startWithValues { data in
-            print("Data => \(data)")
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -115,12 +131,19 @@ class ComposeMessageViewController: UIViewController {
         self.view = composeMessageView
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        composeMessageView.preview <~ attachment.producer.map { $0.flatMap(UIImage.init) }
+
+    }
+
     func didTapSend() {
         present(LoadingViewController(), animated: true, completion: nil)
         let content = (view as! ComposeMessageView).contentField.text ?? "No content"
 
         composer
-            .sendMessage(with: content, attachments: attachments.value)
+            .sendMessage(with: content, attachments: [attachment.value].flatMap { $0 })
             .observe(on: UIScheduler())
             .on(completed: { [weak self] in
                 self?.dismiss(animated: true) {
@@ -170,7 +193,7 @@ extension ComposeMessageViewController: UIImagePickerControllerDelegate {
         let resized = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        self.attachments.value.append(UIImageJPEGRepresentation(resized, 75)!)
+        self.attachment.value = UIImageJPEGRepresentation(resized, 75)!
         dismiss(animated: true, completion: nil)
     }
 }
