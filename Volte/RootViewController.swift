@@ -40,20 +40,22 @@ class RootView: UIView {
 
 class RootViewController: UIViewController {
     private let accountController: AccountControllerType
+    private let storageController: StorageController
 
     private var containedViewController: UIViewController?
     private var rootView: RootView {
         return view as! RootView
     }
 
-    init(accountController: AccountControllerType) {
+    init(accountController: AccountControllerType, storageController: StorageController) {
         self.accountController = accountController
+        self.storageController = storageController
 
         super.init(nibName: nil, bundle: nil)
 
         self.accountController.account.producer.startWithValues { account in
             if let account = account {
-                let provider = TimelineContentProvider(account: account)
+                let provider = TimelineContentProvider(storageController: storageController)
                 let timelineViewController = TimelineViewController(provider: provider, accountController: self.accountController, account: account)
                 self.transition(to: UINavigationController(rootViewController: timelineViewController))
             } else {

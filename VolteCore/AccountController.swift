@@ -31,9 +31,6 @@ public class AccountController: AccountControllerType {
     public var account = MutableProperty<Account?>(nil)
 
     public init() {
-        print(keychain.allItems())
-        rg_set_logging_severity(RGLogSeverity.trace)
-        
         if let username = keychain.stringForKey(AccountController.usernameKey), let password = keychain.stringForKey(AccountController.passwordKey) {
             print("Auto-auth woooo")
             self.authenticate(with: username, password: password)

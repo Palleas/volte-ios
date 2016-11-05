@@ -13,12 +13,8 @@ import CryptoSwift
 import SafariServices
 import VolteCore
 
-protocol TimelineViewModelType {
-    var messages: MutableProperty<[Item]> { get }
-}
-
-class TimelineViewModel {
-    var messages = MutableProperty<[Item]>([])
+struct TimelineViewModel {
+    var messages = MutableProperty<[Message]>([])
 }
 
 class TimelineViewController: UIViewController {
@@ -60,42 +56,8 @@ class TimelineViewController: UIViewController {
 
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-3, for: .default)
 
-        // 🙈
-        if let presented = presentedViewController, presented is SFSafariViewController {
-            return
-        }
+        viewModel.messages <~ provider.messages
 
-        fetchMessages()
-    }
-
-    func fetchMessages() {
-        present(LoadingViewController(), animated: true, completion: nil)
-
-        provider
-            .fetchItems()
-            .collect()
-            .map { $0.sorted(by: { (item1, item2) -> Bool in
-                return item1.uid > item2.uid
-            })}
-            .observe(on: UIScheduler())
-            .startWithResult { [weak self] (result) in
-                self?.dismiss(animated: true, completion: nil)
-                
-                if let messages = result.value {
-                    // TODO use RAC binding but I don't remember how it works
-                    self?.viewModel.messages.value = messages
-                } else if let error = result.error, error == .authenticationError {
-                    let alert = UIAlertController(title: L10n.Login.Failure.Title, message: L10n.Login.Failure.Message, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: L10n.Alert.Dismiss, style: .default) { _ in
-                        self?.accountController.logout()
-
-                        self?.dismiss(animated: true, completion: nil)
-                    })
-                    self?.present(alert, animated: true, completion: nil)
-                } else if let error = result.error {
-                    print("Error = \(error)")
-                }
-        }
     }
 
     func didTapCompose() {
@@ -116,7 +78,7 @@ class TimelineViewController: UIViewController {
 
 extension TimelineViewController: TimelineViewDelegate {
     func didPullToRefresh() {
-        fetchMessages()
+
     }
 
     func didTap(url: URL) {
