@@ -37,6 +37,7 @@
 		7A7DE3C11DB9105E00D71FD8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */; };
 		7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
 		7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A9A95881DCE8C1300993386 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A95871DCE8C1300993386 /* Keyboard.swift */; };
 		7AACD21D1DC037A800AC1249 /* VolteCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AACD21B1DC037A800AC1249 /* VolteCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AACD2201DC037A800AC1249 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
 		7AACD2211DC037A800AC1249 /* VolteCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -177,6 +178,7 @@
 		7A7DE3BC1DB8477200D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LoginViewController.xib; sourceTree = "<group>"; };
 		7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
+		7A9A95871DCE8C1300993386 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7AACD2191DC037A800AC1249 /* VolteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VolteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AACD21B1DC037A800AC1249 /* VolteCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolteCore.h; sourceTree = "<group>"; };
 		7AACD21C1DC037A800AC1249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				7A7DE3B61DB8420200D71FD8 /* Localizations.swift */,
 				7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */,
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
+				7A9A95871DCE8C1300993386 /* Keyboard.swift */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */,
 				7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */,
 				7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */,
+				7A9A95881DCE8C1300993386 /* Keyboard.swift in Sources */,
 				7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */,
 				7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */,
 				7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */,

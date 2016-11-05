@@ -17,3 +17,4 @@
 "alert.dismiss" = "Fermer";
 "compose.error.title" = "Impossible de poster le message";
 "compose.error.message" = "Une erreur est survenue lors de l'envoi du message, veuillez réessayer plus tard.";
+"compose.attachment.remove" = "Supprimer la pièce jointe";

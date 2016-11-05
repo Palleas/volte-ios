@@ -24,8 +24,6 @@ struct L10n {
       static let NotAuthenticated = L10n.tr("sharing.error.not_authenticated")
       /// An error occured while trying to send the message.
       static let Composing = L10n.tr("sharing.error.composing")
-      /// This content cannot be shared, please make sure you're sharing a valid URL.
-      static let InvalidUrl = L10n.tr("sharing.error.invalid_url")
     }
   }
 }
