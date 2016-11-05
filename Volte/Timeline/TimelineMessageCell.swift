@@ -103,7 +103,7 @@ class TimelineMessageCell: UITableViewCell {
             preview.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             preview.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             preview.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            preview.heightAnchor.constraint(equalToConstant: 300)
+            preview.heightAnchor.constraint(equalTo: contentView.widthAnchor)
         ]
     }
     
