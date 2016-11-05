@@ -155,7 +155,6 @@ extension ComposeMessageViewController: UINavigationControllerDelegate {}
 
 extension ComposeMessageViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("User did cancel")
         dismiss(animated: true, completion: nil)
     }
 

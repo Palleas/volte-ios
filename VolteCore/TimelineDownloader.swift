@@ -71,13 +71,18 @@ public class TimelineDownloader {
         print("Fetching message with id \(uid)")
         let operation = self.session.fetchMessageOperation(withFolder: "INBOX", uid: uid)!
         return operation.reactive.fetch()
-            .map {
-                let attachments = ($0.mainPart() as! MCOMultipart).parts as! [MCOAttachment]
-                return ($0.header.from.mailbox, $0.header.date, attachments)
-            }
-            .flatMapError { _ in return SignalProducer<(String?, Date?, [MCOAttachment]), TimelineError>(error: .decodingError(uid)) }
-            .attemptMap({ (from, date, parts) -> Result<Message, TimelineError> in
+            .flatMapError { _ in return SignalProducer<MCOMessageParser, TimelineError>(error: .decodingError(uid)) }
+            .attemptMap { message in
+                guard let parts = (message.mainPart() as? MCOMultipart)?.parts as? [MCOAttachment] else {
+                    print("Invalid content for message \(uid)")
+                    return Result(error: TimelineError.decodingError(uid))
+                }
+
+                let from = message.header.from.mailbox
+                let date = message.header.date
+
                 guard let voltePart = parts.filter({ $0.mimeType == "application/ld+json" }).first else {
+                    print("No main content for message \(uid)")
                     return Result(error: TimelineError.decodingError(uid))
                 }
 
@@ -103,7 +108,11 @@ public class TimelineDownloader {
                 print("Message has \(message.attachments?.count) attachments")
 
                 return Result(value: message)
-            })
+            }
+            .flatMapError { error in
+                print("Got error \(error)")
+                return SignalProducer.empty
+            }
     }
 
     public func fetchItems() -> SignalProducer<[Message], TimelineError> {
