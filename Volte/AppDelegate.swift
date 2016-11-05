@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Scheduling auto refresh")
                 return timer(interval: 5, on: QueueScheduler())
                     .promoteErrors(TimelineError.self)
-                    .flatMap(.merge, transform: { _ -> SignalProducer<[Message], TimelineError> in
+                    .flatMap(.concat, transform: { _ -> SignalProducer<[Message], TimelineError> in
                         return TimelineDownloader(account: account, storageController: self.storageController).fetchItems()
                     })
             }
