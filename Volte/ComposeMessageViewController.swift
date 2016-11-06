@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import VolteCore
-
+import Result
 
 protocol ComposeMessageViewDelegate: class {
     func didTapCamera()
+    func didTapPreview()
 }
 
 class ComposeMessageView: UIView {
+    private var bottomConstraint: NSLayoutConstraint!
 
     let contentField: UITextView = {
         let field = UITextView()
@@ -37,7 +39,25 @@ class ComposeMessageView: UIView {
         return placeholder
     }()
 
-    private let toolbar = UIToolbar()
+    let previewView: UIImageView = {
+        let preview = UIImageView()
+        preview.translatesAutoresizingMaskIntoConstraints = false
+        preview.isUserInteractionEnabled = true
+
+        return preview
+    }()
+
+    private let toolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.translatesAutoresizingMaskIntoConstraints = false
+
+        return toolbar
+    }()
+
+
+
+    let preview = MutableProperty<UIImage?>(nil)
+    let keyboardStatus = MutableProperty<(CGFloat, TimeInterval, UIViewAnimationOptions)?>(nil)
 
     weak var delegate: ComposeMessageViewDelegate?
 
@@ -46,21 +66,49 @@ class ComposeMessageView: UIView {
         contentField.delegate = self
         addSubview(contentField)
         addSubview(placeholder)
+        addSubview(toolbar)
+        addSubview(previewView)
+
+        self.bottomConstraint = toolbar.bottomAnchor.constraint(equalTo: bottomAnchor)
 
         NSLayoutConstraint.activate([
             contentField.topAnchor.constraint(equalTo: topAnchor),
             contentField.leftAnchor.constraint(equalTo: leftAnchor),
-            contentField.bottomAnchor.constraint(equalTo: bottomAnchor),
             contentField.rightAnchor.constraint(equalTo: rightAnchor),
 
-            placeholder.topAnchor.constraint(equalTo: topAnchor, constant: 71), // SORRY 🙈
+            bottomConstraint,
+
+            toolbar.leftAnchor.constraint(equalTo: leftAnchor),
+            toolbar.rightAnchor.constraint(equalTo: rightAnchor),
+            toolbar.topAnchor.constraint(equalTo: contentField.bottomAnchor),
+            toolbar.heightAnchor.constraint(equalToConstant: 44),
+
+            previewView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            previewView.bottomAnchor.constraint(equalTo: toolbar.topAnchor, constant: -10),
+            previewView.heightAnchor.constraint(equalToConstant: 100),
+            previewView.widthAnchor.constraint(equalToConstant: 100),
+
+            placeholder.topAnchor.constraint(equalTo: topAnchor, constant: 0), // SORRY 🙈
             placeholder.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
         ])
+
+        preview.producer.startWithValues { self.previewView.image = $0 }
+        keyboardStatus.producer.startWithValues { keyboard in
+            guard let (height, duration, options) = keyboard else { return }
+
+            UIView.animate(withDuration: duration, delay: 0, options: options, animations: {
+                self.bottomConstraint.constant = -height
+                self.setNeedsLayout()
+                self.layoutSubviews()
+            }, completion: nil)
+        }
 
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(didTapCamera))
         ]
-        contentField.inputAccessoryView = toolbar
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnPreview))
+        previewView.addGestureRecognizer(tap)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,9 +119,8 @@ class ComposeMessageView: UIView {
         delegate?.didTapCamera()
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        toolbar.frame = CGRect(origin: .zero, size: CGSize(width: frame.width, height: 44))
+    @objc private func didTapOnPreview() {
+        delegate?.didTapPreview()
     }
 }
 
@@ -88,21 +135,18 @@ extension ComposeMessageView: UITextViewDelegate {
 class ComposeMessageViewController: UIViewController {
 
     private let composer: MessageComposer
-    fileprivate var attachments = MutableProperty<[Data]>([Data]())
-    
+    fileprivate var attachment = MutableProperty<Data?>(nil)
+    private var composeMessageView: ComposeMessageView {
+        return view as! ComposeMessageView
+    }
+
     init(composer: MessageComposer) {
         self.composer = composer
         
         super.init(nibName: nil, bundle: nil)
 
-        navigationController?.navigationBar.isTranslucent = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapSend))
-
         title = L10n.Timeline.Compose.Title
-
-        attachments.producer.startWithValues { data in
-            print("Data => \(data)")
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -115,12 +159,35 @@ class ComposeMessageViewController: UIViewController {
         self.view = composeMessageView
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let center = NotificationCenter.default.reactive
+
+        let keyboardNotifications = Signal.merge(
+            center.notifications(forName: .UIKeyboardWillChangeFrame),
+            center.notifications(forName: .UIKeyboardWillHide),
+            center.notifications(forName: .UIKeyboardWillShow)
+        )
+
+        composeMessageView.keyboardStatus <~ keyboardNotifications.map(Keyboard.parse)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+        composeMessageView.preview <~ attachment.producer.map { $0.flatMap(UIImage.init) }
+
+        navigationController?.navigationBar.isTranslucent = false
+    }
+
     func didTapSend() {
         present(LoadingViewController(), animated: true, completion: nil)
         let content = (view as! ComposeMessageView).contentField.text ?? "No content"
 
         composer
-            .sendMessage(with: content, attachments: attachments.value)
+            .sendMessage(with: content, attachments: [attachment.value].flatMap { $0 })
             .observe(on: UIScheduler())
             .on(completed: { [weak self] in
                 self?.dismiss(animated: true) {
@@ -149,6 +216,14 @@ extension ComposeMessageViewController: ComposeMessageViewDelegate {
         picker.delegate = self
         present(picker, animated: true, completion: nil)
     }
+
+    func didTapPreview() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: L10n.Compose.Attachment.Remove, style: .destructive) { [weak self] _ in
+            self?.attachment.value = nil
+        })
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ComposeMessageViewController: UINavigationControllerDelegate {}
@@ -170,7 +245,7 @@ extension ComposeMessageViewController: UIImagePickerControllerDelegate {
         let resized = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        self.attachments.value.append(UIImageJPEGRepresentation(resized, 75)!)
+        self.attachment.value = UIImageJPEGRepresentation(resized, 75)!
         dismiss(animated: true, completion: nil)
     }
 }

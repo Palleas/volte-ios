@@ -17,6 +17,11 @@ struct L10n {
 
   struct Compose {
 
+    struct Attachment {
+      /// Remove attachment
+      static let Remove = L10n.tr("compose.attachment.remove")
+    }
+
     struct Error {
       /// Unable to post message
       static let Title = L10n.tr("compose.error.title")

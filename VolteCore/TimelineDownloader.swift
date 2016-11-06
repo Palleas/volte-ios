@@ -122,10 +122,10 @@ public class TimelineDownloader {
         return self.storageController
             .lastFetchedUID()
             .promoteErrors(TimelineError.self)
-            .flatMap(.latest, transform: { (uid) -> SignalProducer<MCOIMAPMessage, TimelineError> in
+            .flatMap(.latest, transform: { uid in
                 return self.fetchShallowMessages(start: UInt64(uid + 1))
             })
-            .flatMap(.concat, transform: { (message) -> SignalProducer<Message, TimelineError> in
+            .flatMap(.concat, transform: { message in
                 return self.fetchMessage(with: message.uid)
             })
             .collect()

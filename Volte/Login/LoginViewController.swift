@@ -9,16 +9,6 @@
 import UIKit
 import VolteCore
 
-func parse(keyboardNotification notification: Notification) -> (CGFloat, TimeInterval, UIViewAnimationOptions)? {
-    guard let info = notification.userInfo else { return nil }
-    guard let height = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else { return nil }
-    guard let duration = info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return nil }
-    guard let curveRaw = info[UIKeyboardAnimationCurveUserInfoKey] as? Int else { return nil }
-    let curve = UIViewAnimationOptions(rawValue: UInt(curveRaw) << 16)
-
-    return (height, duration, curve)
-}
-
 // TODO use RAC Action
 protocol LoginViewDelegate: class {
     func didAuthenticate(with username: String?, password: String?)
@@ -119,7 +109,7 @@ class LoginViewController: UIViewController {
     }
 
     func keyboardWillAppear(note: Notification) {
-        guard let (height, duration, animation) = parse(keyboardNotification: note) else { return }
+        guard let (height, duration, animation) = Keyboard.parse(keyboardNotification: note) else { return }
 
         UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
             self.loginView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
@@ -127,7 +117,7 @@ class LoginViewController: UIViewController {
     }
 
     func keyboardWillChangeFrame(note: Notification) {
-        guard let (height, duration, animation) = parse(keyboardNotification: note) else { return }
+        guard let (height, duration, animation) = Keyboard.parse(keyboardNotification: note) else { return }
 
         UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
             self.loginView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: height, right: 0)
@@ -135,7 +125,7 @@ class LoginViewController: UIViewController {
     }
 
     func keyboardWillHide(note: Notification) {
-        guard let (_, duration, animation) = parse(keyboardNotification: note) else { return }
+        guard let (_, duration, animation) = Keyboard.parse(keyboardNotification: note) else { return }
 
         UIView.animate(withDuration: duration, delay: 0, options: animation, animations: {
             self.loginView.scrollView.contentInset = UIEdgeInsets.zero

@@ -17,4 +17,4 @@
 "alert.dismiss" = "Dismiss";
 "compose.error.title" = "Unable to post message";
 "compose.error.message" = "We were ynable to post your message, please try again later.";
-
+"compose.attachment.remove" = "Remove attachment";
