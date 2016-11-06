@@ -1,4 +1,4 @@
-github "MailCore/mailcore2" "efce413258a838818a39a12f0f86d563c8488468"
+github "palleas/mailcore2" "remove-ssl"
 github "ReactiveCocoa/ReactiveCocoa" "master"
 github "SwiftyJSON/SwiftyJSON"
 github "krzyzanowskim/CryptoSwift" "0.6.4"

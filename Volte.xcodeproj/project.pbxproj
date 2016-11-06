@@ -30,6 +30,24 @@
 		7A32BB481DCA908100F1F5A2 /* ReactiveCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */; };
 		7A32BB4A1DCA9DB900F1F5A2 /* TimelineContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */; };
 		7A32BB501DCAA42B00F1F5A2 /* ReactiveMailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB4F1DCAA42B00F1F5A2 /* ReactiveMailCore.swift */; };
+		7A6B0E221DCF9BBC00ED5E0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B0E211DCF9BBC00ED5E0A /* AppDelegate.swift */; };
+		7A6B0E241DCF9BBC00ED5E0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B0E231DCF9BBC00ED5E0A /* ViewController.swift */; };
+		7A6B0E261DCF9BBC00ED5E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B0E251DCF9BBC00ED5E0A /* Assets.xcassets */; };
+		7A6B0E291DCF9BBC00ED5E0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A6B0E271DCF9BBC00ED5E0A /* Main.storyboard */; };
+		7A6B0E371DCF9BCE00ED5E0A /* VolteCore-Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A6B0E401DCF9C5600ED5E0A /* VolteStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */; };
+		7A6B0E411DCF9C5C00ED5E0A /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */; };
+		7A6B0E421DCF9C5C00ED5E0A /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */; };
+		7A6B0E431DCF9C5C00ED5E0A /* Attachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */; };
+		7A6B0E441DCF9C5C00ED5E0A /* Attachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */; };
+		7A6B0E451DCF9C6200ED5E0A /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD051DAED0ED000D0D79 /* AccountController.swift */; };
+		7A6B0E461DCF9C6200ED5E0A /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACD2251DC0382900AC1249 /* MessageComposer.swift */; };
+		7A6B0E471DCF9C6200ED5E0A /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB351DC960D000F1F5A2 /* StorageController.swift */; };
+		7A6B0E481DCF9C6700ED5E0A /* TimelineDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */; };
+		7A6B0E491DCF9C6700ED5E0A /* TimelineContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */; };
+		7A6B0E4A1DCF9C6C00ED5E0A /* ReactiveCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */; };
+		7A6B0E4B1DCF9C6C00ED5E0A /* ReactiveMailCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB4F1DCAA42B00F1F5A2 /* ReactiveMailCore.swift */; };
+		7A6B0E511DCFAB4E00ED5E0A /* Potato.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B0E501DCFAB4E00ED5E0A /* Potato.m */; };
 		7A754C121DB7D19100376570 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A754C111DB7D19100376570 /* LoadingViewController.swift */; };
 		7A7DE3B21DB8404D00D71FD8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */; };
 		7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B61DB8420200D71FD8 /* Localizations.swift */; };
@@ -121,6 +139,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7A6B0E3F1DCF9BCE00ED5E0A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AD9ECA41DC17033001FAAF7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +198,17 @@
 		7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCoreData.swift; sourceTree = "<group>"; };
 		7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineContentProvider.swift; sourceTree = "<group>"; };
 		7A32BB4F1DCAA42B00F1F5A2 /* ReactiveMailCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveMailCore.swift; sourceTree = "<group>"; };
+		7A6B0E1F1DCF9BBB00ED5E0A /* VolteMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolteMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A6B0E211DCF9BBC00ED5E0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A6B0E231DCF9BBC00ED5E0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A6B0E251DCF9BBC00ED5E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A6B0E281DCF9BBC00ED5E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A6B0E2A1DCF9BBC00ED5E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VolteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VolteCore-Mac.h"; sourceTree = "<group>"; };
+		7A6B0E361DCF9BCE00ED5E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A6B0E4F1DCFAB4E00ED5E0A /* VolteMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VolteMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A6B0E501DCFAB4E00ED5E0A /* Potato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Potato.m; sourceTree = "<group>"; };
 		7A754C111DB7D19100376570 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		7A7DE3B51DB8407C00D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A7DE3B61DB8420200D71FD8 /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizations.swift; sourceTree = "<group>"; };
@@ -227,6 +266,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7A6B0E1C1DCF9BBB00ED5E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A6B0E2F1DCF9BCE00ED5E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2151DC037A800AC1249 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,23 +355,7 @@
 		7A1391471DC1626E00B2DBD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7AD9ECF01DC17E5D001FAAF7 /* Security.framework */,
-				EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */,
-				9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */,
-				5928BB7B739DB6804DA652D3 /* CoreText.framework */,
-				37A97DD264B994C0F167607E /* CoreTelephony.framework */,
-				28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */,
-				7F9D51215CAF110225FDBED0 /* QuartzCore.framework */,
-				5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */,
-				8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */,
-				53C8D051CCF7528339401977 /* CoreVideo.framework */,
-				7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */,
-				7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */,
-				7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */,
-				7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */,
-				7AB44C041DAD7A7C0082AE6B /* Result.framework */,
-				7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */,
-				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
+				7A6B0E521DCFB52400ED5E0A /* IOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -392,7 +429,54 @@
 			name = Timeline;
 			sourceTree = "<group>";
 		};
-		7AACD21A1DC037A800AC1249 /* VolteCore */ = {
+		7A6B0E201DCF9BBC00ED5E0A /* VolteMac */ = {
+			isa = PBXGroup;
+			children = (
+				7A6B0E211DCF9BBC00ED5E0A /* AppDelegate.swift */,
+				7A6B0E231DCF9BBC00ED5E0A /* ViewController.swift */,
+				7A6B0E251DCF9BBC00ED5E0A /* Assets.xcassets */,
+				7A6B0E271DCF9BBC00ED5E0A /* Main.storyboard */,
+				7A6B0E2A1DCF9BBC00ED5E0A /* Info.plist */,
+				7A6B0E501DCFAB4E00ED5E0A /* Potato.m */,
+				7A6B0E4F1DCFAB4E00ED5E0A /* VolteMac-Bridging-Header.h */,
+			);
+			path = VolteMac;
+			sourceTree = "<group>";
+		};
+		7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */,
+				7A6B0E361DCF9BCE00ED5E0A /* Info.plist */,
+			);
+			path = "VolteCore-Mac";
+			sourceTree = "<group>";
+		};
+		7A6B0E521DCFB52400ED5E0A /* IOS */ = {
+			isa = PBXGroup;
+			children = (
+				7AD9ECF01DC17E5D001FAAF7 /* Security.framework */,
+				EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */,
+				9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */,
+				5928BB7B739DB6804DA652D3 /* CoreText.framework */,
+				37A97DD264B994C0F167607E /* CoreTelephony.framework */,
+				28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */,
+				7F9D51215CAF110225FDBED0 /* QuartzCore.framework */,
+				5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */,
+				8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */,
+				53C8D051CCF7528339401977 /* CoreVideo.framework */,
+				7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */,
+				7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */,
+				7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */,
+				7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */,
+				7AB44C041DAD7A7C0082AE6B /* Result.framework */,
+				7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */,
+				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
+			);
+			name = IOS;
+			sourceTree = "<group>";
+		};
+		7AACD21A1DC037A800AC1249 /* VolteCore-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				7A32BB4B1DCAA30A00F1F5A2 /* Models */,
@@ -403,6 +487,7 @@
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
 				7A32BB4C1DCAA31B00F1F5A2 /* Extensions */,
 			);
+			name = "VolteCore-iOS";
 			path = VolteCore;
 			sourceTree = "<group>";
 		};
@@ -444,10 +529,12 @@
 				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
 				7ABF0E831DC40AB60041CBB2 /* LinkedData */,
 				7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */,
+				7A6B0E201DCF9BBC00ED5E0A /* VolteMac */,
+				7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */,
 				7A1391471DC1626E00B2DBD7 /* Frameworks */,
 				7ADFD5B21DAD1E7E0070C5BE /* Products */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
-				7AACD21A1DC037A800AC1249 /* VolteCore */,
+				7AACD21A1DC037A800AC1249 /* VolteCore-iOS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -459,6 +546,8 @@
 				7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */,
 				7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */,
 				7ABF0E8A1DC40AB60041CBB2 /* LinkedDataTests.xctest */,
+				7A6B0E1F1DCF9BBB00ED5E0A /* VolteMac.app */,
+				7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -488,6 +577,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		7A6B0E301DCF9BCE00ED5E0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A6B0E371DCF9BCE00ED5E0A /* VolteCore-Mac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2161DC037A800AC1249 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,9 +604,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7AACD2181DC037A800AC1249 /* VolteCore */ = {
+		7A6B0E1E1DCF9BBB00ED5E0A /* VolteMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore" */;
+			buildConfigurationList = 7A6B0E2B1DCF9BBC00ED5E0A /* Build configuration list for PBXNativeTarget "VolteMac" */;
+			buildPhases = (
+				7A6B0E1B1DCF9BBB00ED5E0A /* Sources */,
+				7A6B0E1C1DCF9BBB00ED5E0A /* Frameworks */,
+				7A6B0E1D1DCF9BBB00ED5E0A /* Resources */,
+				7A6B0E3F1DCF9BCE00ED5E0A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VolteMac;
+			productName = VolteMac;
+			productReference = 7A6B0E1F1DCF9BBB00ED5E0A /* VolteMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A6B0E321DCF9BCE00ED5E0A /* VolteCore-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A6B0E3C1DCF9BCE00ED5E0A /* Build configuration list for PBXNativeTarget "VolteCore-Mac" */;
+			buildPhases = (
+				7A6B0E2E1DCF9BCE00ED5E0A /* Sources */,
+				7A6B0E2F1DCF9BCE00ED5E0A /* Frameworks */,
+				7A6B0E301DCF9BCE00ED5E0A /* Headers */,
+				7A6B0E311DCF9BCE00ED5E0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VolteCore-Mac";
+			productName = "VolteCore-Mac";
+			productReference = 7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7AACD2181DC037A800AC1249 /* VolteCore-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore-iOS" */;
 			buildPhases = (
 				7AACD2141DC037A800AC1249 /* Sources */,
 				7AACD2151DC037A800AC1249 /* Frameworks */,
@@ -520,7 +653,7 @@
 			);
 			dependencies = (
 			);
-			name = VolteCore;
+			name = "VolteCore-iOS";
 			productName = VolteCore;
 			productReference = 7AACD2191DC037A800AC1249 /* VolteCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -607,10 +740,21 @@
 		7ADFD5A91DAD1E7E0070C5BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Perfectly-Cooked";
 				TargetAttributes = {
+					7A6B0E1E1DCF9BBB00ED5E0A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MR4EU5S834;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					7A6B0E321DCF9BCE00ED5E0A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MR4EU5S834;
+						ProvisioningStyle = Automatic;
+					};
 					7AACD2181DC037A800AC1249 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8VS9JKFDZS;
@@ -666,15 +810,33 @@
 			projectRoot = "";
 			targets = (
 				7ADFD5B01DAD1E7E0070C5BE /* Volte */,
-				7AACD2181DC037A800AC1249 /* VolteCore */,
+				7AACD2181DC037A800AC1249 /* VolteCore-iOS */,
 				7AD9ECD61DC172CB001FAAF7 /* Sharing */,
 				7ABF0E811DC40AB60041CBB2 /* LinkedData */,
 				7ABF0E891DC40AB60041CBB2 /* LinkedDataTests */,
+				7A6B0E1E1DCF9BBB00ED5E0A /* VolteMac */,
+				7A6B0E321DCF9BCE00ED5E0A /* VolteCore-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7A6B0E1D1DCF9BBB00ED5E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A6B0E261DCF9BBC00ED5E0A /* Assets.xcassets in Resources */,
+				7A6B0E291DCF9BBC00ED5E0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A6B0E311DCF9BCE00ED5E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2171DC037A800AC1249 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -744,6 +906,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7A6B0E1B1DCF9BBB00ED5E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A6B0E241DCF9BBC00ED5E0A /* ViewController.swift in Sources */,
+				7A6B0E511DCFAB4E00ED5E0A /* Potato.m in Sources */,
+				7A6B0E221DCF9BBC00ED5E0A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A6B0E2E1DCF9BCE00ED5E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A6B0E441DCF9C5C00ED5E0A /* Attachment+CoreDataProperties.swift in Sources */,
+				7A6B0E401DCF9C5600ED5E0A /* VolteStorage.xcdatamodeld in Sources */,
+				7A6B0E481DCF9C6700ED5E0A /* TimelineDownloader.swift in Sources */,
+				7A6B0E461DCF9C6200ED5E0A /* MessageComposer.swift in Sources */,
+				7A6B0E4B1DCF9C6C00ED5E0A /* ReactiveMailCore.swift in Sources */,
+				7A6B0E471DCF9C6200ED5E0A /* StorageController.swift in Sources */,
+				7A6B0E411DCF9C5C00ED5E0A /* Message+CoreDataClass.swift in Sources */,
+				7A6B0E451DCF9C6200ED5E0A /* AccountController.swift in Sources */,
+				7A6B0E491DCF9C6700ED5E0A /* TimelineContentProvider.swift in Sources */,
+				7A6B0E431DCF9C5C00ED5E0A /* Attachment+CoreDataClass.swift in Sources */,
+				7A6B0E4A1DCF9C6C00ED5E0A /* ReactiveCoreData.swift in Sources */,
+				7A6B0E421DCF9C5C00ED5E0A /* Message+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2141DC037A800AC1249 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,7 +1002,7 @@
 /* Begin PBXTargetDependency section */
 		7AACD21F1DC037A800AC1249 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7AACD2181DC037A800AC1249 /* VolteCore */;
+			target = 7AACD2181DC037A800AC1249 /* VolteCore-iOS */;
 			targetProxy = 7AACD21E1DC037A800AC1249 /* PBXContainerItemProxy */;
 		};
 		7ABF0E8D1DC40AB60041CBB2 /* PBXTargetDependency */ = {
@@ -826,12 +1017,20 @@
 		};
 		7AD9ECEE1DC17529001FAAF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7AACD2181DC037A800AC1249 /* VolteCore */;
+			target = 7AACD2181DC037A800AC1249 /* VolteCore-iOS */;
 			targetProxy = 7AD9ECED1DC17529001FAAF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7A6B0E271DCF9BBC00ED5E0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A6B0E281DCF9BBC00ED5E0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -872,6 +1071,97 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7A6B0E2C1DCF9BBC00ED5E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				INFOPLIST_FILE = VolteMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "VolteMac/VolteMac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7A6B0E2D1DCF9BBC00ED5E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				INFOPLIST_FILE = VolteMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteMac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "VolteMac/VolteMac-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7A6B0E3D1DCF9BCE00ED5E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "VolteCore-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCore-Mac";
+				PRODUCT_NAME = VolteCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A6B0E3E1DCF9BCE00ED5E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "VolteCore-Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCore-Mac";
+				PRODUCT_NAME = VolteCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7AACD2221DC037A800AC1249 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -893,7 +1183,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCore";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = VolteCore;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -923,7 +1214,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCore";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = VolteCore;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1193,7 +1485,23 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore" */ = {
+		7A6B0E2B1DCF9BBC00ED5E0A /* Build configuration list for PBXNativeTarget "VolteMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A6B0E2C1DCF9BBC00ED5E0A /* Debug */,
+				7A6B0E2D1DCF9BBC00ED5E0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7A6B0E3C1DCF9BCE00ED5E0A /* Build configuration list for PBXNativeTarget "VolteCore-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A6B0E3D1DCF9BCE00ED5E0A /* Debug */,
+				7A6B0E3E1DCF9BCE00ED5E0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AACD2221DC037A800AC1249 /* Debug */,
