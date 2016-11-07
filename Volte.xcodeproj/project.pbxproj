@@ -7,18 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00FCE200D6931F0ADBA51CAC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5928BB7B739DB6804DA652D3 /* CoreText.framework */; };
-		19776F0B187CC6DBB0D23204 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */; };
 		5E76BA40086843107AB34376 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */; };
-		7A13913E1DC1619000B2DBD7 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; };
-		7A13913F1DC1619000B2DBD7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; };
 		7A1391401DC161C800B2DBD7 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD051DAED0ED000D0D79 /* AccountController.swift */; };
 		7A1391411DC161E200B2DBD7 /* TimelineDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */; };
 		7A1391421DC161F300B2DBD7 /* testers.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A1660A81DAFF29100AEBC50 /* testers.json */; };
-		7A1391431DC1623300B2DBD7 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
-		7A1391441DC1623300B2DBD7 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; };
-		7A1391451DC1623800B2DBD7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; };
-		7A1391461DC1624D00B2DBD7 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; };
 		7A1660A31DAEDC0500AEBC50 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */; };
 		7A1660A51DAF125800AEBC50 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */; };
 		7A32BB341DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */; };
@@ -53,25 +45,20 @@
 		7A7DE3B71DB8420200D71FD8 /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE3B61DB8420200D71FD8 /* Localizations.swift */; };
 		7A7DE3B91DB8476F00D71FD8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3BB1DB8476F00D71FD8 /* LoginViewController.xib */; };
 		7A7DE3C11DB9105E00D71FD8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */; };
-		7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
-		7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8A7AF91DD00100004D83AD /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AF81DD00100004D83AD /* AssetsLibrary.framework */; };
+		7A8A7AFB1DD00104004D83AD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AFA1DD00104004D83AD /* CoreText.framework */; };
+		7A8A7AFD1DD0010C004D83AD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AFC1DD0010C004D83AD /* CoreTelephony.framework */; };
+		7A8A7AFF1DD00110004D83AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AFE1DD00110004D83AD /* SystemConfiguration.framework */; };
+		7A8A7B011DD0011B004D83AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B001DD0011B004D83AD /* QuartzCore.framework */; };
+		7A8A7B031DD00122004D83AD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B021DD00122004D83AD /* CoreMedia.framework */; };
+		7A8A7B051DD00126004D83AD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B041DD00126004D83AD /* CoreVideo.framework */; };
+		7A8A7B061DD0017A004D83AD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AF51DD00079004D83AD /* AVFoundation.framework */; };
 		7A9A95881DCE8C1300993386 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A95871DCE8C1300993386 /* Keyboard.swift */; };
 		7AACD21D1DC037A800AC1249 /* VolteCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AACD21B1DC037A800AC1249 /* VolteCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AACD2201DC037A800AC1249 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
 		7AACD2211DC037A800AC1249 /* VolteCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AACD2261DC0382900AC1249 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACD2251DC0382900AC1249 /* MessageComposer.swift */; };
-		7AACD2401DC1609A00AC1249 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
-		7AB44C061DAD7A7D0082AE6B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; };
-		7AB44C071DAD7A7D0082AE6B /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AB44C081DAD7A7D0082AE6B /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; };
-		7AB44C091DAD7A7D0082AE6B /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AB44C0A1DAD7A7D0082AE6B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; };
-		7AB44C0B1DAD7A7D0082AE6B /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AB44C0C1DAD7A7D0082AE6B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; };
-		7AB44C0D1DAD7A7D0082AE6B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7AB44C0F1DAE70E20082AE6B /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; };
-		7AB44C101DAE70E20082AE6B /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */; };
 		7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */; };
 		7ABF0E8B1DC40AB60041CBB2 /* LinkedData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */; };
@@ -81,30 +68,14 @@
 		7AD9ECDA1DC172CB001FAAF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */; };
 		7AD9ECDD1DC172CB001FAAF7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD9ECDB1DC172CB001FAAF7 /* MainInterface.storyboard */; };
 		7AD9ECE11DC172CB001FAAF7 /* Sharing.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7AD9ECE71DC17525001FAAF7 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */; };
-		7AD9ECE81DC17525001FAAF7 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */; };
-		7AD9ECE91DC17525001FAAF7 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */; };
-		7AD9ECEA1DC17525001FAAF7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C041DAD7A7C0082AE6B /* Result.framework */; };
-		7AD9ECEB1DC17525001FAAF7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */; };
-		7AD9ECEC1DC17525001FAAF7 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
 		7AD9ECEF1DC1752C001FAAF7 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
-		7AD9ECF11DC17E5D001FAAF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD9ECF01DC17E5D001FAAF7 /* Security.framework */; };
-		7AD9ECF21DC17E69001FAAF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD9ECF01DC17E5D001FAAF7 /* Security.framework */; };
-		7ADAC3505C800341EF4A34FC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C8D051CCF7528339401977 /* CoreVideo.framework */; };
 		7ADFD5B51DAD1E7E0070C5BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */; };
 		7ADFD5B71DAD1E7E0070C5BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */; };
 		7ADFD5BC1DAD1E7E0070C5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */; };
-		7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; };
-		7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADFD5C61DAD22130070C5BE /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AE2D8981DC18E8B009BA8BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */; };
 		7AE2D89D1DC18FC1009BA8BA /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */; };
 		7AFECF061DB28CBA001A0E6B /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */; };
 		7AFECF071DB28CBA001A0E6B /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */; };
-		B45FE76137DA7D98DA407945 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F9D51215CAF110225FDBED0 /* QuartzCore.framework */; };
-		BCE642410C839D1CEF2F1AA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */; };
-		C6175B922EB7411D41DE531F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */; };
-		CFF0AFC6186EEC857A94A419 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */; };
-		FE40AD08426EDD8A3D4B0CD4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A97DD264B994C0F167607E /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,14 +137,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7ADFD5C81DAD22130070C5BE /* MailCore.framework in Embed Frameworks */,
-				7A80E2041DB1488900E22CD9 /* RGLockboxIOS.framework in Embed Frameworks */,
 				7AACD2211DC037A800AC1249 /* VolteCore.framework in Embed Frameworks */,
-				7AB44C071DAD7A7D0082AE6B /* ReactiveCocoa.framework in Embed Frameworks */,
-				7AB44C091DAD7A7D0082AE6B /* ReactiveSwift.framework in Embed Frameworks */,
-				7AB44C101DAE70E20082AE6B /* CryptoSwift.framework in Embed Frameworks */,
-				7AB44C0B1DAD7A7D0082AE6B /* Result.framework in Embed Frameworks */,
-				7AB44C0D1DAD7A7D0082AE6B /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,11 +145,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		37A97DD264B994C0F167607E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		53C8D051CCF7528339401977 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		5928BB7B739DB6804DA652D3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7A1660A21DAEDC0500AEBC50 /* TimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 		7A1660A81DAFF29100AEBC50 /* testers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testers.json; sourceTree = "<group>"; };
@@ -216,7 +175,14 @@
 		7A7DE3BA1DB8476F00D71FD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoginViewController.xib; sourceTree = "<group>"; };
 		7A7DE3BC1DB8477200D71FD8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LoginViewController.xib; sourceTree = "<group>"; };
 		7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
+		7A8A7AF51DD00079004D83AD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7A8A7AF81DD00100004D83AD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7A8A7AFA1DD00104004D83AD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		7A8A7AFC1DD0010C004D83AD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7A8A7AFE1DD00110004D83AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7A8A7B001DD0011B004D83AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7A8A7B021DD00122004D83AD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7A8A7B041DD00126004D83AD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7A9A95871DCE8C1300993386 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7AACD2191DC037A800AC1249 /* VolteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VolteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AACD21B1DC037A800AC1249 /* VolteCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolteCore.h; sourceTree = "<group>"; };
@@ -224,11 +190,6 @@
 		7AACD2251DC0382900AC1249 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDownloader.swift; sourceTree = "<group>"; };
-		7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
-		7AB44C041DAD7A7C0082AE6B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineMessageCell.swift; sourceTree = "<group>"; };
 		7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7ABDDD051DAED0ED000D0D79 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
@@ -245,13 +206,11 @@
 		7AD9ECDE1DC172CB001FAAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD9ECE51DC1737E001FAAF7 /* Sharing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sharing.entitlements; sourceTree = "<group>"; };
 		7AD9ECE61DC1738D001FAAF7 /* Volte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Volte.entitlements; sourceTree = "<group>"; };
-		7AD9ECF01DC17E5D001FAAF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7ADFD5B11DAD1E7E0070C5BE /* Volte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADFD5B41DAD1E7E0070C5BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ADFD5B61DAD1E7E0070C5BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ADFD5C01DAD1E7E0070C5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ADFD5C61DAD22130070C5BE /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
 		7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volte-Bridging-Header.h"; sourceTree = "<group>"; };
 		7AE2D8991DC18E8B009BA8BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7AE2D89B1DC18F3A009BA8BA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -259,9 +218,6 @@
 		7AFECF031DB28CBA001A0E6B /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
 		7AFECF041DB28CBA001A0E6B /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
 		7AFECF051DB28CBA001A0E6B /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
-		7F9D51215CAF110225FDBED0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,14 +240,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD9ECF21DC17E69001FAAF7 /* Security.framework in Frameworks */,
-				7AACD2401DC1609A00AC1249 /* MailCore.framework in Frameworks */,
-				7A13913E1DC1619000B2DBD7 /* ReactiveSwift.framework in Frameworks */,
-				7A1391461DC1624D00B2DBD7 /* ReactiveCocoa.framework in Frameworks */,
-				7A1391451DC1623800B2DBD7 /* SwiftyJSON.framework in Frameworks */,
-				7A1391431DC1623300B2DBD7 /* RGLockboxIOS.framework in Frameworks */,
-				7A1391441DC1623300B2DBD7 /* CryptoSwift.framework in Frameworks */,
-				7A13913F1DC1619000B2DBD7 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +263,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD9ECEF1DC1752C001FAAF7 /* VolteCore.framework in Frameworks */,
-				7AD9ECE71DC17525001FAAF7 /* RGLockboxIOS.framework in Frameworks */,
-				7AD9ECE81DC17525001FAAF7 /* ReactiveCocoa.framework in Frameworks */,
-				7AD9ECE91DC17525001FAAF7 /* ReactiveSwift.framework in Frameworks */,
-				7AD9ECEA1DC17525001FAAF7 /* Result.framework in Frameworks */,
-				7AD9ECEB1DC17525001FAAF7 /* SwiftyJSON.framework in Frameworks */,
-				7AD9ECEC1DC17525001FAAF7 /* MailCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,24 +270,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD9ECF11DC17E5D001FAAF7 /* Security.framework in Frameworks */,
-				7ADFD5C71DAD22130070C5BE /* MailCore.framework in Frameworks */,
-				7A80E2031DB1488900E22CD9 /* RGLockboxIOS.framework in Frameworks */,
-				7AB44C061DAD7A7D0082AE6B /* ReactiveCocoa.framework in Frameworks */,
-				7AB44C081DAD7A7D0082AE6B /* ReactiveSwift.framework in Frameworks */,
-				7AB44C0F1DAE70E20082AE6B /* CryptoSwift.framework in Frameworks */,
-				7AB44C0A1DAD7A7D0082AE6B /* Result.framework in Frameworks */,
-				7AB44C0C1DAD7A7D0082AE6B /* SwiftyJSON.framework in Frameworks */,
+				7A8A7B061DD0017A004D83AD /* AVFoundation.framework in Frameworks */,
+				7A8A7B051DD00126004D83AD /* CoreVideo.framework in Frameworks */,
+				7A8A7B031DD00122004D83AD /* CoreMedia.framework in Frameworks */,
+				7A8A7B011DD0011B004D83AD /* QuartzCore.framework in Frameworks */,
+				7A8A7AFF1DD00110004D83AD /* SystemConfiguration.framework in Frameworks */,
+				7A8A7AFD1DD0010C004D83AD /* CoreTelephony.framework in Frameworks */,
+				7A8A7AFB1DD00104004D83AD /* CoreText.framework in Frameworks */,
+				7A8A7AF91DD00100004D83AD /* AssetsLibrary.framework in Frameworks */,
 				5E76BA40086843107AB34376 /* BuddyBuildSDK.framework in Frameworks */,
-				C6175B922EB7411D41DE531F /* AssetsLibrary.framework in Frameworks */,
-				00FCE200D6931F0ADBA51CAC /* CoreText.framework in Frameworks */,
 				7AACD2201DC037A800AC1249 /* VolteCore.framework in Frameworks */,
-				FE40AD08426EDD8A3D4B0CD4 /* CoreTelephony.framework in Frameworks */,
-				CFF0AFC6186EEC857A94A419 /* SystemConfiguration.framework in Frameworks */,
-				B45FE76137DA7D98DA407945 /* QuartzCore.framework in Frameworks */,
-				BCE642410C839D1CEF2F1AA7 /* AVFoundation.framework in Frameworks */,
-				19776F0B187CC6DBB0D23204 /* CoreMedia.framework in Frameworks */,
-				7ADAC3505C800341EF4A34FC /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,13 +326,13 @@
 		7A32BB4B1DCAA30A00F1F5A2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */,
-				7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */,
-				7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */,
 				7A32BB411DC969AF00F1F5A2 /* Attachment+CoreDataClass.swift */,
 				7A32BB421DC969AF00F1F5A2 /* Attachment+CoreDataProperties.swift */,
+				7A32BB3F1DC969AF00F1F5A2 /* Message+CoreDataClass.swift */,
+				7A32BB401DC969AF00F1F5A2 /* Message+CoreDataProperties.swift */,
+				7A32BB321DC95FCD00F1F5A2 /* VolteStorage.xcdatamodeld */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7A32BB4C1DCAA31B00F1F5A2 /* Extensions */ = {
@@ -407,7 +341,7 @@
 				7A32BB471DCA908100F1F5A2 /* ReactiveCoreData.swift */,
 				7A32BB4F1DCAA42B00F1F5A2 /* ReactiveMailCore.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7A32BB4D1DCAA32E00F1F5A2 /* Controllers */ = {
@@ -417,27 +351,27 @@
 				7AACD2251DC0382900AC1249 /* MessageComposer.swift */,
 				7A32BB351DC960D000F1F5A2 /* StorageController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7A32BB4E1DCAA34A00F1F5A2 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */,
 				7A32BB491DCA9DB900F1F5A2 /* TimelineContentProvider.swift */,
+				7AB44C001DAD78CC0082AE6B /* TimelineDownloader.swift */,
 			);
-			name = Timeline;
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		7A6B0E201DCF9BBC00ED5E0A /* VolteMac */ = {
 			isa = PBXGroup;
 			children = (
 				7A6B0E211DCF9BBC00ED5E0A /* AppDelegate.swift */,
-				7A6B0E231DCF9BBC00ED5E0A /* ViewController.swift */,
 				7A6B0E251DCF9BBC00ED5E0A /* Assets.xcassets */,
-				7A6B0E271DCF9BBC00ED5E0A /* Main.storyboard */,
 				7A6B0E2A1DCF9BBC00ED5E0A /* Info.plist */,
+				7A6B0E271DCF9BBC00ED5E0A /* Main.storyboard */,
 				7A6B0E501DCFAB4E00ED5E0A /* Potato.m */,
+				7A6B0E231DCF9BBC00ED5E0A /* ViewController.swift */,
 				7A6B0E4F1DCFAB4E00ED5E0A /* VolteMac-Bridging-Header.h */,
 			);
 			path = VolteMac;
@@ -446,8 +380,8 @@
 		7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */ = {
 			isa = PBXGroup;
 			children = (
-				7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */,
 				7A6B0E361DCF9BCE00ED5E0A /* Info.plist */,
+				7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */,
 			);
 			path = "VolteCore-Mac";
 			sourceTree = "<group>";
@@ -455,47 +389,45 @@
 		7A6B0E521DCFB52400ED5E0A /* IOS */ = {
 			isa = PBXGroup;
 			children = (
-				7AD9ECF01DC17E5D001FAAF7 /* Security.framework */,
+				7A8A7B041DD00126004D83AD /* CoreVideo.framework */,
+				7A8A7B021DD00122004D83AD /* CoreMedia.framework */,
+				7A8A7B001DD0011B004D83AD /* QuartzCore.framework */,
+				7A8A7AFE1DD00110004D83AD /* SystemConfiguration.framework */,
+				7A8A7AFC1DD0010C004D83AD /* CoreTelephony.framework */,
+				7A8A7AFA1DD00104004D83AD /* CoreText.framework */,
+				7A8A7AF81DD00100004D83AD /* AssetsLibrary.framework */,
+				7A8A7AF51DD00079004D83AD /* AVFoundation.framework */,
 				EDD1179F82EAAB515E2DD540 /* BuddyBuildSDK.framework */,
-				9DA933E0D590AD4A9F41A79E /* AssetsLibrary.framework */,
-				5928BB7B739DB6804DA652D3 /* CoreText.framework */,
-				37A97DD264B994C0F167607E /* CoreTelephony.framework */,
-				28092AB9CBA2796F233A97FF /* SystemConfiguration.framework */,
-				7F9D51215CAF110225FDBED0 /* QuartzCore.framework */,
-				5FC9C7FAEC2B1D05F69E46AB /* AVFoundation.framework */,
-				8B7B7017AB4F449FFB99FBA4 /* CoreMedia.framework */,
-				53C8D051CCF7528339401977 /* CoreVideo.framework */,
-				7A80E2021DB1488900E22CD9 /* RGLockboxIOS.framework */,
-				7AB44C0E1DAE70E20082AE6B /* CryptoSwift.framework */,
-				7AB44C021DAD7A7C0082AE6B /* ReactiveCocoa.framework */,
-				7AB44C031DAD7A7C0082AE6B /* ReactiveSwift.framework */,
-				7AB44C041DAD7A7C0082AE6B /* Result.framework */,
-				7AB44C051DAD7A7D0082AE6B /* SwiftyJSON.framework */,
-				7ADFD5C61DAD22130070C5BE /* MailCore.framework */,
 			);
 			name = IOS;
+			sourceTree = "<group>";
+		};
+		7A6B0E531DCFB93B00ED5E0A /* VolteCore */ = {
+			isa = PBXGroup;
+			children = (
+				7A32BB4D1DCAA32E00F1F5A2 /* Controllers */,
+				7A32BB4C1DCAA31B00F1F5A2 /* Extensions */,
+				7A32BB4B1DCAA30A00F1F5A2 /* Models */,
+				7A32BB4E1DCAA34A00F1F5A2 /* Timeline */,
+				7A1660A81DAFF29100AEBC50 /* testers.json */,
+			);
+			path = VolteCore;
 			sourceTree = "<group>";
 		};
 		7AACD21A1DC037A800AC1249 /* VolteCore-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7A32BB4B1DCAA30A00F1F5A2 /* Models */,
-				7A32BB4D1DCAA32E00F1F5A2 /* Controllers */,
 				7AACD21C1DC037A800AC1249 /* Info.plist */,
-				7A32BB4E1DCAA34A00F1F5A2 /* Timeline */,
 				7AACD21B1DC037A800AC1249 /* VolteCore.h */,
-				7A1660A81DAFF29100AEBC50 /* testers.json */,
-				7A32BB4C1DCAA31B00F1F5A2 /* Extensions */,
 			);
-			name = "VolteCore-iOS";
-			path = VolteCore;
+			path = "VolteCore-iOS";
 			sourceTree = "<group>";
 		};
 		7ABF0E831DC40AB60041CBB2 /* LinkedData */ = {
 			isa = PBXGroup;
 			children = (
-				7ABF0E841DC40AB60041CBB2 /* LinkedData.h */,
 				7ABF0E851DC40AB60041CBB2 /* Info.plist */,
+				7ABF0E841DC40AB60041CBB2 /* LinkedData.h */,
 				7ABF0E991DC431BD0041CBB2 /* Node.swift */,
 			);
 			path = LinkedData;
@@ -504,8 +436,8 @@
 		7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */ = {
 			isa = PBXGroup;
 			children = (
-				7ABF0E8F1DC40AB60041CBB2 /* LinkedDataTests.swift */,
 				7ABF0E911DC40AB60041CBB2 /* Info.plist */,
+				7ABF0E8F1DC40AB60041CBB2 /* LinkedDataTests.swift */,
 			);
 			path = LinkedDataTests;
 			sourceTree = "<group>";
@@ -513,12 +445,12 @@
 		7AD9ECD81DC172CB001FAAF7 /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
-				7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */,
-				7AD9ECE51DC1737E001FAAF7 /* Sharing.entitlements */,
-				7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */,
-				7AD9ECDB1DC172CB001FAAF7 /* MainInterface.storyboard */,
 				7AD9ECDE1DC172CB001FAAF7 /* Info.plist */,
 				7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */,
+				7AE2D89C1DC18FC1009BA8BA /* Localizations.swift */,
+				7AD9ECDB1DC172CB001FAAF7 /* MainInterface.storyboard */,
+				7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */,
+				7AD9ECE51DC1737E001FAAF7 /* Sharing.entitlements */,
 			);
 			path = Sharing;
 			sourceTree = "<group>";
@@ -526,15 +458,16 @@
 		7ADFD5A81DAD1E7E0070C5BE = {
 			isa = PBXGroup;
 			children = (
-				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
+				7A1391471DC1626E00B2DBD7 /* Frameworks */,
 				7ABF0E831DC40AB60041CBB2 /* LinkedData */,
 				7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */,
-				7A6B0E201DCF9BBC00ED5E0A /* VolteMac */,
-				7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */,
-				7A1391471DC1626E00B2DBD7 /* Frameworks */,
 				7ADFD5B21DAD1E7E0070C5BE /* Products */,
+				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
+				7A6B0E531DCFB93B00ED5E0A /* VolteCore */,
+				7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */,
 				7AACD21A1DC037A800AC1249 /* VolteCore-iOS */,
+				7A6B0E201DCF9BBC00ED5E0A /* VolteMac */,
 			);
 			sourceTree = "<group>";
 		};
@@ -555,7 +488,6 @@
 		7ADFD5B31DAD1E7E0070C5BE /* Volte */ = {
 			isa = PBXGroup;
 			children = (
-				7AD9ECE61DC1738D001FAAF7 /* Volte.entitlements */,
 				7A1660AA1DB05A4300AEBC50 /* Externals */,
 				7A1660A01DAEDA6100AEBC50 /* Login */,
 				7A1660A11DAEDA7200AEBC50 /* Timeline */,
@@ -563,13 +495,14 @@
 				7ADFD5BB1DAD1E7E0070C5BE /* Assets.xcassets */,
 				7A1660A41DAF125800AEBC50 /* ComposeMessageViewController.swift */,
 				7ADFD5C01DAD1E7E0070C5BE /* Info.plist */,
+				7A9A95871DCE8C1300993386 /* Keyboard.swift */,
 				7A7DE3C01DB9105E00D71FD8 /* Launch Screen.storyboard */,
 				7A754C111DB7D19100376570 /* LoadingViewController.swift */,
 				7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */,
 				7A7DE3B61DB8420200D71FD8 /* Localizations.swift */,
 				7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */,
 				7ADFD5CA1DAD22B10070C5BE /* Volte-Bridging-Header.h */,
-				7A9A95871DCE8C1300993386 /* Keyboard.swift */,
+				7AD9ECE61DC1738D001FAAF7 /* Volte.entitlements */,
 			);
 			path = Volte;
 			sourceTree = "<group>";
@@ -1029,6 +962,7 @@
 				7A6B0E281DCF9BBC00ED5E0A /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7A7DE3B41DB8404D00D71FD8 /* Localizable.strings */ = {
@@ -1057,6 +991,7 @@
 				7AD9ECDC1DC172CB001FAAF7 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7AE2D89A1DC18E8B009BA8BA /* Localizable.strings */ = {
@@ -1066,6 +1001,7 @@
 				7AE2D89B1DC18F3A009BA8BA /* fr */,
 			);
 			name = Localizable.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1178,7 +1114,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = VolteCore/Info.plist;
+				INFOPLIST_FILE = "VolteCore-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1209,7 +1145,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = VolteCore/Info.plist;
+				INFOPLIST_FILE = "VolteCore-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1357,6 +1293,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1408,6 +1345,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1492,6 +1430,7 @@
 				7A6B0E2D1DCF9BBC00ED5E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A6B0E3C1DCF9BCE00ED5E0A /* Build configuration list for PBXNativeTarget "VolteCore-Mac" */ = {
 			isa = XCConfigurationList;
@@ -1500,6 +1439,7 @@
 				7A6B0E3E1DCF9BCE00ED5E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore-iOS" */ = {
 			isa = XCConfigurationList;
