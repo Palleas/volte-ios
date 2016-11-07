@@ -8,7 +8,13 @@
 
 import Foundation
 import ReactiveSwift
+
+#if os(iOS) || os(tvOS)
 import RGLockboxIOS
+#else
+import RGLockboxOSX
+#endif
+
 
 public struct Account {
     let username: String

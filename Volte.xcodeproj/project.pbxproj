@@ -53,6 +53,14 @@
 		7A8A7B031DD00122004D83AD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B021DD00122004D83AD /* CoreMedia.framework */; };
 		7A8A7B051DD00126004D83AD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B041DD00126004D83AD /* CoreVideo.framework */; };
 		7A8A7B061DD0017A004D83AD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7AF51DD00079004D83AD /* AVFoundation.framework */; };
+		7A8A7B0E1DD00353004D83AD /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B071DD00353004D83AD /* CryptoSwift.framework */; };
+		7A8A7B0F1DD00353004D83AD /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B081DD00353004D83AD /* MailCore.framework */; };
+		7A8A7B101DD00353004D83AD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B091DD00353004D83AD /* ReactiveCocoa.framework */; };
+		7A8A7B111DD00353004D83AD /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0A1DD00353004D83AD /* ReactiveSwift.framework */; };
+		7A8A7B121DD00353004D83AD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0B1DD00353004D83AD /* Result.framework */; };
+		7A8A7B131DD00353004D83AD /* RGLockboxOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */; };
+		7A8A7B141DD00353004D83AD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */; };
+		7A8A7B161DD0056B004D83AD /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A7B151DD0056B004D83AD /* Legacy.swift */; };
 		7A9A95881DCE8C1300993386 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A95871DCE8C1300993386 /* Keyboard.swift */; };
 		7AACD21D1DC037A800AC1249 /* VolteCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AACD21B1DC037A800AC1249 /* VolteCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AACD2201DC037A800AC1249 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
@@ -183,6 +191,14 @@
 		7A8A7B001DD0011B004D83AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A8A7B021DD00122004D83AD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7A8A7B041DD00126004D83AD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7A8A7B071DD00353004D83AD /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
+		7A8A7B081DD00353004D83AD /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/Mac/MailCore.framework; sourceTree = "<group>"; };
+		7A8A7B091DD00353004D83AD /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		7A8A7B0A1DD00353004D83AD /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/Mac/ReactiveSwift.framework; sourceTree = "<group>"; };
+		7A8A7B0B1DD00353004D83AD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxOSX.framework; path = Carthage/Build/Mac/RGLockboxOSX.framework; sourceTree = "<group>"; };
+		7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7A8A7B151DD0056B004D83AD /* Legacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legacy.swift; sourceTree = "<group>"; };
 		7A9A95871DCE8C1300993386 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7AACD2191DC037A800AC1249 /* VolteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VolteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AACD21B1DC037A800AC1249 /* VolteCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolteCore.h; sourceTree = "<group>"; };
@@ -233,6 +249,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8A7B0E1DD00353004D83AD /* CryptoSwift.framework in Frameworks */,
+				7A8A7B0F1DD00353004D83AD /* MailCore.framework in Frameworks */,
+				7A8A7B101DD00353004D83AD /* ReactiveCocoa.framework in Frameworks */,
+				7A8A7B111DD00353004D83AD /* ReactiveSwift.framework in Frameworks */,
+				7A8A7B121DD00353004D83AD /* Result.framework in Frameworks */,
+				7A8A7B131DD00353004D83AD /* RGLockboxOSX.framework in Frameworks */,
+				7A8A7B141DD00353004D83AD /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +312,13 @@
 		7A1391471DC1626E00B2DBD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A8A7B071DD00353004D83AD /* CryptoSwift.framework */,
+				7A8A7B081DD00353004D83AD /* MailCore.framework */,
+				7A8A7B091DD00353004D83AD /* ReactiveCocoa.framework */,
+				7A8A7B0A1DD00353004D83AD /* ReactiveSwift.framework */,
+				7A8A7B0B1DD00353004D83AD /* Result.framework */,
+				7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */,
+				7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */,
 				7A6B0E521DCFB52400ED5E0A /* IOS */,
 			);
 			name = Frameworks;
@@ -382,6 +412,7 @@
 			children = (
 				7A6B0E361DCF9BCE00ED5E0A /* Info.plist */,
 				7A6B0E351DCF9BCE00ED5E0A /* VolteCore-Mac.h */,
+				7A8A7B151DD0056B004D83AD /* Legacy.swift */,
 			);
 			path = "VolteCore-Mac";
 			sourceTree = "<group>";
@@ -854,6 +885,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6B0E441DCF9C5C00ED5E0A /* Attachment+CoreDataProperties.swift in Sources */,
+				7A8A7B161DD0056B004D83AD /* Legacy.swift in Sources */,
 				7A6B0E401DCF9C5600ED5E0A /* VolteStorage.xcdatamodeld in Sources */,
 				7A6B0E481DCF9C6700ED5E0A /* TimelineDownloader.swift in Sources */,
 				7A6B0E461DCF9C6200ED5E0A /* MessageComposer.swift in Sources */,
@@ -1057,6 +1089,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "VolteCore-Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1083,6 +1119,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "VolteCore-Mac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
