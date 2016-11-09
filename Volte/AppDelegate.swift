@@ -22,12 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
 
-        storageController.load().startWithCompleted {}
+        storageController.load().startWithResult { result in
+            print("Result = \(result)")
+        }
 
         downloadDisposable = accountController.account.producer
             .skipNil()
             .flatMap(.latest) { (account) -> SignalProducer<[Message], TimelineError> in
-                print("Scheduling auto refresh")
                 return timer(interval: 5, on: QueueScheduler())
                     .promoteErrors(TimelineError.self)
                     .flatMap(.concat, transform: { _ -> SignalProducer<[Message], TimelineError> in
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
             }
             .startWithResult { result in
+                print("Fetching result = \(result)")
                 self.storageController.refresh()
         }
 
@@ -49,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        try! self.storageController.container.viewContext.save()
+        try! self.storageController.managedObjectContext.save()
     }
 
 }

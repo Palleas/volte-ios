@@ -93,7 +93,6 @@ public class TimelineDownloader {
                 message.content = payload["text"].string
                 message.postedAt = date as NSDate?
                 message.uid = Int32(uid)
-                print("Creating message \(uid) - \(message.content)")
 
                 // Extract attachments
                 let attachments: [MCOAttachment] = parts.filter { $0.mimeType == "image/jpg" }
@@ -117,7 +116,7 @@ public class TimelineDownloader {
 
     public func fetchItems() -> SignalProducer<[Message], TimelineError> {
         print("Fetching all messages")
-        let context = self.storageController.container.newBackgroundContext()
+        let context = self.storageController.managedObjectContext // newBackgroundContext()
 
         return self.storageController
             .lastFetchedUID()
@@ -140,7 +139,9 @@ public class TimelineDownloader {
                 }
 
                 return context.reactive.save()
-                    .flatMapError { _ in SignalProducer<(),TimelineError>(error: .internalError) }
+                    .flatMap(.latest) { self.storageController.managedObjectContext.reactive.save() }
+                    .flatMap(.latest) { self.storageController.privateObjectContext.reactive.save() }
+                    .flatMapError { _ in SignalProducer<() ,TimelineError>(error: .internalError) }
                     .flatMap(.latest, transform: { (_) -> SignalProducer<[Message], TimelineError> in
                         print("Saved background context and returning \(messages.count) messages")
                         return SignalProducer<[Message], TimelineError>(value: messages)

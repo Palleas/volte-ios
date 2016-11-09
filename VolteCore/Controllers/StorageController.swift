@@ -25,24 +25,49 @@ public class StorageController {
         case initializationError
     }
 
-    public let container: NSPersistentContainer
+    public let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    public let privateObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
 
     public let messages = MutableProperty<[Message]>([])
 
     public init() {
         let bundle = Bundle(for: type(of: self))
         let mom = NSManagedObjectModel.mergedModel(from: [bundle])!
-        container = VoltePersistentContainer(name: "Volte", managedObjectModel: mom)
+
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mom)
+        privateObjectContext.persistentStoreCoordinator = coordinator
+
+        managedObjectContext.parent = privateObjectContext
+
+        messages.producer.startWithValues {
+            print("Messages = \($0)")
+        }
+
     }
 
     public func load() -> SignalProducer<(), StorageError> {
         return SignalProducer { sink, _ in
-            self.container.loadPersistentStores { (description, error) in
-                if let _ = error {
-                    sink.send(error: .initializationError)
-                } else {
-                    sink.sendCompleted()
-                }
+            guard let psc = self.privateObjectContext.persistentStoreCoordinator else {
+                sink.send(error: .initializationError)
+                return
+            }
+
+            var options = [AnyHashable: Any]()
+            options[NSMigratePersistentStoresAutomaticallyOption] = true
+            options[NSInferMappingModelAutomaticallyOption] = true
+            options[NSSQLitePragmasOption] = ["journal_mode": "DELETE"]
+
+            let fileManager = FileManager.default
+            guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last else { return }
+            let storeURL = documentsURL.appendingPathComponent("DataModel.sqlite")
+            print("store URL is \(storeURL)")
+
+            do {
+                try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
+                sink.send(value: ())
+                sink.sendCompleted()
+            } catch {
+                sink.send(error: .initializationError)
             }
         }
     }
@@ -53,9 +78,8 @@ public class StorageController {
             request.sortDescriptors = [NSSortDescriptor(key: "uid", ascending: false)]
             request.fetchLimit = 1
 
-            let uid = try! self.container.viewContext.fetch(request).first?.uid ?? 1
-            print("UID = \(uid)")
-            
+            let uid = try! self.managedObjectContext.fetch(request).first?.uid ?? 1
+
             sink.send(value: uid)
             sink.sendCompleted()
         }
@@ -66,10 +90,20 @@ public class StorageController {
         let request = NSFetchRequest<Message>(entityName: Message.entity().name!)
         request.sortDescriptors = [NSSortDescriptor(key: "postedAt", ascending: false)]
 
-        let producer = self.container.viewContext.reactive.fetch(request)
-            .flatMapError { _ in return SignalProducer<[Message], NoError>(values: []) }
+        let producer = self.managedObjectContext.reactive.fetch(request)
+            .flatMapError { error -> SignalProducer<[Message], NoError> in
+                print("Error during refresh \(error)")
+                return SignalProducer<[Message], NoError>(values: [])
+            }
 
         messages <~ producer
+    }
+
+    public func newBackgroundContext() -> NSManagedObjectContext {
+        let spawn = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        spawn.parent = managedObjectContext
+
+        return spawn
     }
 
 }
