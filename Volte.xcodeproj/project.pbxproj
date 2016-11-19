@@ -69,10 +69,6 @@
 		7AB44BFF1DAD69F10082AE6B /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44BFE1DAD69F10082AE6B /* TimelineViewController.swift */; };
 		7AB44C181DAE9A000082AE6B /* TimelineMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */; };
 		7ABDDD041DAED0BC000D0D79 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */; };
-		7ABF0E8B1DC40AB60041CBB2 /* LinkedData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */; };
-		7ABF0E901DC40AB60041CBB2 /* LinkedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF0E8F1DC40AB60041CBB2 /* LinkedDataTests.swift */; };
-		7ABF0E921DC40AB60041CBB2 /* LinkedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ABF0E841DC40AB60041CBB2 /* LinkedData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7ABF0E9A1DC431BD0041CBB2 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABF0E991DC431BD0041CBB2 /* Node.swift */; };
 		7AD9ECDA1DC172CB001FAAF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */; };
 		7AD9ECDD1DC172CB001FAAF7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD9ECDB1DC172CB001FAAF7 /* MainInterface.storyboard */; };
 		7AD9ECE11DC172CB001FAAF7 /* Sharing.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -93,13 +89,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7AACD2181DC037A800AC1249;
 			remoteInfo = VolteCore;
-		};
-		7ABF0E8C1DC40AB60041CBB2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7ADFD5A91DAD1E7E0070C5BE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7ABF0E811DC40AB60041CBB2;
-			remoteInfo = LinkedData;
 		};
 		7AD9ECDF1DC172CB001FAAF7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -209,13 +198,6 @@
 		7AB44C171DAE9A000082AE6B /* TimelineMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineMessageCell.swift; sourceTree = "<group>"; };
 		7ABDDD031DAED0BC000D0D79 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7ABDDD051DAED0ED000D0D79 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
-		7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LinkedData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ABF0E841DC40AB60041CBB2 /* LinkedData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedData.h; sourceTree = "<group>"; };
-		7ABF0E851DC40AB60041CBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ABF0E8A1DC40AB60041CBB2 /* LinkedDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinkedDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ABF0E8F1DC40AB60041CBB2 /* LinkedDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedDataTests.swift; sourceTree = "<group>"; };
-		7ABF0E911DC40AB60041CBB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ABF0E991DC431BD0041CBB2 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Sharing.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD9ECD91DC172CB001FAAF7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		7AD9ECDC1DC172CB001FAAF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -263,21 +245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E7E1DC40AB60041CBB2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E871DC40AB60041CBB2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ABF0E8B1DC40AB60041CBB2 /* LinkedData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,25 +421,6 @@
 			path = "VolteCore-iOS";
 			sourceTree = "<group>";
 		};
-		7ABF0E831DC40AB60041CBB2 /* LinkedData */ = {
-			isa = PBXGroup;
-			children = (
-				7ABF0E851DC40AB60041CBB2 /* Info.plist */,
-				7ABF0E841DC40AB60041CBB2 /* LinkedData.h */,
-				7ABF0E991DC431BD0041CBB2 /* Node.swift */,
-			);
-			path = LinkedData;
-			sourceTree = "<group>";
-		};
-		7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */ = {
-			isa = PBXGroup;
-			children = (
-				7ABF0E911DC40AB60041CBB2 /* Info.plist */,
-				7ABF0E8F1DC40AB60041CBB2 /* LinkedDataTests.swift */,
-			);
-			path = LinkedDataTests;
-			sourceTree = "<group>";
-		};
 		7AD9ECD81DC172CB001FAAF7 /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,8 +438,6 @@
 			isa = PBXGroup;
 			children = (
 				7A1391471DC1626E00B2DBD7 /* Frameworks */,
-				7ABF0E831DC40AB60041CBB2 /* LinkedData */,
-				7ABF0E8E1DC40AB60041CBB2 /* LinkedDataTests */,
 				7ADFD5B21DAD1E7E0070C5BE /* Products */,
 				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
@@ -508,8 +454,6 @@
 				7ADFD5B11DAD1E7E0070C5BE /* Volte.app */,
 				7AACD2191DC037A800AC1249 /* VolteCore.framework */,
 				7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */,
-				7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */,
-				7ABF0E8A1DC40AB60041CBB2 /* LinkedDataTests.xctest */,
 				7A6B0E1F1DCF9BBB00ED5E0A /* VolteMac.app */,
 				7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */,
 			);
@@ -554,14 +498,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AACD21D1DC037A800AC1249 /* VolteCore.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E7F1DC40AB60041CBB2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ABF0E921DC40AB60041CBB2 /* LinkedData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,42 +557,6 @@
 			productName = VolteCore;
 			productReference = 7AACD2191DC037A800AC1249 /* VolteCore.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		7ABF0E811DC40AB60041CBB2 /* LinkedData */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7ABF0E971DC40AB60041CBB2 /* Build configuration list for PBXNativeTarget "LinkedData" */;
-			buildPhases = (
-				7ABF0E7D1DC40AB60041CBB2 /* Sources */,
-				7ABF0E7E1DC40AB60041CBB2 /* Frameworks */,
-				7ABF0E7F1DC40AB60041CBB2 /* Headers */,
-				7ABF0E801DC40AB60041CBB2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LinkedData;
-			productName = LinkedData;
-			productReference = 7ABF0E821DC40AB60041CBB2 /* LinkedData.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7ABF0E891DC40AB60041CBB2 /* LinkedDataTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7ABF0E981DC40AB60041CBB2 /* Build configuration list for PBXNativeTarget "LinkedDataTests" */;
-			buildPhases = (
-				7ABF0E861DC40AB60041CBB2 /* Sources */,
-				7ABF0E871DC40AB60041CBB2 /* Frameworks */,
-				7ABF0E881DC40AB60041CBB2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7ABF0E8D1DC40AB60041CBB2 /* PBXTargetDependency */,
-			);
-			name = LinkedDataTests;
-			productName = LinkedDataTests;
-			productReference = 7ABF0E8A1DC40AB60041CBB2 /* LinkedDataTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7AD9ECD61DC172CB001FAAF7 /* Sharing */ = {
 			isa = PBXNativeTarget;
@@ -725,17 +625,6 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
-					7ABF0E811DC40AB60041CBB2 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = MR4EU5S834;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-					};
-					7ABF0E891DC40AB60041CBB2 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = MR4EU5S834;
-						ProvisioningStyle = Automatic;
-					};
 					7AD9ECD61DC172CB001FAAF7 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8VS9JKFDZS;
@@ -776,8 +665,6 @@
 				7ADFD5B01DAD1E7E0070C5BE /* Volte */,
 				7AACD2181DC037A800AC1249 /* VolteCore-iOS */,
 				7AD9ECD61DC172CB001FAAF7 /* Sharing */,
-				7ABF0E811DC40AB60041CBB2 /* LinkedData */,
-				7ABF0E891DC40AB60041CBB2 /* LinkedDataTests */,
 				7A6B0E1E1DCF9BBB00ED5E0A /* VolteMac */,
 				7A6B0E321DCF9BCE00ED5E0A /* VolteCore-Mac */,
 			);
@@ -806,20 +693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1391421DC161F300B2DBD7 /* testers.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E801DC40AB60041CBB2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E881DC40AB60041CBB2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,22 +792,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7ABF0E7D1DC40AB60041CBB2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ABF0E9A1DC431BD0041CBB2 /* Node.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7ABF0E861DC40AB60041CBB2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7ABF0E901DC40AB60041CBB2 /* LinkedDataTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7AD9ECD31DC172CB001FAAF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -969,11 +826,6 @@
 			isa = PBXTargetDependency;
 			target = 7AACD2181DC037A800AC1249 /* VolteCore-iOS */;
 			targetProxy = 7AACD21E1DC037A800AC1249 /* PBXContainerItemProxy */;
-		};
-		7ABF0E8D1DC40AB60041CBB2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7ABF0E811DC40AB60041CBB2 /* LinkedData */;
-			targetProxy = 7ABF0E8C1DC40AB60041CBB2 /* PBXContainerItemProxy */;
 		};
 		7AD9ECE01DC172CB001FAAF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1199,83 +1051,6 @@
 			};
 			name = Release;
 		};
-		7ABF0E931DC40AB60041CBB2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MR4EU5S834;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LinkedData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.LinkedData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7ABF0E941DC40AB60041CBB2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MR4EU5S834;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LinkedData/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.LinkedData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7ABF0E951DC40AB60041CBB2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = MR4EU5S834;
-				INFOPLIST_FILE = LinkedDataTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.LinkedDataTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		7ABF0E961DC40AB60041CBB2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = MR4EU5S834;
-				INFOPLIST_FILE = LinkedDataTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.LinkedDataTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		7AD9ECE31DC172CB001FAAF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1486,24 +1261,6 @@
 			buildConfigurations = (
 				7AACD2221DC037A800AC1249 /* Debug */,
 				7AACD2231DC037A800AC1249 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7ABF0E971DC40AB60041CBB2 /* Build configuration list for PBXNativeTarget "LinkedData" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7ABF0E931DC40AB60041CBB2 /* Debug */,
-				7ABF0E941DC40AB60041CBB2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7ABF0E981DC40AB60041CBB2 /* Build configuration list for PBXNativeTarget "LinkedDataTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7ABF0E951DC40AB60041CBB2 /* Debug */,
-				7ABF0E961DC40AB60041CBB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

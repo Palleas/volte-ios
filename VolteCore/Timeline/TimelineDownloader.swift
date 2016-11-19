@@ -115,8 +115,7 @@ public class TimelineDownloader {
     }
 
     public func fetchItems() -> SignalProducer<[Message], TimelineError> {
-        print("Fetching all messages")
-        let context = self.storageController.managedObjectContext // newBackgroundContext()
+        let context = self.storageController.managedObjectContext
 
         return self.storageController
             .lastFetchedUID()
