@@ -89,6 +89,18 @@ class StorageControllerSpecs: QuickSpec {
             }
         }
 
+        describe("Saving to disk") {
+            it("should save everything") {
+                let message = Message(context: storage.managedObjectContext)
+                message.uid = 34
 
+                expect(storage.managedObjectContext.hasChanges).to(beTrue())
+
+                _ = storage.save().wait()
+
+                expect(storage.managedObjectContext.hasChanges).to(beFalse())
+                expect(storage.privateObjectContext.hasChanges).to(beFalse())
+            }
+        }
     }
 }
