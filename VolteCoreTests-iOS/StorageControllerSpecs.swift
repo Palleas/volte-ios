@@ -66,5 +66,29 @@ class StorageControllerSpecs: QuickSpec {
                 }
             }
         }
+
+        describe("spawning a child context") {
+            it("should have the viewContext as parent") {
+                let spawned = storage.newBackgroundContext()
+                expect(spawned.parent).to(equal(storage.managedObjectContext))
+            }
+
+            it("should merge the changes into the parent") {
+                let spawned = storage.newBackgroundContext()
+                expect(spawned.hasChanges).to(beFalse())
+
+                let message = Message(context: spawned)
+                message.uid = 34
+
+                expect(spawned.hasChanges).to(beTrue())
+
+                _ = spawned.reactive.save().wait()
+
+                expect(spawned.hasChanges).to(beFalse())
+                expect(storage.managedObjectContext.hasChanges).to(beTrue())
+            }
+        }
+
+
     }
 }
