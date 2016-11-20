@@ -60,7 +60,6 @@ public class StorageController {
             let fileManager = FileManager.default
             guard let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last else { return }
             let storeURL = documentsURL.appendingPathComponent("DataModel.sqlite")
-            print("store URL is \(storeURL)")
 
             do {
                 try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
@@ -105,7 +104,6 @@ public class StorageController {
 
         return spawn
     }
-
 }
 
 class StorageScheduler: SchedulerProtocol {

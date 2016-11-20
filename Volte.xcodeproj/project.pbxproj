@@ -61,6 +61,26 @@
 		7A8A7B131DD00353004D83AD /* RGLockboxOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */; };
 		7A8A7B141DD00353004D83AD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */; };
 		7A8A7B161DD0056B004D83AD /* Legacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A7B151DD0056B004D83AD /* Legacy.swift */; };
+		7A8C1F1C1DE11977009CC038 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
+		7A8C1F241DE11A42009CC038 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F221DE11A42009CC038 /* Nimble.framework */; };
+		7A8C1F251DE11A42009CC038 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F231DE11A42009CC038 /* Quick.framework */; };
+		7A8C1F291DE11A5C009CC038 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F271DE11A5C009CC038 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F2A1DE11A5C009CC038 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F281DE11A5C009CC038 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F2D1DE11B71009CC038 /* StorageControllerSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C1F2C1DE11B71009CC038 /* StorageControllerSpecs.swift */; };
+		7A8C1F301DE13438009CC038 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F2E1DE13438009CC038 /* ReactiveCocoa.framework */; };
+		7A8C1F311DE13438009CC038 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F2F1DE13438009CC038 /* ReactiveSwift.framework */; };
+		7A8C1F331DE1343F009CC038 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F321DE1343F009CC038 /* Result.framework */; };
+		7A8C1F361DE13443009CC038 /* RGLockboxIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F341DE13443009CC038 /* RGLockboxIOS.framework */; };
+		7A8C1F371DE13443009CC038 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F351DE13443009CC038 /* SwiftyJSON.framework */; };
+		7A8C1F391DE13449009CC038 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F381DE13449009CC038 /* CryptoSwift.framework */; };
+		7A8C1F3B1DE13457009CC038 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8C1F3A1DE13457009CC038 /* MailCore.framework */; };
+		7A8C1F3C1DE13482009CC038 /* CryptoSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F381DE13449009CC038 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F3D1DE13488009CC038 /* MailCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F3A1DE13457009CC038 /* MailCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F3E1DE13488009CC038 /* RGLockboxIOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F341DE13443009CC038 /* RGLockboxIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F3F1DE13488009CC038 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F351DE13443009CC038 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F401DE13488009CC038 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F321DE1343F009CC038 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F411DE13488009CC038 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F2E1DE13438009CC038 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A8C1F421DE13488009CC038 /* ReactiveSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A8C1F2F1DE13438009CC038 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A9A95881DCE8C1300993386 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A95871DCE8C1300993386 /* Keyboard.swift */; };
 		7AACD21D1DC037A800AC1249 /* VolteCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AACD21B1DC037A800AC1249 /* VolteCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AACD2201DC037A800AC1249 /* VolteCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AACD2191DC037A800AC1249 /* VolteCore.framework */; };
@@ -83,6 +103,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7A8C1F1D1DE11977009CC038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ADFD5A91DAD1E7E0070C5BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AACD2181DC037A800AC1249;
+			remoteInfo = "VolteCore-iOS";
+		};
 		7AACD21E1DC037A800AC1249 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7ADFD5A91DAD1E7E0070C5BE /* Project object */;
@@ -115,6 +142,24 @@
 			files = (
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A8C1F261DE11A4B009CC038 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A8C1F291DE11A5C009CC038 /* Nimble.framework in CopyFiles */,
+				7A8C1F2A1DE11A5C009CC038 /* Quick.framework in CopyFiles */,
+				7A8C1F3D1DE13488009CC038 /* MailCore.framework in CopyFiles */,
+				7A8C1F3C1DE13482009CC038 /* CryptoSwift.framework in CopyFiles */,
+				7A8C1F3E1DE13488009CC038 /* RGLockboxIOS.framework in CopyFiles */,
+				7A8C1F3F1DE13488009CC038 /* SwiftyJSON.framework in CopyFiles */,
+				7A8C1F401DE13488009CC038 /* Result.framework in CopyFiles */,
+				7A8C1F411DE13488009CC038 /* ReactiveCocoa.framework in CopyFiles */,
+				7A8C1F421DE13488009CC038 /* ReactiveSwift.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7AD9ECA41DC17033001FAAF7 /* Embed App Extensions */ = {
@@ -188,6 +233,20 @@
 		7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxOSX.framework; path = Carthage/Build/Mac/RGLockboxOSX.framework; sourceTree = "<group>"; };
 		7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7A8A7B151DD0056B004D83AD /* Legacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legacy.swift; sourceTree = "<group>"; };
+		7A8C1F171DE11977009CC038 /* VolteCoreTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VolteCoreTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8C1F1B1DE11977009CC038 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A8C1F221DE11A42009CC038 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7A8C1F231DE11A42009CC038 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		7A8C1F271DE11A5C009CC038 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7A8C1F281DE11A5C009CC038 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		7A8C1F2C1DE11B71009CC038 /* StorageControllerSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageControllerSpecs.swift; sourceTree = "<group>"; };
+		7A8C1F2E1DE13438009CC038 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		7A8C1F2F1DE13438009CC038 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		7A8C1F321DE1343F009CC038 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7A8C1F341DE13443009CC038 /* RGLockboxIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RGLockboxIOS.framework; path = Carthage/Build/iOS/RGLockboxIOS.framework; sourceTree = "<group>"; };
+		7A8C1F351DE13443009CC038 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7A8C1F381DE13449009CC038 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		7A8C1F3A1DE13457009CC038 /* MailCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MailCore.framework; path = Carthage/Build/iOS/MailCore.framework; sourceTree = "<group>"; };
 		7A9A95871DCE8C1300993386 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7AACD2191DC037A800AC1249 /* VolteCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VolteCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AACD21B1DC037A800AC1249 /* VolteCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolteCore.h; sourceTree = "<group>"; };
@@ -241,10 +300,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A8C1F141DE11977009CC038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A8C1F1C1DE11977009CC038 /* VolteCore.framework in Frameworks */,
+				7A8C1F241DE11A42009CC038 /* Nimble.framework in Frameworks */,
+				7A8C1F251DE11A42009CC038 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2151DC037A800AC1249 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8C1F301DE13438009CC038 /* ReactiveCocoa.framework in Frameworks */,
+				7A8C1F311DE13438009CC038 /* ReactiveSwift.framework in Frameworks */,
+				7A8C1F3B1DE13457009CC038 /* MailCore.framework in Frameworks */,
+				7A8C1F391DE13449009CC038 /* CryptoSwift.framework in Frameworks */,
+				7A8C1F331DE1343F009CC038 /* Result.framework in Frameworks */,
+				7A8C1F361DE13443009CC038 /* RGLockboxIOS.framework in Frameworks */,
+				7A8C1F371DE13443009CC038 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,13 +355,7 @@
 		7A1391471DC1626E00B2DBD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A8A7B071DD00353004D83AD /* CryptoSwift.framework */,
-				7A8A7B081DD00353004D83AD /* MailCore.framework */,
-				7A8A7B091DD00353004D83AD /* ReactiveCocoa.framework */,
-				7A8A7B0A1DD00353004D83AD /* ReactiveSwift.framework */,
-				7A8A7B0B1DD00353004D83AD /* Result.framework */,
-				7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */,
-				7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */,
+				7A8C1F2B1DE11A69009CC038 /* Mac */,
 				7A6B0E521DCFB52400ED5E0A /* IOS */,
 			);
 			name = Frameworks;
@@ -387,6 +457,15 @@
 		7A6B0E521DCFB52400ED5E0A /* IOS */ = {
 			isa = PBXGroup;
 			children = (
+				7A8C1F3A1DE13457009CC038 /* MailCore.framework */,
+				7A8C1F381DE13449009CC038 /* CryptoSwift.framework */,
+				7A8C1F341DE13443009CC038 /* RGLockboxIOS.framework */,
+				7A8C1F351DE13443009CC038 /* SwiftyJSON.framework */,
+				7A8C1F321DE1343F009CC038 /* Result.framework */,
+				7A8C1F2E1DE13438009CC038 /* ReactiveCocoa.framework */,
+				7A8C1F2F1DE13438009CC038 /* ReactiveSwift.framework */,
+				7A8C1F271DE11A5C009CC038 /* Nimble.framework */,
+				7A8C1F281DE11A5C009CC038 /* Quick.framework */,
 				7A8A7B041DD00126004D83AD /* CoreVideo.framework */,
 				7A8A7B021DD00122004D83AD /* CoreMedia.framework */,
 				7A8A7B001DD0011B004D83AD /* QuartzCore.framework */,
@@ -410,6 +489,31 @@
 				7A1660A81DAFF29100AEBC50 /* testers.json */,
 			);
 			path = VolteCore;
+			sourceTree = "<group>";
+		};
+		7A8C1F181DE11977009CC038 /* VolteCoreTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7A8C1F1B1DE11977009CC038 /* Info.plist */,
+				7A8C1F2C1DE11B71009CC038 /* StorageControllerSpecs.swift */,
+			);
+			path = "VolteCoreTests-iOS";
+			sourceTree = "<group>";
+		};
+		7A8C1F2B1DE11A69009CC038 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				7A8C1F221DE11A42009CC038 /* Nimble.framework */,
+				7A8C1F231DE11A42009CC038 /* Quick.framework */,
+				7A8A7B071DD00353004D83AD /* CryptoSwift.framework */,
+				7A8A7B081DD00353004D83AD /* MailCore.framework */,
+				7A8A7B091DD00353004D83AD /* ReactiveCocoa.framework */,
+				7A8A7B0A1DD00353004D83AD /* ReactiveSwift.framework */,
+				7A8A7B0B1DD00353004D83AD /* Result.framework */,
+				7A8A7B0C1DD00353004D83AD /* RGLockboxOSX.framework */,
+				7A8A7B0D1DD00353004D83AD /* SwiftyJSON.framework */,
+			);
+			name = Mac;
 			sourceTree = "<group>";
 		};
 		7AACD21A1DC037A800AC1249 /* VolteCore-iOS */ = {
@@ -442,8 +546,9 @@
 				7AD9ECD81DC172CB001FAAF7 /* Sharing */,
 				7ADFD5B31DAD1E7E0070C5BE /* Volte */,
 				7A6B0E531DCFB93B00ED5E0A /* VolteCore */,
-				7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */,
 				7AACD21A1DC037A800AC1249 /* VolteCore-iOS */,
+				7A6B0E341DCF9BCE00ED5E0A /* VolteCore-Mac */,
+				7A8C1F181DE11977009CC038 /* VolteCoreTests-iOS */,
 				7A6B0E201DCF9BBC00ED5E0A /* VolteMac */,
 			);
 			sourceTree = "<group>";
@@ -456,6 +561,7 @@
 				7AD9ECD71DC172CB001FAAF7 /* Sharing.appex */,
 				7A6B0E1F1DCF9BBB00ED5E0A /* VolteMac.app */,
 				7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */,
+				7A8C1F171DE11977009CC038 /* VolteCoreTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -540,6 +646,25 @@
 			productReference = 7A6B0E331DCF9BCE00ED5E0A /* VolteCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		7A8C1F161DE11977009CC038 /* VolteCoreTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A8C1F1F1DE11977009CC038 /* Build configuration list for PBXNativeTarget "VolteCoreTests-iOS" */;
+			buildPhases = (
+				7A8C1F131DE11977009CC038 /* Sources */,
+				7A8C1F141DE11977009CC038 /* Frameworks */,
+				7A8C1F151DE11977009CC038 /* Resources */,
+				7A8C1F261DE11A4B009CC038 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A8C1F1E1DE11977009CC038 /* PBXTargetDependency */,
+			);
+			name = "VolteCoreTests-iOS";
+			productName = "VolteCoreTests-iOS";
+			productReference = 7A8C1F171DE11977009CC038 /* VolteCoreTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7AACD2181DC037A800AC1249 /* VolteCore-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore-iOS" */;
@@ -619,6 +744,12 @@
 						DevelopmentTeam = MR4EU5S834;
 						ProvisioningStyle = Automatic;
 					};
+					7A8C1F161DE11977009CC038 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MR4EU5S834;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
 					7AACD2181DC037A800AC1249 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 8VS9JKFDZS;
@@ -667,6 +798,7 @@
 				7AD9ECD61DC172CB001FAAF7 /* Sharing */,
 				7A6B0E1E1DCF9BBB00ED5E0A /* VolteMac */,
 				7A6B0E321DCF9BCE00ED5E0A /* VolteCore-Mac */,
+				7A8C1F161DE11977009CC038 /* VolteCoreTests-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -682,6 +814,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7A6B0E311DCF9BCE00ED5E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A8C1F151DE11977009CC038 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -773,6 +912,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A8C1F131DE11977009CC038 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A8C1F2D1DE11B71009CC038 /* StorageControllerSpecs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7AACD2141DC037A800AC1249 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -822,6 +969,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7A8C1F1E1DE11977009CC038 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AACD2181DC037A800AC1249 /* VolteCore-iOS */;
+			targetProxy = 7A8C1F1D1DE11977009CC038 /* PBXContainerItemProxy */;
+		};
 		7AACD21F1DC037A800AC1249 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7AACD2181DC037A800AC1249 /* VolteCore-iOS */;
@@ -987,6 +1139,41 @@
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7A8C1F201DE11977009CC038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "VolteCoreTests-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCoreTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7A8C1F211DE11977009CC038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = MR4EU5S834;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "VolteCoreTests-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.VolteCoreTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1255,6 +1442,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7A8C1F1F1DE11977009CC038 /* Build configuration list for PBXNativeTarget "VolteCoreTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A8C1F201DE11977009CC038 /* Debug */,
+				7A8C1F211DE11977009CC038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		7AACD2241DC037A800AC1249 /* Build configuration list for PBXNativeTarget "VolteCore-iOS" */ = {
 			isa = XCConfigurationList;
