@@ -104,6 +104,14 @@ public class StorageController {
 
         return spawn
     }
+
+    public func wipe() throws {
+        let urls = privateObjectContext.persistentStoreCoordinator?.persistentStores.flatMap {
+            $0.url
+        }
+        
+        try urls?.forEach { try FileManager.default.removeItem(at: $0) }
+    }
 }
 
 class StorageScheduler: SchedulerProtocol {

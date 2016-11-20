@@ -21,6 +21,7 @@ class StorageControllerSpecs: QuickSpec {
     override func spec() {
         var storage: StorageController!
 
+        
         beforeEach {
             storage = StorageController()
 
@@ -29,12 +30,11 @@ class StorageControllerSpecs: QuickSpec {
         }
 
         afterEach {
-            storage.wipe()
+            try! storage.wipe()
             storage = nil
         }
 
         context("Fresh install") {
-
             describe("last fetched id") {
                 it("should return 1 as the last fetched id") {
                     let result = storage.lastFetchedUID().first()
@@ -42,7 +42,6 @@ class StorageControllerSpecs: QuickSpec {
                     expect(result!.value).to(equal(1))
                 }
             }
-
         }
 
         context("database already has some message") {
